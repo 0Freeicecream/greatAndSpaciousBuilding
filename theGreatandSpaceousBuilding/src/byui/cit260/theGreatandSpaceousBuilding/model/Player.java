@@ -5,6 +5,10 @@ import java.util.Objects;
 
 public class Player implements Serializable {
 	
+    /**
+     * @author Nena
+     */
+    
 	//class instance variables
 	private String name;
         private double bestTime;
