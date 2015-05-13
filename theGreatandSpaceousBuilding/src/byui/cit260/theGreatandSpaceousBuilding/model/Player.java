@@ -24,6 +24,6 @@ public class Player implements Serializable {
 		this.name = name;
 	}
         public void setBestTime(double bestTime) {
-                this.bestTime = bestTime;
+                this.bestTime = bestTime; //test
         }
 }
