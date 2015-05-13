@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Player implements Serializable {
 	
     /**
-     * @author Nena
+     * @author Nena/Ted
      */
     
 	//class instance variables
