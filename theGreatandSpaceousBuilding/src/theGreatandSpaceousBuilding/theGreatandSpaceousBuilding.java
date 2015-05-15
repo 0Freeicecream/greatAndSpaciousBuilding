@@ -7,6 +7,7 @@ package theGreatandSpaceousBuilding;
 
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import byui.cit260.theGreatandSpaceousBuilding.model.Location;
+import byui.cit260.theGreatandSpaceousBuilding.model.Map;
 
 /**
  *
@@ -24,6 +25,15 @@ public class theGreatandSpaceousBuilding {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        //Map Test
+        Map mapOne = new Map();
+        
+        mapOne.setRowCount(5);
+        mapOne.setCollumnCount(5);
+        
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
     
         //Location Test
         Location locationOne = new Location();    
