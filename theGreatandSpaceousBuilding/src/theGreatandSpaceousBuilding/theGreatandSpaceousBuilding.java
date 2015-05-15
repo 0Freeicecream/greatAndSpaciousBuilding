@@ -5,6 +5,7 @@
  */
 package theGreatandSpaceousBuilding;
 
+import byui.cit260.theGreatandSpaceousBuilding.model.Game;
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import byui.cit260.theGreatandSpaceousBuilding.model.Location;
 import byui.cit260.theGreatandSpaceousBuilding.model.Map;
@@ -17,6 +18,16 @@ public class theGreatandSpaceousBuilding {
     
         
     public static void main(String[] args) {
+        
+        //Game Test
+        Game gameOne = new Game();
+        gameOne.setTotalTime(0.0);
+        gameOne.setPlayerCoordinatesX(1);
+        gameOne.setPlayerCoordinatesY(5);
+        
+        String gameInfo = gameOne.toString();
+        System.out.println(gameInfo);
+        
         //Player Test
         Player playerOne = new Player();    
         
