@@ -1,7 +1,6 @@
 package byui.cit260.theGreatandSpaceousBuilding.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public class Location implements Serializable {
 
