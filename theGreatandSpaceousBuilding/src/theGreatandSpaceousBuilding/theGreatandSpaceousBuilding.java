@@ -6,6 +6,7 @@
 package theGreatandSpaceousBuilding;
 
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
+import byui.cit260.theGreatandSpaceousBuilding.model.Location;
 
 /**
  *
@@ -15,6 +16,7 @@ public class theGreatandSpaceousBuilding {
     
         
     public static void main(String[] args) {
+        //Player Test
         Player playerOne = new Player();    
         
         playerOne.setName("Fred Fredburger");
@@ -22,5 +24,18 @@ public class theGreatandSpaceousBuilding {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+    
+        //Location Test
+        Location locationOne = new Location();    
+        
+        locationOne.setX(0);
+        locationOne.setY(-1);
+        locationOne.setFruitPoints(2);
+        locationOne.setIronRod(true);
+        locationOne.setPath(true);
+        locationOne.setHolyGhost(false);
+        
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
     }
 }
