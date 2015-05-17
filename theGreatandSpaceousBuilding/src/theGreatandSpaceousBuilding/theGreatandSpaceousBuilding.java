@@ -5,6 +5,7 @@
  */
 package theGreatandSpaceousBuilding;
 
+import byui.cit260.theGreatandSpaceousBuilding.model.Challenge;
 import byui.cit260.theGreatandSpaceousBuilding.model.Game;
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import byui.cit260.theGreatandSpaceousBuilding.model.Location;
@@ -58,5 +59,15 @@ public class theGreatandSpaceousBuilding {
         
         String locationInfo = locationOne.toString();
         System.out.println(locationInfo);
+        
+        //Challenge Test
+        Challenge challengeOne = new Challenge();
+        
+        challengeOne.setType("Pringles");
+        challengeOne.setObedienceMod(0);
+        challengeOne.setTestimonyMod(-7);
+        
+        String challengeInfo = challengeOne.toString();
+        System.out.println(challengeInfo);
     }
 }
