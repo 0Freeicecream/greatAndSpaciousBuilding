@@ -10,6 +10,7 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Game;
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import byui.cit260.theGreatandSpaceousBuilding.model.Location;
 import byui.cit260.theGreatandSpaceousBuilding.model.Map;
+import byui.cit260.theGreatandSpaceousBuilding.model.Scenario;
 
 /**
  *
@@ -69,5 +70,17 @@ public class theGreatandSpaceousBuilding {
         
         String challengeInfo = challengeOne.toString();
         System.out.println(challengeInfo);
+        
+        //Test scenario
+        Scenario scenarioOne = new Scenario();
+        
+        scenarioOne.setStory("There once was a man from Peru, who dreamed he was eating his shoe, he woke up with a fright, on that terrible night, to find out that his dream had come true");
+        scenarioOne.setQuestion("What is the answer to the equation 2 + 2?");
+        scenarioOne.setChoices("A: -10 B: -20X6 C: 2 D: Fish");
+        scenarioOne.setAnswer("C");
+        scenarioOne.setEarnedFruits(2);
+        
+        String scenarioInfo = scenarioOne.toString();
+        System.out.println(scenarioInfo);
     }
 }
