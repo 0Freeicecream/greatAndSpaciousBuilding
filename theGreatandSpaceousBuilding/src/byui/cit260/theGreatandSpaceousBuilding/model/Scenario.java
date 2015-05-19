@@ -19,13 +19,14 @@ public class Scenario {
     private String question;
     private String choices;
     private String answer;
+    private double earnedFruits;
      
     public Scenario(){   
     }
     
     @Override
     public String toString() {
-        return "Scenario{" + "story=" + story + ", question=" + question + ", choices=" + choices + ", answer=" + answer + '}';
+        return "Scenario{" + "story=" + story + ", question=" + question + ", choices=" + choices + ", answer=" + answer + ", earnedFruits=" + earnedFruits +  '}';
     }
     
     @Override
@@ -35,6 +36,7 @@ public class Scenario {
         hash = 47 * hash + Objects.hashCode(this.question);
         hash = 47 * hash + Objects.hashCode(this.choices);
         hash = 47 * hash + Objects.hashCode(this.answer);
+        hash = 47 * hash + Objects.hashCode(this.earnedFruits);        
         return hash;
     }
 
@@ -59,8 +61,12 @@ public class Scenario {
         if (!Objects.equals(this.answer, other.answer)) {
             return false;
         }
+        if (Double.doubleToLongBits(this.earnedFruits) != Double.doubleToLongBits(other.earnedFruits)) {
+            return false;
+        }
         return true;
     }
+    
     public String getStory(){
         return story;
     }
@@ -91,6 +97,14 @@ public class Scenario {
     
     public void setAnswer (String answer) {
         this.answer = answer;
+    }
+
+    public double getEarnedFruits() {
+        return earnedFruits;
+    }
+
+    public void setEarnedFruits(double earnedFruits) {
+        this.earnedFruits = earnedFruits;
     }
     
 }
