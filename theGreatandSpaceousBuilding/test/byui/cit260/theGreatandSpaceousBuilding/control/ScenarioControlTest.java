@@ -32,9 +32,15 @@ public class ScenarioControlTest {
         int testimony = 0;
         int obedience = 0;
         int challengeRating = 0;
+        int expResult = 0; //expected output returned value
+        
+        //create instance of ScenarioControl class
         ScenarioControl instance = new ScenarioControl();
-        int expResult = 0;
+        
+        //Call function to run test
         int result = instance.fingerOfScorn(testimony, obedience, challengeRating);
+        
+        //compare results to expectations
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
