@@ -5,25 +5,19 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.control;
 
-import java.util.Random;
 /**
  *
  * @author Néna and Ted
  */
 public class ScenarioControl {
     
-    public class Random {
-        private int randNum() {
-            Random rn = new Random();
-            int num = rn.nextInt(10) + 1;
-            return num;
-        }
-
-        private int nextInt(int i) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    }
     public int fingerOfScorn(int testimony, int obedience, int challengeRating) {
+        double randA = Math.random() * 9 + 1;
+        double randB = Math.random() * 9 + 1;
+        int rand1 = (int) randA;
+        int rand2 = (int) randB;
+        
+        
         if (testimony > 99) {
             //Error – Testimony too high
             return -1;
@@ -43,8 +37,7 @@ public class ScenarioControl {
             //Error – obedience too low
             return -1;
         } else
-            return (testimony + num1 ) - (challengeRating + Math.random() - obedience);
+            
+            return (testimony + rand1  - (challengeRating + rand2 - obedience));
     }
-    
-    
 }
