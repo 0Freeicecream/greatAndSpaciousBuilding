@@ -14,9 +14,7 @@ public class ScenarioControl {
     public int roll() {
         
         double randA = Math.random() * 9 + 1;
-        int rand1 = (int) randA;
-        System.out.println(rand1);
-        return rand1;
+        return (int) randA;
     }
     int rand1 = roll(); 
     
