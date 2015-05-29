@@ -412,7 +412,7 @@ public class ScenarioControlTest {
         challengeRating = 45;
         x = 2;
         rand = 5;
-        expResult = 86 //expected output returned value;
+        expResult = 86; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
