@@ -11,14 +11,15 @@ package byui.cit260.theGreatandSpaceousBuilding.control;
  */
 public class ScenarioControl {
     
-    public int roll() {
-        
-        double randA = Math.random() * 9 + 1;
-        return (int) randA;
-    }
-    int rand1 = roll(); 
-    
-    public Integer fingerOfScorn(int testimony, int obedience, int challengeRating, int rand1) {
+        private int roll() {
+
+            double randA = Math.random() * 9 + 1;
+            return (int) randA;
+        }
+    int rand = roll();
+
+   
+    public Integer fingerOfScorn(int testimony, int obedience, int challengeRating, int rand) {
         
         if (testimony > 99) {
             //Error – Testimony too high
@@ -38,18 +39,18 @@ public class ScenarioControl {
         } else if (challengeRating < 1) {
             //Error – obedience too low
             return null;
-        } else if (rand1 > 10) {
+        } else if (rand > 10) {
             //Error – obedience too high
             return null;
-        } else if (rand1 < 1) {
+        } else if (rand < 1) {
             //Error – obedience too low
             return null;
         } else
             
-            return (testimony + rand1)  - (challengeRating - obedience);
+            return (testimony + rand)  - (challengeRating - obedience);
     }    
     
-     public Integer pride(int testimony, int obedience, int challengeRating, int x, int ran1) {
+     public Integer pride(int testimony, int obedience, int challengeRating, int rand, int x) {
         
         if (testimony > 99) {
             //Error – Testimony too high
@@ -69,20 +70,20 @@ public class ScenarioControl {
         } else if (challengeRating < 1) {
             //Error – obedience too low
             return null;
-        } else if (rand1 > 10) {
+        } else if (rand > 10) {
             //Error – obedience too high
             return null;
-        } else if (rand1 < 1) {
+        } else if (rand < 1) {
             //Error – obedience too low
             return null;
-        } else if (x > 99) {
-            //Error – obedience too high
+        } else if (x > 5) {
+            //Error – x too high
             return null;
         } else if (x < 1) {
-            //Error – obedience too low
+            //Error – x too low
             return null;
         } else
             
-            return (testimony + rand1)  - (challengeRating + x - obedience);
+            return (testimony + rand)  - ((challengeRating + x) - obedience);
     }
 }
