@@ -11,33 +11,36 @@ package byui.cit260.theGreatandSpaceousBuilding.control;
  */
 public class ScenarioControl {
     
-    public int fingerOfScorn(int testimony, int obedience, int challengeRating) {
+    public Integer fingerOfScorn(int testimony, int obedience, int challengeRating) {
         double randA = Math.random() * 9 + 1;
-        double randB = Math.random() * 9 + 1;
         int rand1 = (int) randA;
-        int rand2 = (int) randB;
-        
+        return fingerOfScorn(testimony, obedience, challengeRating, rand1);
+    }
+    
+    public Integer fingerOfScorn(int testimony, int obedience, int challengeRating, int rand1) {
+       
+        System.out.println(rand1);
         
         if (testimony > 99) {
             //Error – Testimony too high
-            return -1;
+            return null;
         } else if (testimony < 1) {
             //Error – testimony too low
-            return -1;
+            return null;
         } else if (obedience > 99) {
             //Error – obedience too high
-            return -1;
+            return null;
         } else if (obedience < 1) {
             //Error – obedience too low
-            return -1;
+            return null;
         } else if (challengeRating > 99) {
             //Error – obedience too high
-            return -1;
+            return null;
         } else if (challengeRating < 1) {
             //Error – obedience too low
-            return -1;
+            return null;
         } else
             
-            return (testimony + rand1  - (challengeRating + rand2 - obedience));
+            return (testimony + rand1)  - (challengeRating + obedience);
     }
 }

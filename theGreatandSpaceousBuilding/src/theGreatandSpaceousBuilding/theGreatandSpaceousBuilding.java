@@ -82,5 +82,7 @@ public class theGreatandSpaceousBuilding {
         
         String scenarioInfo = scenarioOne.toString();
         System.out.println(scenarioInfo);
+        
+   
     }
 }
