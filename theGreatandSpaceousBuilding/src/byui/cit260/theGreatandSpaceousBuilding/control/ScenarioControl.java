@@ -85,4 +85,37 @@ public class ScenarioControl {
         } else
             return (testimony + rand) - ((challengeRating + x) - obedience);
     }
-}
+     
+    public Integer mistsOfDarkness (int testimony, int obedience, int challengeRating, int rand, int y){
+        
+        if (testimony > 99) {
+            //Error - testimony too high
+            return -1;
+        } else if (testimony < 1) {
+            //Error - testimony too low
+            return -1;
+        } else if (obedience > 99) {
+	    //Error – obedience too high
+            return  -1;
+        } else if (obedience < 1) {
+            //Error – obedience too low
+            return -1;
+        } else if (challengeRating > 99) {
+            //Error – obedience too high
+            return -1;
+        } else if (challengeRating < 1) {
+            //Error – obedience too low
+            return -1;
+        } else if (y < 1) {
+            //Error – Y Coordinate too low
+            return  -1;
+        } else if (y > 5) {
+            //Error – Y Coordinate too high
+            return -1;
+        } else
+            return (testimony + rand) - ((challengeRating + y) - obedience);
+
+
+       }
+    }
+

@@ -164,7 +164,7 @@ public class ScenarioControlTest {
         *  Test Case #1
         */
         System.out.println("pride");
-        System.out.println("\tTest case #2");
+        System.out.println("\tTest case #1");
         int testimony = 11;
         int obedience = 12;
         int challengeRating = 73;
@@ -577,9 +577,9 @@ public class ScenarioControlTest {
         assertEquals(expResult, result);
 
         /*
-        * Test case 20
+        * Test case 21
         */
-        System.out.println("\tTest case #20");
+        System.out.println("\tTest case #21");
         //input values for test case 20
         testimony = 4;
         obedience = 68;
@@ -599,5 +599,248 @@ public class ScenarioControlTest {
 
     
     }
-    
-}
+    /**
+     * Test of mistsOfDarkness method, of class ScenarioControl.
+     */
+    @Test
+    public void testMistsOfDarkness (){
+        System.out.println("mistsOfDarkness");
+        
+        /*
+        * Test case #1
+        */
+        System.out.println("\tTest case #1");
+        //input values for test case 1
+        int testimony = 11;
+        int obedience = 12;
+        int challengeRating = 73;
+        int rand = 1;
+        int y = 4;
+        Integer expResult = -53; //expected output returned value
+        
+        //create instance of ScenarioControl class
+        ScenarioControl instance = new ScenarioControl();
+        
+        //Call function to run test
+        Integer result = instance.mistsOfDarkness(testimony, obedience, challengeRating, rand, y);
+        
+        //compare results to expectations
+        assertEquals(expResult, result);
+        
+        
+        /*
+        * Test case #2
+        */
+        System.out.println("\tTest case #2");
+        //input values for test case 1
+        testimony = 100;
+        obedience = 26;
+        challengeRating = 8;
+        rand = 2;
+        y = 3;
+        expResult = -1; //expected output returned value
+        
+        //create instance of ScenarioControl class
+        instance = new ScenarioControl();
+        
+        //Call function to run test
+        result = instance.mistsOfDarkness(testimony, obedience, challengeRating, rand, y);
+        
+        //compare results to expectations
+        assertEquals(expResult, result);
+        
+         /*
+        * Test case #3
+        */
+        System.out.println("\tTest case #3");
+        //input values for test case 1
+        testimony = 0;
+        obedience = 54;
+        challengeRating = 15;
+        rand = 3;
+        y = 2;
+        expResult = -1; //expected output returned value
+        
+        //create instance of ScenarioControl class
+        instance = new ScenarioControl();
+        
+        //Call function to run test
+        result = instance.mistsOfDarkness(testimony, obedience, challengeRating, rand, y);
+        
+        //compare results to expectations
+        assertEquals(expResult, result);
+        
+         /*
+        * Test case #4
+        */
+        System.out.println("\tTest case #4");
+        //input values for test case 1
+        testimony = 50;
+        obedience = 100;
+        challengeRating = 88;
+        rand = 4;
+        y = 2;
+        expResult = -1; //expected output returned value
+        
+        //create instance of ScenarioControl class
+        instance = new ScenarioControl();
+        
+        //Call function to run test
+        result = instance.mistsOfDarkness(testimony, obedience, challengeRating, rand, y);
+        
+        //compare results to expectations
+        assertEquals(expResult, result);
+        
+         /*
+        * Test case #5
+        */
+        System.out.println("\tTest case #5");
+        //input values for test case 1
+        testimony = 37;
+        obedience = 0;
+        challengeRating = 34;
+        rand = 5;
+        y = 4;
+        expResult = -1; //expected output returned value
+        
+        //create instance of ScenarioControl class
+        instance = new ScenarioControl();
+        
+        //Call function to run test
+        result = instance.mistsOfDarkness(testimony, obedience, challengeRating, rand, y);
+        
+        //compare results to expectations
+        assertEquals(expResult, result);
+        
+         /*
+        * Test case #6
+        */
+        System.out.println("\tTest case #6");
+        //input values for test case 1
+        testimony = 18;
+        obedience = 90;
+        challengeRating = 100;
+        rand = 6;
+        y = 4;
+        expResult = -1; //expected output returned value
+        
+        //create instance of ScenarioControl class
+        instance = new ScenarioControl();
+        
+        //Call function to run test
+        result = instance.mistsOfDarkness(testimony, obedience, challengeRating, rand, y);
+        
+        //compare results to expectations
+        assertEquals(expResult, result);
+        
+         /*
+        * Test case #7
+        */
+        System.out.println("\tTest case #7");
+        //input values for test case 1
+        testimony = 81;
+        obedience = 28;
+        challengeRating = 0;
+        rand = 7;
+        y = 3;
+        expResult = -1; //expected output returned value
+        
+        //create instance of ScenarioControl class
+        instance = new ScenarioControl();
+        
+        //Call function to run test
+        result = instance.mistsOfDarkness(testimony, obedience, challengeRating, rand, y);
+        
+        //compare results to expectations
+        assertEquals(expResult, result);
+        
+         /*
+        * Test case #8
+        */
+        System.out.println("\tTest case #8");
+        //input values for test case 1
+        testimony = 63;
+        obedience = 41;
+        challengeRating = 82;
+        rand = 8;
+        y = 0;
+        expResult = -1; //expected output returned value
+        
+        //create instance of ScenarioControl class
+        instance = new ScenarioControl();
+        
+        //Call function to run test
+        result = instance.mistsOfDarkness(testimony, obedience, challengeRating, rand, y);
+        
+        //compare results to expectations
+        assertEquals(expResult, result);
+        
+         /*
+        * Test case #9
+        */
+        System.out.println("\tTest case #9");
+        //input values for test case 1
+        testimony = 82;
+        obedience = 22;
+        challengeRating = 72;
+        rand = 9;
+        y = 6;
+        expResult = -1; //expected output returned value
+        
+        //create instance of ScenarioControl class
+        instance = new ScenarioControl();
+        
+        //Call function to run test
+        result = instance.mistsOfDarkness(testimony, obedience, challengeRating, rand, y);
+        
+        //compare results to expectations
+        assertEquals(expResult, result);
+        
+         /*
+        * Test case #10
+        */
+        System.out.println("\tTest case #10");
+        //input values for test case 1
+        testimony = 1;
+        obedience = 1;
+        challengeRating = 1;
+        rand = 1;
+        y = 1;
+        expResult = 1; //expected output returned value
+        
+        //create instance of ScenarioControl class
+        instance = new ScenarioControl();
+        
+        //Call function to run test
+        result = instance.mistsOfDarkness(testimony, obedience, challengeRating, rand, y);
+        
+        //compare results to expectations
+        assertEquals(expResult, result);
+        
+         /*
+        * Test case #11
+        */
+        System.out.println("\tTest case #11");
+        //input values for test case 1
+        testimony = 99;
+        obedience = 99;
+        challengeRating = 99;
+        rand = 10;
+        y = 5;
+        expResult = 104; //expected output returned value
+        
+        //create instance of ScenarioControl class
+        instance = new ScenarioControl();
+        
+        //Call function to run test
+        result = instance.mistsOfDarkness(testimony, obedience, challengeRating, rand, y);
+        
+        //compare results to expectations
+        assertEquals(expResult, result);
+        
+    }
+        
+    }
+
+
+
