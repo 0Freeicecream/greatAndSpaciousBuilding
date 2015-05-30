@@ -42,14 +42,14 @@ public class ScenarioControlTest {
         int testimony = 2;
         int obedience = 1;
         int challengeRating = 3;
-        int rand1 = 4;
+        int rand = 4;
         Integer expResult = 4; //expected output returned value
         
         //create instance of ScenarioControl class
         ScenarioControl instance = new ScenarioControl();
         
         //Call function to run test
-        Integer result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand1);
+        Integer result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -62,14 +62,14 @@ public class ScenarioControlTest {
         testimony = 100;
         obedience = 6;
         challengeRating = 4;
-        rand1 = 7;
-        expResult = null; //expected output returned value
+        rand = 7;
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand1);
+        result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -82,14 +82,14 @@ public class ScenarioControlTest {
         testimony = 10;
         obedience = -4;
         challengeRating = 6;
-        rand1 = 6;
-        expResult = null; //expected output returned value
+        rand = 6;
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand1);
+        result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -102,14 +102,14 @@ public class ScenarioControlTest {
         testimony = 3;
         obedience = 101;
         challengeRating = 8;
-        rand1 = 7;
-        expResult = null; //expected output returned value
+        rand = 7;
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand1);
+        result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -122,14 +122,14 @@ public class ScenarioControlTest {
         testimony = 1;
         obedience = 1;
         challengeRating = 1;
-        rand1 = 1;
+        rand = 1;
         expResult = 2; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand1);
+        result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -142,14 +142,14 @@ public class ScenarioControlTest {
         testimony = 99;
         obedience = 99;
         challengeRating = 99;
-        rand1 = 10;
+        rand = 10;
         expResult = 109; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand1);
+        result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -160,7 +160,11 @@ public class ScenarioControlTest {
      */
     @Test
     public void testPride() {
+        /*
+        *  Test Case #1
+        */
         System.out.println("pride");
+        System.out.println("\tTest case #2");
         int testimony = 11;
         int obedience = 12;
         int challengeRating = 73;
@@ -181,13 +185,13 @@ public class ScenarioControlTest {
         challengeRating = 8;
         x = 3;
         rand = 1;
-        expResult = null; //expected output returned value
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -202,13 +206,13 @@ public class ScenarioControlTest {
         challengeRating = 8;
         x = 3;
         rand = 1;
-        expResult = null; //expected output returned value
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -223,13 +227,13 @@ public class ScenarioControlTest {
         challengeRating = 88;
         x = 2;
         rand = 7;
-        expResult = null; //expected output returned value
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -244,13 +248,13 @@ public class ScenarioControlTest {
         challengeRating = 34;
         x = 4;
         rand = 1;
-        expResult = null; //expected output returned value
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -265,13 +269,13 @@ public class ScenarioControlTest {
         challengeRating = 100;
         x = 4;
         rand = 1;
-        expResult = null; //expected output returned value
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -286,13 +290,13 @@ public class ScenarioControlTest {
         challengeRating = 0;
         x = 3;
         rand = 1;
-        expResult = null; //expected output returned value
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -307,13 +311,13 @@ public class ScenarioControlTest {
         challengeRating = 82;
         x = 0;
         rand = 1;
-        expResult = null; //expected output returned value
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -327,14 +331,14 @@ public class ScenarioControlTest {
         obedience = 22;
         challengeRating = 72;
         rand = 5;
-        x = 6;
-        expResult = null; //expected output returned value
+        x = 11;
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -349,13 +353,13 @@ public class ScenarioControlTest {
         challengeRating = 65;
         x = 2;
         rand = 0;
-        expResult = null; //expected output returned value
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -370,13 +374,13 @@ public class ScenarioControlTest {
         challengeRating = 65;
         x = 2;
         rand = 11;
-        expResult = null; //expected output returned value
+        expResult = -1; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -386,18 +390,20 @@ public class ScenarioControlTest {
         */
         System.out.println("\tTest case #12");
         //input values for test case 12
-        testimony = 1;
+        testimony = 10;
         obedience = 45;
         challengeRating = 65;
         x = 2;
         rand = 5;
-        expResult = -16; //expected output returned value
+        expResult = -7; //expected output returned value
         
         //create instance of ScenarioControl class
         instance = new ScenarioControl();
         
+        // Print individual bits of code for test porpoises
+        
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -418,7 +424,7 @@ public class ScenarioControlTest {
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -439,7 +445,7 @@ public class ScenarioControlTest {
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -460,7 +466,7 @@ public class ScenarioControlTest {
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -481,7 +487,7 @@ public class ScenarioControlTest {
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -502,7 +508,7 @@ public class ScenarioControlTest {
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -523,7 +529,7 @@ public class ScenarioControlTest {
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -544,7 +550,7 @@ public class ScenarioControlTest {
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -565,7 +571,7 @@ public class ScenarioControlTest {
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
@@ -586,7 +592,7 @@ public class ScenarioControlTest {
         instance = new ScenarioControl();
         
         //Call function to run test
-        result = instance.pride(testimony, obedience, challengeRating, x, rand);
+        result = instance.pride(testimony, obedience, challengeRating, rand, x);
         
         //compare results to expectations
         assertEquals(expResult, result);
