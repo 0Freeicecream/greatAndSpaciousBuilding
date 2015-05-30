@@ -23,28 +23,28 @@ public class ScenarioControl {
         
         if (testimony > 99) {
             //Error – Testimony too high
-            return null;
+            return -1;
         } else if (testimony < 1) {
             //Error – testimony too low
-            return null;
+            return -1;
         } else if (obedience > 99) {
             //Error – obedience too high
-            return null;
+            return -1;
         } else if (obedience < 1) {
             //Error – obedience too low
-            return null;
+            return -1;
         } else if (challengeRating > 99) {
             //Error – obedience too high
-            return null;
+            return -1;
         } else if (challengeRating < 1) {
             //Error – obedience too low
-            return null;
+            return -1;
         } else if (rand > 10) {
             //Error – obedience too high
-            return null;
+            return -1;
         } else if (rand < 1) {
             //Error – obedience too low
-            return null;
+            return -1;
         } else
             
             return (testimony + rand)  - (challengeRating - obedience);
@@ -54,36 +54,35 @@ public class ScenarioControl {
         
         if (testimony > 99) {
             //Error – Testimony too high
-            return null;
+            return -1;
         } else if (testimony < 1) {
             //Error – testimony too low
-            return null;
+            return -1;
         } else if (obedience > 99) {
             //Error – obedience too high
-            return null;
+            return -1;
         } else if (obedience < 1) {
             //Error – obedience too low
-            return null;
+            return -1;
         } else if (challengeRating > 99) {
             //Error – obedience too high
-            return null;
+            return -1;
         } else if (challengeRating < 1) {
             //Error – obedience too low
-            return null;
+            return -1;
         } else if (rand > 10) {
             //Error – obedience too high
-            return null;
+            return -1;
         } else if (rand < 1) {
             //Error – obedience too low
-            return null;
+            return -1;
         } else if (x > 5) {
             //Error – x too high
-            return null;
+            return -1;
         } else if (x < 1) {
             //Error – x too low
-            return null;
+            return -1;
         } else
-            
-            return (testimony + rand)  - ((challengeRating + x) - obedience);
+            return (testimony + rand) - ((challengeRating + x) - obedience);
     }
 }
