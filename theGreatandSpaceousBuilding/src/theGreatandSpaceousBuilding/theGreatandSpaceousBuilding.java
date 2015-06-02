@@ -26,7 +26,7 @@ public class theGreatandSpaceousBuilding {
         return currentGame;
     }
     
-    private static setCurrentGame(Game currentGame) {
+    private static void setCurrentGame(Game currentGame) {
         theGreatandSpaceousBuilding.currentGame = currentGame;
     }
     
@@ -34,7 +34,7 @@ public class theGreatandSpaceousBuilding {
         return player;
     }
     
-    private static setPlayer (Player player) {
+    private static void setPlayer (Player player) {
         theGreatandSpaceousBuilding.player = player;
     }
         
