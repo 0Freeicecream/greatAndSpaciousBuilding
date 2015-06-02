@@ -21,22 +21,24 @@ public class theGreatandSpaceousBuilding {
     
     private static Game currentGame = null;
     private static Player player = null;
-    
-    private static getCurrentGame() {
+
+    public static Game getCurrentGame() {
         return currentGame;
     }
-    
-    private static void setCurrentGame(Game currentGame) {
+
+    public static void setCurrentGame(Game currentGame) {
         theGreatandSpaceousBuilding.currentGame = currentGame;
     }
-    
-    private static getPlayer() {
+
+    public static Player getPlayer() {
         return player;
     }
-    
-    private static void setPlayer (Player player) {
+
+    public static void setPlayer(Player player) {
         theGreatandSpaceousBuilding.player = player;
     }
+    
+
         
     public static void main(String[] args) {
         
