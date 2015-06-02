@@ -20,11 +20,11 @@ public class StartProgramViewTest {
     }
     
     @Before
-    public void setUp() {
+    public void setUp() throws Exception {
     }
     
     @After
-    public void tearDown() {
+    public void tearDown() throws Exception {
     }
 
     /**
@@ -32,11 +32,11 @@ public class StartProgramViewTest {
      */
     @Test
     public void testStartProgram() {
-        System.out.println("startProgram");
+        System.out.println("getPlayersName");
+        //input value for Test Case 1
         StartProgramView instance = new StartProgramView();
-        instance.startProgram();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String result = instance.getPlayerName();
+        String expectedResult = "Fred Fredburger";
     }
     
 }
