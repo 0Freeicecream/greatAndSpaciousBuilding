@@ -72,7 +72,7 @@ public class StartProgramView {
     private void displayWelcomeMessage(Player player) {
         System.out.println("\n\nHey " + player.getName());
         System.out.println("\nWelcome to the Great and Spaceous Building");
-        System.out.println("\nEnjoy your trip to the Tree of Life (hopefully)");
+        System.out.println("Enjoy your trip to the Tree of Life (hopefully)");
     }
 }
 
