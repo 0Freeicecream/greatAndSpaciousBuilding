@@ -24,7 +24,12 @@ public class StartProgramView {
 }
 
     private void displayBanner() {
-        System.out.println("We are going to tell you how to play this game");
+        System.out.println("\n\n***********************************************");
+                
+        System.out.println("*                                                *"
+                        +"\n* Welcome to The Great and Spacious Building Game!"
+                        +"\n* In this game ");
+        System.out.println("**************************************************");
     }
     
 }
