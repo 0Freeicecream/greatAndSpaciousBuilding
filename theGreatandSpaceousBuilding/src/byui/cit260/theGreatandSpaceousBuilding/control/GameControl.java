@@ -5,10 +5,17 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.control;
 
+import byui.cit260.theGreatandSpaceousBuilding.model.Player;
+
+
 /**
  *
  * @author Néna
  */
 public class GameControl {
+    
+    public static void createNewGame(Player player) {
+        System.out.println("\n*** createNewGame stub function was called ***");
+    }
     
 }

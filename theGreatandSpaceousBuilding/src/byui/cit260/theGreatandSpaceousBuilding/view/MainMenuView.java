@@ -5,6 +5,7 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.view;
 
+import byui.cit260.theGreatandSpaceousBuilding.control.GameControl;
 import java.util.Scanner;
 
 /**
@@ -87,7 +88,11 @@ public class MainMenuView {
         }
     }    
         private void startNewGame() {
-            System.out.println("--Your startNewGame function is working perfectly--");
+            GameControl.createNewGame(theGreatandSpaciousBuilding.getPlayer());
+            
+            //display the game menu
+            GameMenuView gameMenu = new GameMenuView();
+            gameMenu.displayMenu();
         }
         
         private void saveGame() {
@@ -105,5 +110,5 @@ public class MainMenuView {
         private void displayBestScores() {
             System.out.println("--Your displayBestScores function is working perfectly--");
         }
-
+        
 }
