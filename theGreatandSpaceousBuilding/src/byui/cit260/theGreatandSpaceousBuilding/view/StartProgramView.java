@@ -31,7 +31,8 @@ public class StartProgramView {
         this.displayWelcomeMessage(player);
         
         // DISPLAY the main menu
-      
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
 }
 
     private void displayBanner() {
@@ -72,7 +73,7 @@ public class StartProgramView {
     private void displayWelcomeMessage(Player player) {
         System.out.println("\n\nHey " + player.getName());
         System.out.println("\nWelcome to the Great and Spaceous Building");
-        System.out.println("Enjoy your trip to the Tree of Life (hopefully)");
+        System.out.println("Enjoy your trip to the Tree of Life (if you make it\n)");
     }
 }
 
