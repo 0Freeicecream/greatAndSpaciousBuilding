@@ -22,7 +22,7 @@ public class MainMenuView {
             + "\nL - Load Saved Game"
             + "\nH - Help Documents"
             + "\nT - Top Scores"
-            + "\nQ - Quit Game"
+            + "\nE - Exit Game"
             + "\n-------------------------------";
             
 
@@ -80,7 +80,7 @@ public class MainMenuView {
             case 'T': // Show off other people's best runs and fill the player with shame/glory
                 this.displayBestScores();
                 break;
-            case 'Q': // Closes program so players can get to more important things
+            case 'E': // Closes program so players can get to more important things
                 return;
             default: // displays in any other instance
                 System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
