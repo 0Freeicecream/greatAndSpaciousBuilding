@@ -7,6 +7,7 @@ package byui.cit260.theGreatandSpaceousBuilding.view;
 
 import byui.cit260.theGreatandSpaceousBuilding.control.GameControl;
 import java.util.Scanner;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 
 /**
  *
@@ -88,7 +89,7 @@ public class MainMenuView {
         }
     }    
         private void startNewGame() {
-            GameControl.createNewGame(theGreatandSpaciousBuilding.getPlayer());
+            GameControl.createNewGame(theGreatandSpaceousBuilding.getPlayer());
             
             //display the game menu
             GameMenuView gameMenu = new GameMenuView();
