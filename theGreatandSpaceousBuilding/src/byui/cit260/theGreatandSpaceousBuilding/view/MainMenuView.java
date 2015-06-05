@@ -22,7 +22,7 @@ public class MainMenuView {
             + "\nL - Load Saved Game"
             + "\nH - Help Documents"
             + "\nT - Top Scores"
-            + "\nE - Exit Game"
+            + "\nQ - Quit Game"
             + "\n-------------------------------";
             
 
@@ -33,11 +33,12 @@ public class MainMenuView {
             System.out.println(MENU); // displays the main menu
             
             String input = this.getInput(); //Gets user input
+            input = input.toUpperCase();
             selection = input.charAt(0); //Get first character of string
             
             this.doAction(selection); //do action based on selection
             
-        } while (selection != 'E'); // selection is not exit
+        } while (selection != 'Q'); // selection is not exit
         
     }
 
@@ -80,7 +81,7 @@ public class MainMenuView {
             case 'T': // Show off other people's best runs and fill the player with shame/glory
                 this.displayBestScores();
                 break;
-            case 'E': // Closes program so players can get to more important things
+            case 'Q': // Closes program so players can get to more important things
                 return;
             default: // displays in any other instance
                 System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
@@ -104,8 +105,10 @@ public class MainMenuView {
             System.out.println("--Your startExistingGame function is working perfectly--");
         }
         
-        private void displayHelpMenu() {
-            System.out.println("--Your displayHelpMenu function is working perfectly--");
+        private void displayHelpMenu() {            
+            //display the help menu
+            HelpMenuView helpMenu = new HelpMenuView();
+            helpMenu.displayMenu();
         }
         
         private void displayBestScores() {
