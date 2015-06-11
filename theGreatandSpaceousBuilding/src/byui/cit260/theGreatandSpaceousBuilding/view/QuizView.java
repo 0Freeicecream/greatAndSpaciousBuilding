@@ -23,10 +23,18 @@ public class QuizView {
     
     private final char ANSWER = 'C';
     
-    boolean answerQuiz(char ANSWER) {
+    void quizView() {
+        char guess = answerQuiz();
+        if (guess == ANSWER) {
+            System.out.println("\n\nYou answered correctly, you gain x Fruit!");
+        } else {
+            System.out.println("\n\nYou chose poorly.");
+        }
         
+    }
+    
+    char answerQuiz() {
         char selection = ' ';
-        
         // Prints Quiz
         System.out.println(QUIZ);
         
@@ -35,16 +43,7 @@ public class QuizView {
         input = input.toUpperCase();
         selection = input.charAt(0); //Get first character of string
         
-        //Compares Guess to Answer
-        if (selection == ANSWER) {
-            // Prints congradulation
-            System.out.println("That's correct, you gain Fruit");
-        } else {
-            // Prints Failure Message
-            System.out.println("You chose poorly");
-        } 
-        // Returns result of the quiz
-            return selection == ANSWER;
+        return selection;    
     }
     
         String getInput() {
