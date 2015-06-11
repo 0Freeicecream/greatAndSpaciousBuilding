@@ -99,7 +99,7 @@ public class GameMenuView {
     private void displayMap() {
             //display the Map View
             MapView mapView = new MapView();
-            mapView.displayMenu();
+            mapView.displayPrompts();
     }
 
     private void displayQuiz() {
@@ -111,8 +111,8 @@ public class GameMenuView {
 
     private void displayChallengeSelection() {
             //display the Map View
-            MapView mapView = new MapView();
-            mapView.displayMenu();
+            ChallengeSelectionView challengeSelectionView = new ChallengeSelectionView();
+            challengeSelectionView.displayMenu();
     }
      
 }
