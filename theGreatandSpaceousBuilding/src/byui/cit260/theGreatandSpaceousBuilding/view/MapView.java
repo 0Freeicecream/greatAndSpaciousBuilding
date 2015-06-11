@@ -6,27 +6,40 @@
 package byui.cit260.theGreatandSpaceousBuilding.view;
 
 import java.util.Scanner;
-
+import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
+import byui.cit260.theGreatandSpaceousBuilding.view.QuizView;
 /**
  *
  * @author Néna
  */
 public class MapView {
   
+    public String movePrompt = "Please enter a direction (N, S, E, or W)";
+    char dir = 'X';    
            
-    void displayMenu() {
-        char selection = ' ';
+    void displayPrompts() {
+        char selection;
         do {
-            
-            System.out.println("You are at x,y "); // displays the location of the user
+            System.out.println("you are at: " + MapControl.getLocation() );
+            System.out.println(movePrompt); // displays the location of the user
             
             String input = this.getInput(); //Gets user input
             input = input.toUpperCase();
             selection = input.charAt(0); //Get first character of string
             
-            this.doAction(selection); //do action based on selection
+            this.pickDirection(selection); //do action based on selection
+            if (dir != 'X' && MapControl.movePlayer(dir)) {
+                break;
+            }
+            else {
+                System.out.println("You can not travel that direction");
+            }
             
-        } while (selection != 'F' || selection != 'T' || selection != 'O'); // selection is not correct
+        } while (dir == 'X'); // selection is not correct
+        
+                /* eventually hand off to
+                *QuizView.answerQuiz();
+                */
         
     }
 
@@ -41,7 +54,7 @@ public class MapView {
             selection = keyboard.nextLine();
             selection = selection.trim();
             
-            //If selection is invalid ( not F, T, or O
+            //If selection is invalid ( not N, S, E or W
             if (selection.length() < 1) {
                 System.out.println("Invalid command, must contain at least one character");
                 continue; // repeats
@@ -52,41 +65,18 @@ public class MapView {
         return selection; //Yell players selection into code
     }
     
-    public void doAction(char choice) {
-        switch (choice) {
-            case 'F': // Choose Fruit
-                this.displayFruit();
-                break;
-            case 'T': // Choose Testimony
-                this.displayTestimony();
-                break;
-            case 'O': // Choose Obedience
-                this.displayObedience();
+    public void pickDirection(char direction) {
+        switch (direction) {
+            case 'N': // Choose North
+            case 'S': // Choose South
+            case 'E': // Choose East
+            case 'W': // Choose West
+                dir = direction;
                 break;
             default: // displays in any other instance
-                System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
+                dir = 'X';
+                System.out.println("!!--Not a valid direction--!!");
                 break;
         }
     }
-
- 
-private void chooseAttribute(){
-            GameControl.createNewGame(theGreatandSpaceousBuilding.getAttributes());
-            
-            //display the Attribute Menu
-            AttributeMenuView attributeMenu = new AttributeMenuView();
-            attributeMenu.displayMenu();
-        }
-        
-        private void displayFruit() {
-            System.out.println("--You've added 1 point to Fruit--");
-        }
-        
-        private void displayTestimony() {
-            System.out.println("--You've added 1 point to Testimony--");
-        }
-    
-        private void displayObedience() {
-            System.out.println("--You've added 1 point to Obedience--");
-}
-}
+    }
