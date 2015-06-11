@@ -11,7 +11,7 @@ public class Map implements Serializable {
     
     // class instance variables
     private double rowCount;
-    private double collumnCount;
+    private double columnCount;
 
     public Map() {
     }
@@ -24,24 +24,24 @@ public class Map implements Serializable {
         this.rowCount = rowCount;
     }
 
-    public double getCollumnCount() {
-        return collumnCount;
+    public double getColumnCount() {
+        return columnCount;
     }
 
-    public void setCollumnCount(double collumnCount) {
-        this.collumnCount = collumnCount;
+    public void setColumnCount(double columnCount) {
+        this.columnCount = columnCount;
     }
 
     @Override
     public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", collumnCount=" + collumnCount + '}';
+        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 23 * hash + (int) (Double.doubleToLongBits(this.rowCount) ^ (Double.doubleToLongBits(this.rowCount) >>> 32));
-        hash = 23 * hash + (int) (Double.doubleToLongBits(this.collumnCount) ^ (Double.doubleToLongBits(this.collumnCount) >>> 32));
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.columnCount) ^ (Double.doubleToLongBits(this.columnCount) >>> 32));
         return hash;
     }
 
@@ -57,7 +57,7 @@ public class Map implements Serializable {
         if (Double.doubleToLongBits(this.rowCount) != Double.doubleToLongBits(other.rowCount)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.collumnCount) != Double.doubleToLongBits(other.collumnCount)) {
+        if (Double.doubleToLongBits(this.columnCount) != Double.doubleToLongBits(other.columnCount)) {
             return false;
         }
         return true;

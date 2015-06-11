@@ -11,7 +11,7 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 
 /**
  *
- * @author Randy
+ * @author Ted and Nena
  */
 public class MainMenuView {
     
@@ -27,7 +27,7 @@ public class MainMenuView {
             
 
     void displayMenu() {
-        char selection = ' ';
+        char selection;
         do {
             
             System.out.println(MENU); // displays the main menu

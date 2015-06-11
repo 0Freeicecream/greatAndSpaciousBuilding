@@ -47,4 +47,8 @@ public class theGreatandSpaceousBuilding {
         startProgramView.startProgram();
         
     }
+
+    public static Player getAttributes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

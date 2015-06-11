@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Néna
+ * @author Ted and Néna
  */
 public class StartProgramView {
     

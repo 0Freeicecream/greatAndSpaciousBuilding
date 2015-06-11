@@ -7,7 +7,7 @@ package byui.cit260.theGreatandSpaceousBuilding.view;
 
 /**
  *
- * @author Néna
+ * @author Ted
  */
 public class GameMenuView {
     void displayMenu() {

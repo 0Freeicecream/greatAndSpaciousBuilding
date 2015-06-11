@@ -5,10 +5,18 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.control;
 
+import byui.cit260.theGreatandSpaceousBuilding.model.Location;
 /**
  *
  * @author Néna
  */
 public class MapControl {
     
+   public String getLocation() {
+       String coordinates;
+       
+       byui.cit260.theGreatandSpaceousBuilding.model.Location.getX();
+       
+       return coordinates;
+   }
 }

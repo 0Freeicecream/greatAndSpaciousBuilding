@@ -12,7 +12,7 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 
 /**
  *
- * @author Randy
+ * @author Ted
  */
 public class ProgramControl {
 
