@@ -59,8 +59,8 @@ public class QuizView {
             selection = selection.toUpperCase();
             
             //If name is invalid (less than two character in length)
-            if (selection != "A" || selection != "B" || selection != "C" || selection != "D") {
-                System.out.println("Invalid command, must be A B C or D");
+            if (selection.length() < 1) {
+                System.out.println("Invalid command, must contain at least one character");
                 continue; // repeats
             }
             break; // out of the exit repitition
