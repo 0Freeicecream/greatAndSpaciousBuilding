@@ -106,7 +106,7 @@ public class GameMenuView {
             //display the Quiz View
         System.out.println("Answer the following question:\n");
             QuizView quizView = new QuizView();
-            quizView.answerQuiz();
+            quizView.quizView();
     }
 
     private void displayChallengeSelection() {
