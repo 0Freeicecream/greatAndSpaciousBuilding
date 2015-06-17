@@ -13,56 +13,19 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
  *
  * @author Ted and Nena
  */
-public class MainMenuView {
+
+public class MainMenuView extends View {
     
-    private final String MENU =
-              "\n-----------Main Menu-----------"
-            + "\nN - New Game"
-            + "\nS - Save Game"
-            + "\nL - Load Saved Game"
-            + "\nH - Help Documents"
-            + "\nT - Top Scores"
-            + "\nQ - Quit Game"
-            + "\n-------------------------------";
-            
-
-    void displayMenu() {
-        char selection;
-        do {
-            
-            System.out.println(MENU); // displays the main menu
-            
-            String input = this.getInput(); //Gets user input
-            input = input.toUpperCase();
-            selection = input.charAt(0); //Get first character of string
-            
-            this.doAction(selection); //do action based on selection
-            
-        } while (selection != 'Q'); // selection is not exit
-        
-    }
-
-    String getInput() {
-        boolean valid = false; // indicates if the name has been retrieved
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in); // Use keyboard input
-        
-        while(!valid) { //while a valid name is not retrived
-            
-            // Demands data from keyboard and trims off the blanks
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            
-            //If name is invalid (less than two character in length)
-            if (selection.length() < 1) {
-                System.out.println("Invalid command, must contain at least one character");
-                continue; // repeats
-            }
-            break; // out of the exit repitition
+        public MainMenuView(){
+            super("\n-----------Main Menu-----------"
+                + "\nN - New Game"
+                + "\nS - Save Game"
+                + "\nL - Load Saved Game"
+                + "\nH - Help Documents"
+                + "\nT - Top Scores"
+                + "\nQ - Quit Game"
+                + "\n-------------------------------");
         }
-        
-        return selection; //Yell players selection into code
-    }
     
     public void doAction(char choice) {
         switch (choice) {
@@ -88,13 +51,24 @@ public class MainMenuView {
                 break;
             
         }
-    }    
-        private void startNewGame() {
+    }
+    
+    @Override
+    public boolean doAction(Object obj) {
+        String value = (String) obj;
+        
+        // convert to Uppercase
+        value = value.toUpperCase();
+        //get first character entered
+        char choice = value.charAt(0);
+    }
+    
+    private void startNewGame() {
             GameControl.createNewGame(theGreatandSpaceousBuilding.getPlayer());
             
             //display the game menu
             GameMenuView gameMenu = new GameMenuView();
-            gameMenu.displayMenu();
+            gameMenu.display();
         }
         
         private void saveGame() {
@@ -108,7 +82,7 @@ public class MainMenuView {
         private void displayHelpMenu() {            
             //display the help menu
             HelpMenuView helpMenu = new HelpMenuView();
-            helpMenu.displayMenu();
+            helpMenu.display();
         }
         
         private void displayBestScores() {

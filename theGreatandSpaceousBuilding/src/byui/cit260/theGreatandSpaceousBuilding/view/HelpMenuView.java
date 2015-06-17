@@ -11,54 +11,16 @@ import java.util.Scanner;
  *
  * @author Ted
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
     
-    private final String MENU =
-              "\n-----------Help Menu-----------"
+        public HelpMenuView(){
+        super("\n-----------Help Menu-----------"
             + "\nG - Goal"
             + "\nM - Moving across the Gameboard"
             + "\nC - Challenges and Quizes"
             + "\nB - Back to Main Menu"
-            + "\n-------------------------------";
-            
-
-    void displayMenu() {
-        char selection = ' ';
-        do {
-            
-            System.out.println(MENU); // displays the main menu
-            
-            String input = this.getInput(); //Gets user input
-            input = input.toUpperCase();
-            selection = input.charAt(0); //Get first character of string
-            
-            this.doAction(selection); //do action based on selection
-            
-        } while (selection != 'B'); // selection is not exit
-        
-    }
-
-    String getInput() {
-        boolean valid = false; // indicates if the name has been retrieved
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in); // Use keyboard input
-        
-        while(!valid) { //while a valid name is not retrived
-            
-            // Demands data from keyboard and trims off the blanks
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            
-            //If name is invalid (less than two character in length)
-            if (selection.length() < 1) {
-                System.out.println("Invalid command, must contain at least one character");
-                continue; // repeats
-            }
-            break; // out of the exit repitition
+            + "\n-------------------------------");
         }
-        
-        return selection; //Yell players selection into code
-    }
     
     public void doAction(char choice) {
         switch (choice) {

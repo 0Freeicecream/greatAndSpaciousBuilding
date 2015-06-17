@@ -13,23 +13,24 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
  *
  * @author Ted
  */
-public class GameMenuView {
-        private final String MENU =
-              "\n-----------Main Menu-----------"
+public class GameMenuView extends View {
+    
+    public GameMenuView() {
+        super("\n-----------Main Menu-----------"
             + "\nA - View Attributes"
             + "\nM - Move on Map"
             + "\nQ - Answer Quiz"
             + "\nC - Tackle Challenge"
             + "\n"
             + "\nR - Return to Main Menu"
-            + "\n-------------------------------";
-            
+            + "\n-------------------------------");
+    }
 
-    void displayMenu() {
+    void display() {
         char selection;
         do {
             
-            System.out.println(MENU); // displays the main menu
+            System.out.println(promptMessage); // displays the main menu
             
             String input = this.getInput(); //Gets user input
             input = input.toUpperCase();
@@ -93,7 +94,7 @@ public class GameMenuView {
     private void displayAttributes() {
             //display the Attributes menu
             AttributeMenuView attributeMenu = new AttributeMenuView();
-            attributeMenu.displayMenu();
+            attributeMenu.display();
     }
 
     private void displayMap() {
@@ -112,7 +113,7 @@ public class GameMenuView {
     private void displayChallengeSelection() {
             //display the Map View
             ChallengeSelectionView challengeSelectionView = new ChallengeSelectionView();
-            challengeSelectionView.displayMenu();
+            challengeSelectionView.display();
     }
      
 }

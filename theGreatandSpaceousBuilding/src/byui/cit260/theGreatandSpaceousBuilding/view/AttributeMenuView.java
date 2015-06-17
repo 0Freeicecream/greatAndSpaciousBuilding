@@ -13,59 +13,21 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
  *
  * @author Néna
  */
-public class AttributeMenuView {
+public class AttributeMenuView extends View {
     
-    private final String ATTRIBUTE_MENU =
-              "\n----------Pick an attribute----------"
+        public AttributeMenuView() {
+        super("\n----------Pick an attribute----------"
             + "\nWhen you win or lose a challange,"
             + "\n1 point will be added or subtracted"
             + "\nfrom your selected attribute"
             + "\nF - Fruit"
             + "\nT - Testimony"
             + "\nO - Obedience"
-            + "\n-------------------------------";
-            
-
-    void displayMenu() {
-        char selection;
-        do {
-            
-            System.out.println(ATTRIBUTE_MENU); // displays the attribute menu
-            
-            String input = this.getInput(); //Gets user input
-            input = input.toUpperCase();
-            selection = input.charAt(0); //Get first character of string
-            
-            this.doAction(selection); //do action based on selection
-            
-        } while (selection != 'F' || selection != 'T' || selection != 'O'); // selection is not correct
-        
-    }
-
-    String getInput() {
-        boolean valid = false; // indicates if the selection has been retrieved
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in); // Use keyboard input
-        
-        while(!valid) { //while a valid selection is not retrived
-            
-            // Demands data from keyboard and trims off the blanks
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            
-            //If selection is invalid ( not F, T, or O
-            if (selection.length() < 1) {
-                System.out.println("Invalid command, must contain at least one character");
-                continue; // repeats
-            }
-            break; // out of the exit repitition
+            + "\n-------------------------------");
         }
-        
-        return selection; //Yell players selection into code
-    }
     
-    public void doAction(char choice) {
-        switch (choice) {
+    public void doAction(char value) {
+        switch (value) {
             case 'F':
             byui.cit260.theGreatandSpaceousBuilding.control.AttributeControl.selection = 'F';    
             // Choose Fruit

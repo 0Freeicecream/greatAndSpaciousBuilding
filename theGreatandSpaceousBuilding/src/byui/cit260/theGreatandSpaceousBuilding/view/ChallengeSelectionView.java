@@ -11,52 +11,14 @@ import java.util.Scanner;
  *
  * @author Ted Bell
  */
-public class ChallengeSelectionView {
+public class ChallengeSelectionView extends View {
     
-    private final String MENU =
-              "\nBecause you've failed the quiz, you must face a challenge.\n"
+    public ChallengeSelectionView() {
+        super("\nBecause you've failed the quiz, you must face a challenge.\n"
             + "F -  Finger of Scorn"
             + "P - Pride"
             + "M - Mists of Darkness"
-            + "R - Random Challenge\n";
-            
-
-    void displayMenu() {
-        char selection = ' ';
-        do {
-            
-            System.out.println(MENU); // displays the main menu
-            
-            String input = this.getInput(); //Gets user input
-            input = input.toUpperCase();
-            selection = input.charAt(0); //Get first character of string
-            
-            this.doAction(selection); //do action based on selection
-            
-            } while (selection != '`'); // selection is not exit
-        
-    }
-
-    String getInput() {
-        boolean valid = false; // indicates if the name has been retrieved
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in); // Use keyboard input
-        
-        while(!valid) { //while a valid name is not retrived
-            
-            // Demands data from keyboard and trims off the blanks
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            
-            //If name is invalid (less than two character in length)
-            if (selection.length() < 1) {
-                System.out.println("Invalid command, must contain at least one character");
-                continue; // repeats
-            }
-            break; // out of the exit repitition
-        }
-        
-        return selection; //Yell players selection into code
+            + "R - Random Challenge\n");
     }
     
     public void doAction(char choice) {

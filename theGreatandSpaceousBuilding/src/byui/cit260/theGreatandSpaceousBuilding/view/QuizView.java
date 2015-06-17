@@ -11,15 +11,16 @@ import java.util.Scanner;
  *
  * @author Ted Bell
  */
-public class QuizView {
+public class QuizView extends View {
     
-    private final String QUIZ = 
-            "\nThis is an example test, the correct answer is Candy"
-            + "\nA. Zubat"
-            + "\nB. Candy Crush Saga"
-            + "\nC. Candy"
-            + "\nD. I don't have a fourth option, I just thought I'd impress you"
-            + "\n";
+    public QuizView(){
+        super("\nThis is an example test, the correct answer is Candy"
+        + "\nA. Zubat"
+        + "\nB. Candy Crush Saga"
+        + "\nC. Candy"
+        + "\nD. I don't have a fourth option, I just thought I'd impress you"
+        + "\n");
+    }
     
     private final char ANSWER = 'C';
     
@@ -36,7 +37,7 @@ public class QuizView {
     char answerQuiz() {
         char selection = ' ';
         // Prints Quiz
-        System.out.println(QUIZ);
+        System.out.println(promptMessage);
         
         // Get's user's guess from the possible answers
         String input = this.getInput(); //Gets user input
@@ -44,29 +45,6 @@ public class QuizView {
         selection = input.charAt(0); //Get first character of string
         
         return selection;    
-    }
-    
-        String getInput() {
-        boolean valid = false; // indicates if the name has been retrieved
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in); // Use keyboard input
-        
-        while(!valid) { //while a valid name is not retrived
-            
-            // Demands data from keyboard and trims off the blanks
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            selection = selection.toUpperCase();
-            
-            //If name is invalid (less than two character in length)
-            if (selection.length() < 1) {
-                System.out.println("Invalid command, must contain at least one character");
-                continue; // repeats
-            }
-            break; // out of the exit repitition
-        }
-        
-        return selection; //Yell players selection into code
     }
         
         
