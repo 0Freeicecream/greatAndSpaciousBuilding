@@ -16,7 +16,7 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 public class GameMenuView extends View {
     
     public GameMenuView() {
-        super("\n-----------Main Menu-----------"
+        super("\n-----------Game Menu-----------"
             + "\nA - View Attributes"
             + "\nM - Move on Map"
             + "\nQ - Answer Quiz"
