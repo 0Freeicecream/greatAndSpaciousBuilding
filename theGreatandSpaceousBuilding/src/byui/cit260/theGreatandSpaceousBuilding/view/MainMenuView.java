@@ -27,7 +27,15 @@ public class MainMenuView extends View {
                 + "\n-------------------------------");
         }
     
-    public void doAction(char choice) {
+    @Override
+    public boolean doAction(Object obj) {
+        //Defines obj String for Superclass
+        String value = (String) obj;
+        // convert to Uppercase
+        value = value.toUpperCase();
+        //get first character entered
+        char choice = value.charAt(0);
+        
         switch (choice) {
             case 'N': // Create and start new.game
                 this.startNewGame();
@@ -51,16 +59,6 @@ public class MainMenuView extends View {
                 break;
             
         }
-    }
-    
-    @Override
-    public boolean doAction(Object obj) {
-        String value = (String) obj;
-        
-        // convert to Uppercase
-        value = value.toUpperCase();
-        //get first character entered
-        char choice = value.charAt(0);
     }
     
     private void startNewGame() {

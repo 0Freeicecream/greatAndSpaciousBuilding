@@ -33,11 +33,9 @@ public abstract class View implements ViewInterface {
         boolean done = false;
         
         do {
-            
             System.out.println(this.promptMessage); // displays the main menu
-            value = this.getImput(); // get value end user demanded
+            value = this.getInput(); // get value end user demanded
             done = this.doAction(value); // Do action based on vlue entered
-            
         } while (!done); // value is not exit
         
     }
