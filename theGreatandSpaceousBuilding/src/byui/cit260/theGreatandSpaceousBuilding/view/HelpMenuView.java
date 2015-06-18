@@ -22,7 +22,14 @@ public class HelpMenuView extends View {
             + "\n-------------------------------");
         }
     
-    public void doAction(char choice) {
+    @Override
+    public boolean doAction(Object obj) {
+        //Defines obj String for Superclass
+        String value = (String) obj;
+        // convert to Uppercase
+        value = value.toUpperCase();
+        //get first character entered
+        char choice = value.charAt(0);
         switch (choice) {
             case 'G': // Create and start new.game
                 this.displayGoals();
@@ -34,12 +41,13 @@ public class HelpMenuView extends View {
                 this.displayChallengesQuiz();
                 break;
             case 'B': // Closes program so players can get to more important things
-                return;
+                return true;
             default: // displays in any other instance
                 System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
             
         }
+            return false;
     }    
 
     private void displayGoals() {

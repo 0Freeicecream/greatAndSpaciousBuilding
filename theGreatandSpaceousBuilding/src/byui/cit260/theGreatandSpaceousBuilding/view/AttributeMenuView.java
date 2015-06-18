@@ -26,22 +26,29 @@ public class AttributeMenuView extends View {
             + "\n-------------------------------");
         }
     
-    public void doAction(char value) {
+    @Override
+    public boolean doAction(Object obj) {
+        //Defines obj String for Superclass
+        String value = (String) obj;
+        // convert to Uppercase
+        value = value.toUpperCase();
+        //get first character entered
+        char choice = value.charAt(0);
         switch (value) {
-            case 'F':
+            case "F":
             byui.cit260.theGreatandSpaceousBuilding.control.AttributeControl.selection = 'F';    
             // Choose Fruit
                 //Set some control variable to Fruit
                 //Call the challenge
                 this.displayFruit();
                 break;
-            case 'T':
+            case "T":
               byui.cit260.theGreatandSpaceousBuilding.control.AttributeControl.selection = 'T';// Choose Testimony
                  //Set some control variable to Testimony
                 //Call the challenge
                 this.displayTestimony();
                 break;
-            case 'O':
+            case "O":
             byui.cit260.theGreatandSpaceousBuilding.control.AttributeControl.selection = 'O';// Choose Obedience
                  //Set some control variable to Obedience
                 //Call the challenge
@@ -51,6 +58,7 @@ public class AttributeMenuView extends View {
                 System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
         }
+            return false;
     }  
         private void displayFruit() {
             System.out.println("--You've waged 1 point to Fruit--");

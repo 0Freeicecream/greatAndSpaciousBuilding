@@ -5,8 +5,6 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Ted Bell
@@ -24,27 +22,21 @@ public class QuizView extends View {
     
     private final char ANSWER = 'C';
     
-    void quizView() {
-        char guess = answerQuiz();
-        if (guess == ANSWER) {
+    @Override
+    public boolean doAction(Object obj) {
+        //Defines obj String for Superclass
+        String value = (String) obj;
+        // convert to Uppercase
+        value = value.toUpperCase();
+        //get first character entered
+        char choice = value.charAt(0);
+        if (choice == ANSWER) {
             System.out.println("\n\nYou answered correctly, you gain x Fruit!");
         } else {
             System.out.println("\n\nYou chose poorly.");
         }
+        return true;
         
-    }
-    
-    char answerQuiz() {
-        char selection = ' ';
-        // Prints Quiz
-        System.out.println(promptMessage);
-        
-        // Get's user's guess from the possible answers
-        String input = this.getInput(); //Gets user input
-        input = input.toUpperCase();
-        selection = input.charAt(0); //Get first character of string
-        
-        return selection;    
     }
         
         

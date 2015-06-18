@@ -9,7 +9,7 @@ package byui.cit260.theGreatandSpaceousBuilding.view;
  *
  * @author Ted
  */
-public class ViewInterface {
+public interface ViewInterface {
     
     public void display();
     public String getInput();

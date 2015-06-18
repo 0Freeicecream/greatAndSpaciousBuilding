@@ -25,46 +25,15 @@ public class GameMenuView extends View {
             + "\nR - Return to Main Menu"
             + "\n-------------------------------");
     }
-
-    void display() {
-        char selection;
-        do {
-            
-            System.out.println(promptMessage); // displays the main menu
-            
-            String input = this.getInput(); //Gets user input
-            input = input.toUpperCase();
-            selection = input.charAt(0); //Get first character of string
-            
-            this.doAction(selection); //do action based on selection
-            
-        } while (selection != 'R'); // selection is not exit
-        
-    }
-
-    String getInput() {
-        boolean valid = false; // indicates if the name has been retrieved
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in); // Use keyboard input
-        
-        while(!valid) { //while a valid name is not retrived
-            
-            // Demands data from keyboard and trims off the blanks
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            
-            //If name is invalid (less than two character in length)
-            if (selection.length() < 1) {
-                System.out.println("Invalid command, must contain at least one character");
-                continue; // repeats
-            }
-            break; // out of the exit repitition
-        }
-        
-        return selection; //Yell players selection into code
-    }
     
-    public void doAction(char choice) {
+    @Override
+    public boolean doAction(Object obj) {
+        //Defines obj String for Superclass
+        String value = (String) obj;
+        // convert to Uppercase
+        value = value.toUpperCase();
+        //get first character entered
+        char choice = value.charAt(0);
         switch (choice) {
             case 'A': // Create and start new.game
                 this.displayAttributes();
@@ -79,12 +48,13 @@ public class GameMenuView extends View {
                 this.displayChallengeSelection();
                 break;
             case 'R': // Closes program so players can get to more important things
-                return;
+                return true;
             default: // displays in any other instance
                 System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
             
         }
+        return false;
     }
         
         private void saveGame() {
@@ -107,7 +77,7 @@ public class GameMenuView extends View {
             //display the Quiz View
         System.out.println("Answer the following question:\n");
             QuizView quizView = new QuizView();
-            quizView.quizView();
+            quizView.display();
     }
 
     private void displayChallengeSelection() {

@@ -53,12 +53,13 @@ public class MainMenuView extends View {
                 this.displayBestScores();
                 break;
             case 'Q': // Closes program so players can get to more important things
-                return;
+                return true;
             default: // displays in any other instance
                 System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
             
         }
+            return false;
     }
     
     private void startNewGame() {
