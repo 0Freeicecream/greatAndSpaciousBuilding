@@ -37,10 +37,10 @@ public class MapView {
             
         } while (dir == 'X'); // selection is not correct
         
-                /* eventually hand off to
-                *QuizView.answerQuiz();
-                */
+                //hand off to Quizview
         
+        AttributeMenuView attributemenu = new AttributeMenuView();
+        attributemenu.display();
     }
 
     String getInput() {

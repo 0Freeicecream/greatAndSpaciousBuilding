@@ -17,7 +17,7 @@ public class AttributeMenuView extends View {
     
         public AttributeMenuView() {
         super("\n----------Pick an attribute----------"
-            + "\nWhen you win or lose a challange,"
+            + "\nWhen you win or lose a challenge,"
             + "\n1 point will be added or subtracted"
             + "\nfrom your selected attribute"
             + "\nF - Fruit"
@@ -58,7 +58,10 @@ public class AttributeMenuView extends View {
                 System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
         }
-            return false;
+        QuizView quizview = new QuizView();
+        quizview.display();
+        
+        return false;
     }  
         private void displayFruit() {
             System.out.println("--You've waged 1 point to Fruit--");
@@ -71,5 +74,4 @@ public class AttributeMenuView extends View {
         private void displayObedience() {
             System.out.println("--You've waged 1 point to Obedience--");
 }
-
 }

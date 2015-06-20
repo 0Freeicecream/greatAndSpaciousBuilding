@@ -31,9 +31,17 @@ public class QuizView extends View {
         //get first character entered
         char choice = value.charAt(0);
         if (choice == ANSWER) {
-            System.out.println("\n\nYou answered correctly, you gain x Fruit!");
-        } else {
+            System.out.println("\n\nYou answered correctly, you gain x Attribute");
+           
+            MapView mapview = new MapView();
+            mapview.displayPrompts();
+        } 
+        else {
             System.out.println("\n\nYou chose poorly.");
+            
+            ChallengeSelectionView challengeselectionview = new ChallengeSelectionView();
+            challengeselectionview.display();
+            
         }
         return true;
         

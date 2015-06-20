@@ -15,10 +15,10 @@ public class ChallengeSelectionView extends View {
     
     public ChallengeSelectionView() {
         super("\nBecause you've failed the quiz, you must face a challenge.\n"
-            + "F -  Finger of Scorn"
-            + "P - Pride"
-            + "M - Mists of Darkness"
-            + "R - Random Challenge\n");
+            + "\nF - Finger of Scorn"
+            + "\nP - Pride"
+            + "\nM - Mists of Darkness"
+            + "\nR - Random Challenge\n");
     }
     
     @Override
