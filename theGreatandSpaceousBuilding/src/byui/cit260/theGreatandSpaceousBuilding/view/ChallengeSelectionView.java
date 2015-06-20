@@ -46,6 +46,7 @@ public class ChallengeSelectionView extends View {
                 System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
             
+            //Hand off to Stats then Map
         }
         return false;
     }

@@ -59,7 +59,7 @@ public class AttributeMenuView extends View {
                 break;
         }
         QuizView quizview = new QuizView();
-        quizview.display();
+        quizview.display(); // hands off to QuizMenu
         
         return false;
     }  

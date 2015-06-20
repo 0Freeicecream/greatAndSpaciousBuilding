@@ -34,13 +34,13 @@ public class QuizView extends View {
             System.out.println("\n\nYou answered correctly, you gain x Attribute");
            
             MapView mapview = new MapView();
-            mapview.displayPrompts();
+            mapview.displayPrompts(); // hands off to Map View
         } 
         else {
             System.out.println("\n\nYou chose poorly.");
             
             ChallengeSelectionView challengeselectionview = new ChallengeSelectionView();
-            challengeselectionview.display();
+            challengeselectionview.display(); // hands off to Challenge View
             
         }
         return true;

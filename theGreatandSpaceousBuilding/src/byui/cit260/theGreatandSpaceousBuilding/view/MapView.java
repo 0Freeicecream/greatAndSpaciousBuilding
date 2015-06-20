@@ -35,12 +35,12 @@ public class MapView {
                 System.out.println("You can not travel that direction");
             }
             
-        } while (dir == 'X'); // selection is not correct
+        } while (true); // selection is not correct
         
-                //hand off to Quizview
+                
         
         AttributeMenuView attributemenu = new AttributeMenuView();
-        attributemenu.display();
+        attributemenu.display();   //hand off to AttributeMenuView
     }
 
     String getInput() {
