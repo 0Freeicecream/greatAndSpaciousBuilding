@@ -10,7 +10,7 @@ import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
 import byui.cit260.theGreatandSpaceousBuilding.view.QuizView;
 /**
  *
- * @author NÃ©na
+ * @author Néna
  */
 public class MapView {
   
@@ -66,12 +66,18 @@ public class MapView {
     }
     
     public void pickDirection(char direction) {
+        boolean isValid = false;
         switch (direction) {
             case 'N': // Choose North
             case 'S': // Choose South
             case 'E': // Choose East
             case 'W': // Choose West
                 dir = direction;
+                isValid = true;
+                break;
+            case '1':
+                StatsView statsview = new StatsView();
+                statsview.displayStats();
                 break;
             default: // displays in any other instance
                 dir = 'X';

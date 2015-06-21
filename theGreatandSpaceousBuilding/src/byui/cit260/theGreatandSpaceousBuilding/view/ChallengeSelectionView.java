@@ -29,26 +29,35 @@ public class ChallengeSelectionView extends View {
         value = value.toUpperCase();
         //get first character entered
         char choice = value.charAt(0);
+        boolean isValid = false;
         switch (choice) {
             case 'F': // Create and start new.game
                 this.fingerOfScorn();
+                isValid = true;
                 break;
             case 'P': // Saves current game
                 this.pride();
+                isValid = true;
                 break;
             case 'M': // restores and runs existing game
                 this.mistsOfDarkness();
+                isValid = true;
                 break;
             case 'R': // Loads the help menu
                 this.randomChallenge();
+                isValid = true;
+                break;
+            case '1':
+                StatsView statsview = new StatsView();
+                statsview.displayStats();
                 break;
             default: // displays in any other instance
                 System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
-            
-            //Hand off to Stats then Map
+
         }
-        return false;
+    
+        return isValid;
     }
 
     private void fingerOfScorn() {

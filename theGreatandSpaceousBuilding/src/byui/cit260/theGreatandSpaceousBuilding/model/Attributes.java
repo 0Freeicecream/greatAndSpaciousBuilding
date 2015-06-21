@@ -15,7 +15,10 @@ public class Attributes implements Serializable{
     private int testimony;
     private int obedience;
     
-    public Attributes(){    
+    public Attributes(){  
+        fruit = 5;
+        testimony = 5;
+        obedience = 5;        
     }
     
     @Override

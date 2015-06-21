@@ -34,6 +34,7 @@ public class AttributeMenuView extends View {
         value = value.toUpperCase();
         //get first character entered
         char choice = value.charAt(0);
+        boolean isValid = false;
         switch (value) {
             case "F":
             byui.cit260.theGreatandSpaceousBuilding.control.AttributeControl.selection = 'F';    
@@ -41,27 +42,37 @@ public class AttributeMenuView extends View {
                 //Set some control variable to Fruit
                 //Call the challenge
                 this.displayFruit();
+                isValid = true;
                 break;
             case "T":
               byui.cit260.theGreatandSpaceousBuilding.control.AttributeControl.selection = 'T';// Choose Testimony
                  //Set some control variable to Testimony
                 //Call the challenge
                 this.displayTestimony();
+                isValid = true;
                 break;
             case "O":
             byui.cit260.theGreatandSpaceousBuilding.control.AttributeControl.selection = 'O';// Choose Obedience
                  //Set some control variable to Obedience
                 //Call the challenge
                 this.displayObedience();
+                isValid = true;
+                break;
+            case "1":
+                StatsView statsview = new StatsView();
+                statsview.displayStats();
                 break;
             default: // displays in any other instance
                 System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
         }
-        QuizView quizview = new QuizView();
-        quizview.display(); // hands off to QuizMenu
+       
+        if (isValid) {
+            QuizView quizview = new QuizView();
+            quizview.display(); // hands off to QuizMenu            
+        }
         
-        return false;
+        return isValid;
     }  
         private void displayFruit() {
             System.out.println("--You've waged 1 point to Fruit--");

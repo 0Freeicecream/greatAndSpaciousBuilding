@@ -6,9 +6,11 @@
 package byui.cit260.theGreatandSpaceousBuilding.control;
 
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
+import byui.cit260.theGreatandSpaceousBuilding.model.Attributes;
 import java.util.HashSet;
 import java.util.Set;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+
 
 /**
  *
@@ -26,8 +28,12 @@ public class ProgramControl {
         player.setName(playersName);
         
         theGreatandSpaceousBuilding.setPlayer(player); //Save the player
-        
+    
+    Attributes attributes = new Attributes();
+    
+    theGreatandSpaceousBuilding.setAttributes(attributes); //save the attributes
         return player;
+    
     }
     
 }

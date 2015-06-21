@@ -18,6 +18,7 @@ public class HelpMenuView extends View {
             + "\nG - Goal"
             + "\nM - Moving across the Gameboard"
             + "\nC - Challenges and Quizes"
+            + "\nA - Attributes"
             + "\nB - Back to Main Menu"
             + "\n-------------------------------");
         }
@@ -39,6 +40,9 @@ public class HelpMenuView extends View {
                 break;
             case 'C': // restores and runs existing game
                 this.displayChallengesQuiz();
+                break;
+            case 'A':
+                 this.displayAttributes();
                 break;
             case 'B': // Closes program so players can get to more important things
                 return true;
@@ -76,6 +80,12 @@ public class HelpMenuView extends View {
         + "\n"
         + "Remember: The further you are across the map, the harder the questions will be,\n"
         + "and where you are on the map can make the challenges harder if you answer wrong.");
+    }
+    
+    private void displayAttributes(){
+        System.out.println("\n**********************************\n"
+        + "\n During the game you can view your attributes stats"
+        + "\n at any time by typing \"1\"");
     }
 
     private void displayChallengesQuiz() {
