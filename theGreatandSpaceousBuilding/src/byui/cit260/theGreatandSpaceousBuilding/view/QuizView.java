@@ -10,7 +10,7 @@ package byui.cit260.theGreatandSpaceousBuilding.view;
  * @author Ted Bell
  */
 public class QuizView extends View {
-    
+    boolean isRight;
     public QuizView(){
         super("\nThis is an example test, the correct answer is Candy"
         + "\nA. Zubat"
@@ -18,6 +18,12 @@ public class QuizView extends View {
         + "\nC. Candy"
         + "\nD. I don't have a fourth option, I just thought I'd impress you"
         + "\n");
+    }
+   
+    public boolean quizOutcome() {
+        this.display();
+        
+        return isRight;
     }
     
     private final char ANSWER = 'C';
@@ -32,19 +38,19 @@ public class QuizView extends View {
         char choice = value.charAt(0);
         if (choice == ANSWER) {
             System.out.println("\n\nYou answered correctly, you gain x Attribute");
-           
-            MapView mapview = new MapView();
-            mapview.displayPrompts(); // hands off to Map View            
+            isRight = true;          
         } 
         else if (choice =='1'){
                 StatsView statsview = new StatsView();
                 statsview.displayStats();
+                return false;
         }
         else {
+            isRight = false;
             System.out.println("\n\nYou chose poorly.");
             
-            ChallengeSelectionView challengeselectionview = new ChallengeSelectionView();
-            challengeselectionview.display(); // hands off to Challenge View
+            //ChallengeSelectionView challengeselectionview = new ChallengeSelectionView();
+            //challengeselectionview.display(); // hands off to Challenge View
           
         }
         return true;

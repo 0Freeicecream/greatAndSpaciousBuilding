@@ -11,7 +11,7 @@ package byui.cit260.theGreatandSpaceousBuilding.control;
  */
 public class AttributeControl {
     
-    public static char selection;
+    public char selection;
     
     
     

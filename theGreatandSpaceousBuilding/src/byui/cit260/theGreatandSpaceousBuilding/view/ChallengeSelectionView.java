@@ -12,13 +12,18 @@ import java.util.Scanner;
  * @author Ted Bell
  */
 public class ChallengeSelectionView extends View {
-    
+    boolean isSuccessful;
     public ChallengeSelectionView() {
         super("\nBecause you've failed the quiz, you must face a challenge.\n"
             + "\nF - Finger of Scorn"
             + "\nP - Pride"
             + "\nM - Mists of Darkness"
             + "\nR - Random Challenge\n");
+    }
+    
+    public boolean doChallenge() {
+        this.display();
+        return isSuccessful;
     }
     
     @Override
