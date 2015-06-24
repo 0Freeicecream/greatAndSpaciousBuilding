@@ -12,6 +12,7 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Location;
 import byui.cit260.theGreatandSpaceousBuilding.model.Map;
 import byui.cit260.theGreatandSpaceousBuilding.model.Scenario;
 import byui.cit260.theGreatandSpaceousBuilding.view.StartProgramView;
+import byui.cit260.theGreatandSpaceousBuilding.model.Attributes;
 
 /**
  *
@@ -21,7 +22,8 @@ public class theGreatandSpaceousBuilding {
     
     private static Game currentGame = null;
     private static Player player = null;
-
+    private static Attributes attributes = null;
+    
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -48,7 +50,11 @@ public class theGreatandSpaceousBuilding {
         
     }
 
-    public static Player getAttributes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static Attributes getAttributes() {
+        return attributes; 
+    }
+     
+    public static void setAttributes(Attributes attributes){
+        theGreatandSpaceousBuilding.attributes = attributes;
     }
 }
