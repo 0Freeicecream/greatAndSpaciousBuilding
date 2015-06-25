@@ -1,6 +1,7 @@
 package byui.cit260.theGreatandSpaceousBuilding.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Location implements Serializable {
 
@@ -10,27 +11,45 @@ public class Location implements Serializable {
      */
     
     // class variables
-        private double x;
-        private double y;
-        private double fruitPoints;
+        private int row;
+        private int column;
+        private int fruitPoints;
         private boolean ironRod;
         private boolean path;
         private boolean holyGhost;
+        private Scenario scenario;
+        private boolean visited;
+
+    public Scenario getScenario() {
+        return scenario;
+    }
+
+    public void setScenario(Scenario scenario) {
+        this.scenario = scenario;
+    }
         
         public Location() {
         }
         
         // functions to pull internal variables
-        public double getX() {
-            return x;
+        public int getRow() {
+            return row;
         }
         
-        public double getY() {
-            return y;
+        public int getColumn() {
+            return column;
         }
         
-        public double getFruitPoints() {
+        public int getFruitPoints() {
             return fruitPoints;
+        }
+
+        public boolean isVisited() {
+        return visited;
+        }
+
+        public void setVisited(boolean visited) {
+            this.visited = visited;
         }
         
         public boolean hasIronRod() {
@@ -46,15 +65,29 @@ public class Location implements Serializable {
         }
         
         // Set variables
-        public void setX(double x) {
-            this.x = x;
+        public void setRow(int row) {
+            this.row = row;
         }
         
-        public void setY(double y) {
-            this.y = y;
+        public void setColumn(int column) {
+            this.column = column;
         }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 79 * hash + this.row;
+        hash = 79 * hash + this.column;
+        hash = 79 * hash + this.fruitPoints;
+        hash = 79 * hash + (this.ironRod ? 1 : 0);
+        hash = 79 * hash + (this.path ? 1 : 0);
+        hash = 79 * hash + (this.holyGhost ? 1 : 0);
+        hash = 79 * hash + Objects.hashCode(this.scenario);
+        hash = 79 * hash + (this.visited ? 1 : 0);
+        return hash;
+    }
         
-        public void setFruitPoints(double fruitPoints) {
+        public void setFruitPoints(int fruitPoints) {
             this.fruitPoints = fruitPoints;
         }
         
@@ -72,18 +105,7 @@ public class Location implements Serializable {
 
     @Override
     public String toString() {
-        return "Location{" + "x=" + x + ", y=" + y + ", fruitPoints=" + fruitPoints + ", ironRod=" + ironRod + ", path=" + path + ", holyGhost=" + holyGhost + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 43 * hash + (int) (Double.doubleToLongBits(this.x) ^ (Double.doubleToLongBits(this.x) >>> 32));
-        hash = 43 * hash + (int) (Double.doubleToLongBits(this.fruitPoints) ^ (Double.doubleToLongBits(this.fruitPoints) >>> 32));
-        hash = 43 * hash + (this.ironRod ? 1 : 0);
-        hash = 43 * hash + (this.path ? 1 : 0);
-        hash = 43 * hash + (this.holyGhost ? 1 : 0);
-        return hash;
+        return "Location{" + "row=" + row + ", column=" + column + ", fruitPoints=" + fruitPoints + ", ironRod=" + ironRod + ", path=" + path + ", holyGhost=" + holyGhost +  ", visited=" + visited + '}';
     }
 
     @Override
@@ -95,13 +117,13 @@ public class Location implements Serializable {
             return false;
         }
         final Location other = (Location) obj;
-        if (Double.doubleToLongBits(this.x) != Double.doubleToLongBits(other.x)) {
+        if (this.row != other.row) {
             return false;
         }
-        if (Double.doubleToLongBits(this.y) != Double.doubleToLongBits(other.y)) {
+        if (this.column != other.column) {
             return false;
         }
-        if (Double.doubleToLongBits(this.fruitPoints) != Double.doubleToLongBits(other.fruitPoints)) {
+        if (this.fruitPoints != other.fruitPoints) {
             return false;
         }
         if (this.ironRod != other.ironRod) {
@@ -113,9 +135,12 @@ public class Location implements Serializable {
         if (this.holyGhost != other.holyGhost) {
             return false;
         }
+        if (!Objects.equals(this.scenario, other.scenario)) {
+            return false;
+        }
+        if (this.visited != other.visited) {
+            return false;
+        }
         return true;
     }
-        
-        
-        
 }
