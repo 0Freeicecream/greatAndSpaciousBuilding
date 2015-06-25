@@ -9,7 +9,7 @@ package byui.cit260.theGreatandSpaceousBuilding.control;
  *
  * @author Néna and Ted
  */
-public class ScenarioControl {
+public class SceneControl {
     
         private int roll() {
 

@@ -5,7 +5,11 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.control;
 
+import byui.cit260.theGreatandSpaceousBuilding.model.Game;
+import byui.cit260.theGreatandSpaceousBuilding.model.Map;
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
+import byui.cit260.theGreatandSpaceousBuilding.model.Scene;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 
 
 /**
@@ -15,7 +19,20 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 public class GameControl {
     
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function was called ***");
+        // Create new game and save it in theGreatandSpaceousBuilding
+        Game game = new Game();
+        theGreatandSpaceousBuilding.setCurrentGame(game);
+        
+        //Save player in THE GAME
+        game.setPlayer(player);
+        
+        //Create, initialize and save the Map
+        Map map = MapControl.createMap();
+        game.setMap(map);
+    }
+
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        System.out.println("Your assignScenesToLocations is working perfectly");
     }
     
 }
