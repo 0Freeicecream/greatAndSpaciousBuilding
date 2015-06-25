@@ -7,7 +7,7 @@ package byui.cit260.theGreatandSpaceousBuilding.view;
 
 /**
  *
- * @author Randy
+ * @author Ted
  */
 public class FullMapView {
     public void displayFullMap() {
