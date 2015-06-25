@@ -19,6 +19,7 @@ public class GameMenuView extends View {
         super("\n-----------Game Menu-----------"
             + "\nA - View Attributes"
             + "\nM - Move on Map"
+            + "\nF - View Full Map"
             + "\nQ - Answer Quiz"
             + "\nC - Tackle Challenge"
             + "\n"
@@ -40,6 +41,9 @@ public class GameMenuView extends View {
                 break;
             case 'M': // Saves current game
                 this.displayMap();
+                break;
+            case 'F': // Saves current game
+                this.displayFullMap();
                 break;
             case 'Q': // restores and runs existing game
                 this.displayQuiz();
@@ -71,6 +75,12 @@ public class GameMenuView extends View {
             //display the Map View
             MapView mapView = new MapView();
             mapView.displayPrompts();
+    }
+
+    private void displayFullMap() {
+            //display the Map View
+            FullMapView fullMapView = new FullMapView();
+            fullMapView.displayFullMap();
     }
 
     private void displayQuiz() {
