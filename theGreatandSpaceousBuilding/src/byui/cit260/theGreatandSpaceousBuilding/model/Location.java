@@ -17,15 +17,15 @@ public class Location implements Serializable {
         private boolean ironRod;
         private boolean path;
         private boolean holyGhost;
-        private Scenario scenario;
+        private Scene scene;
         private boolean visited;
 
-    public Scenario getScenario() {
-        return scenario;
+    public Scene getScene() {
+        return scene;
     }
 
-    public void setScenario(Scenario scenario) {
-        this.scenario = scenario;
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
         
         public Location() {
@@ -82,7 +82,7 @@ public class Location implements Serializable {
         hash = 79 * hash + (this.ironRod ? 1 : 0);
         hash = 79 * hash + (this.path ? 1 : 0);
         hash = 79 * hash + (this.holyGhost ? 1 : 0);
-        hash = 79 * hash + Objects.hashCode(this.scenario);
+        hash = 79 * hash + Objects.hashCode(this.scene);
         hash = 79 * hash + (this.visited ? 1 : 0);
         return hash;
     }
@@ -135,7 +135,7 @@ public class Location implements Serializable {
         if (this.holyGhost != other.holyGhost) {
             return false;
         }
-        if (!Objects.equals(this.scenario, other.scenario)) {
+        if (!Objects.equals(this.scene, other.scene)) {
             return false;
         }
         if (this.visited != other.visited) {

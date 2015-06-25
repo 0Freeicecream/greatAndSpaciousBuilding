@@ -78,5 +78,13 @@ public class Game implements Serializable {
         }
         return true;
     }
+
+    public void setMap(Map map) {
+        System.out.println("Your setMap funciton is working sorta okay I guess");
+    }
+
+    public void setPlayer(Player player) {
+        System.out.println("Your setPlayer function is working properly");
+    }
     
 }

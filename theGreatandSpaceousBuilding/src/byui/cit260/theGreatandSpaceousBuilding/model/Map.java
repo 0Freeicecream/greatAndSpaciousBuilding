@@ -1,5 +1,7 @@
 package byui.cit260.theGreatandSpaceousBuilding.model;
 
+import byui.cit260.theGreatandSpaceousBuilding.control.GameControl;
+import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
 import java.io.Serializable;
 
 public class Map implements Serializable {
@@ -90,19 +92,13 @@ public class Map implements Serializable {
         }
         return true;
     }
-    
-    private static Map createMap() {
-        // create more map
-        Map map = new Map(7, 5);
-        
-        // creates scenarios for the game
-        Scenario[] scenarios = createScenarios();
-        
-        // assign scenarios to locations
-       
-        GameControl.assignScenariosToLocations(map, scenarios);
-        
-        return map;
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
     
 }
