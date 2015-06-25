@@ -13,6 +13,9 @@ public class Game implements Serializable {
     private double totalTime;
     private double playerCoordinatesX;
     private double playerCoordinatesY;
+        
+    private Player player;
+    private Map map;
 
     public Game() {
     }
