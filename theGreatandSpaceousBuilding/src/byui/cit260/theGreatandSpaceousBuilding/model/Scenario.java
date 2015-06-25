@@ -11,7 +11,7 @@ public class Scenario {
      * 
      */
 
-    /*
+
     private static Scenario[] createScenarios() throws MapControlException {
         BufferedImage image = null;
         
@@ -91,7 +91,7 @@ public class Scenario {
         locations[6][3].setScenario(scenarios[ScenarioType.quizShow.ordinal()]);
         locations[6][4].setScenario(scenarios[ScenarioType.quizShow.ordinal()]);
     }
-    */
+
     
     
     //class attributes
