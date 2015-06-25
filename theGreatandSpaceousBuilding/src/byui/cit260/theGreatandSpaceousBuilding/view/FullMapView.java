@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package byui.cit260.theGreatandSpaceousBuilding.view;
+import byui.cit260.theGreatandSpaceousBuilding.model.Scenario;
+import byui.cit260.theGreatandSpaceousBuilding.model.Map;
+import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
 
 /**
  *
@@ -12,5 +15,33 @@ package byui.cit260.theGreatandSpaceousBuilding.view;
 public class FullMapView {
     public void displayFullMap() {
         
+            // Map title
+        System.out.println("\n I'M THE MAP");
+        
+        //row divider
+        System.out.println("|");
+        
+        //row number
+        System.out.println("1  2  3  4  5  6  7");
+        
+        //column length
+        System.out.println("\n-----------------------------------------------");
+        
+        for (i=0; i < columnCount.length; i++) {
+           for (r=0; r < rowCount.length; r++) {
+               if locations.
+           }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    } 
+        
     }
-}
