@@ -17,9 +17,9 @@ public class GameMenuView extends View {
     
     public GameMenuView() {
         super("\n-----------Game Menu-----------"
-            + "\nA - View Attributes"
+            + "\n1 - View Attributes Stats"
             + "\nM - Move on Map"
-            + "\nF - View Full Map"
+            + "\n2 - View Full Map"
             + "\nQ - Answer Quiz"
             + "\nC - Tackle Challenge"
             + "\n"
@@ -36,19 +36,19 @@ public class GameMenuView extends View {
         //get first character entered
         char choice = value.charAt(0);
         switch (choice) {
-            case 'A': // Create and start new.game
-                this.displayAttributes();
+            case '1': // View Attribute Stats
+                this.displayStatsView();
                 break;
-            case 'M': // Saves current game
+            case 'M': // Move on Map
                 this.displayMap();
                 break;
-            case 'F': // Saves current game
+            case '2': // View Full Map
                 this.displayFullMap();
                 break;
-            case 'Q': // restores and runs existing game
+            case 'Q': // Answer Quiz
                 this.displayQuiz();
                 break;
-            case 'C': // Loads the help menu
+            case 'C': // Challenge
                 this.displayChallengeSelection();
                 break;
             case 'R': // Closes program so players can get to more important things
@@ -65,10 +65,10 @@ public class GameMenuView extends View {
             System.out.println("--Your saveGame function is working perfectly--");
         }
 
-    private void displayAttributes() {
-            //display the Attributes menu
-            AttributeMenuView attributeMenu = new AttributeMenuView();
-            attributeMenu.display();
+    private void displayStatsView() {
+            //display the Stats
+            StatsView statsView = new StatsView();
+            statsView.displayStats();
     }
 
     private void displayMap() {

@@ -10,7 +10,8 @@ public class Scenario {
      * REMEMBER TO CHANGE EVERY INSTANCE OF SCENE TO SCENARIO TO MATCH OUR CODE
      * 
      */
-    
+
+    /*
     private static Scenario[] createScenarios() throws MapControlException {
         BufferedImage image = null;
         
@@ -90,6 +91,8 @@ public class Scenario {
         locations[6][3].setScenario(scenarios[ScenarioType.quizShow.ordinal()]);
         locations[6][4].setScenario(scenarios[ScenarioType.quizShow.ordinal()]);
     }
+    */
+    
     
     //class attributes
     private String story;

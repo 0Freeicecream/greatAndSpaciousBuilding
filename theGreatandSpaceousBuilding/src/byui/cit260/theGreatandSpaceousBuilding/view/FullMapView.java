@@ -7,6 +7,8 @@ package byui.cit260.theGreatandSpaceousBuilding.view;
 import byui.cit260.theGreatandSpaceousBuilding.model.Scenario;
 import byui.cit260.theGreatandSpaceousBuilding.model.Map;
 import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
+import byui.cit260.theGreatandSpaceousBuilding.model.Player;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 
 /**
  *
@@ -15,33 +17,41 @@ import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
 public class FullMapView {
     public void displayFullMap() {
         
-            // Map title
-        System.out.println("\n I'M THE MAP");
+        int rowCount = 5;
+        int columnCount = 7;
+        String rowDivider = "----------------";
         
-        //row divider
-        System.out.println("|");
+        Player player = theGreatandSpaceousBuilding.getPlayer();
         
-        //row number
-        System.out.println("1  2  3  4  5  6  7");
+        //displayMap(locations): void {
+
+        //get the map locations from the current game
+        //this.mapGetLocation();
         
-        //column length
-        System.out.println("\n-----------------------------------------------");
+        //DISPLAY title
+        System.out.println("\n*********************THE MAP*********************");
         
-        for (i=0; i < columnCount.length; i++) {
-           for (r=0; r < rowCount.length; r++) {
-               if locations.
-           }
+        //DISPLAY row of column numbers
+        System.out.println("  1 2 3 4 5 6 7");
+        
+        //FOR every row in map
+        for (int i = 0; i < rowCount ; i++){
+            System.out.println(rowDivider);
+            System.out.print(i + 1);
+            for (int j = 0; j < columnCount; j++) {
+                System.out.print("|");
+                if (player.hasVisited(j, i)) {
+                    System.out.print("~");
+                }
+                else {
+                    System.out.print("?");
+                }
+            }
+            System.out.println("|");
         }
+        System.out.println(rowDivider);
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    } 
-        
+       System.out.println("\n*************************************************");
     }
+        
+}

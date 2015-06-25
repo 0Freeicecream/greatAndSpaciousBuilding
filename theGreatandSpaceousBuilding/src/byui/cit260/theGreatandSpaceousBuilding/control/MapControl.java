@@ -45,6 +45,9 @@ public class MapControl {
         else if (direction == 'W'){
             player.setX(x-1);
         }
+        
+        // Add coordinates of where we just left to visited
+        player.addVisited(x, y);
        }
        
        return isValid;

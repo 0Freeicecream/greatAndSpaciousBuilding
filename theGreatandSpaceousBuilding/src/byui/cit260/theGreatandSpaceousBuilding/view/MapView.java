@@ -79,6 +79,12 @@ public class MapView {
                 StatsView statsview = new StatsView();
                 statsview.displayStats();
                 break;
+            
+            case '2':
+                FullMapView fullMapView = new FullMapView();
+                fullMapView.displayFullMap();
+                break;
+                
             default: // displays in any other instance
                 dir = 'X';
                 System.out.println("!!--Not a valid direction--!!");

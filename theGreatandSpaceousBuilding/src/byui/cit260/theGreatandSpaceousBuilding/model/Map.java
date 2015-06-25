@@ -96,10 +96,11 @@ public class Map implements Serializable {
         Map map = new Map(7, 5);
         
         // creates scenarios for the game
-        Scenario[] scenarios = createScenarios();
+        //Scenario[] scenarios = createScenarios();
         
         // assign scenarios to locations
-        GameControl.assignScenariosToLocations(map, scenarios);
+       
+        //GameControl.assignScenariosToLocations(map, scenarios);
         
         return map;
     }

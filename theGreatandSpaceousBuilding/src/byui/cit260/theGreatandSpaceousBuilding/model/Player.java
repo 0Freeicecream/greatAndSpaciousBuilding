@@ -1,6 +1,7 @@
 package byui.cit260.theGreatandSpaceousBuilding.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Player implements Serializable {
@@ -14,6 +15,8 @@ public class Player implements Serializable {
         private double bestTime;
         private int x;
         private int y;
+        
+        ArrayList<String> visited = new ArrayList<String>();
 
         
 
@@ -45,11 +48,24 @@ public class Player implements Serializable {
 
         public int getY() {
              return y;
-         }
+        }
 
         public void setY(int y) {
              this.y = y;
-         }
+        }
+        
+        public void addVisited(int x, int y) {
+            String coords = x + "," + y;
+            
+            if (!visited.contains(coords)) {
+                visited.add(coords);
+            }
+        }
+        
+        public boolean hasVisited(int x, int y) {
+            String coords = x + "," + y;
+            return visited.contains(coords);
+        }
         
         public String getPosition() {
             return x + "," + y;
