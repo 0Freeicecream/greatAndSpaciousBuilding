@@ -5,6 +5,8 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.view;
 import byui.cit260.theGreatandSpaceousBuilding.control.TopScoreControl;
+import byui.cit260.theGreatandSpaceousBuilding.model.Attributes;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 
 /**
  *
@@ -13,9 +15,15 @@ import byui.cit260.theGreatandSpaceousBuilding.control.TopScoreControl;
 public class TopScoreView {
  
     public void displayTopScore(){
+            Attributes attributes = theGreatandSpaceousBuilding.getAttributes();
+        
+        int fruit = attributes.getFruit();
+        int testimony = attributes.getTestimony();
+        int obedience = attributes.getObedience();
+        
         TopScoreControl topscore = new TopScoreControl();
         System.out.println("\n*****TOP SCORE******");
-        System.out.println("\n Your Score is:" + topscore.getScore());
+        System.out.println("\n Your Score is:" + topscore.getScore(fruit, testimony, obedience));
  
     }
 }

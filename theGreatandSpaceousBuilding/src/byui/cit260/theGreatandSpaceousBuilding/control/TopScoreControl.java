@@ -13,14 +13,13 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
  * @author Néna
  */
 public class TopScoreControl {
-    
-   public int getScore(){
-   
-        Attributes attributes = theGreatandSpaceousBuilding.getAttributes();
 
-        int[] scores = {attributes.getFruit(), 
-                        attributes.getTestimony(), 
-                        attributes.getObedience()};
+    
+   public int getScore(int fruit, int testimony, int obedience){
+
+        int[] scores = {fruit, 
+                        testimony, 
+                        obedience};
         int sum = 0;
         for (int score : scores) {
           sum += score;
