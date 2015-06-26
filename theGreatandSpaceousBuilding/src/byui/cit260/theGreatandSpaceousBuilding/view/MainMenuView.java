@@ -85,7 +85,8 @@ public class MainMenuView extends View {
         }
         
         private void displayBestScores() {
-            System.out.println("--Your displayBestScores function is working perfectly--");
+            TopScoreView topscore = new TopScoreView();
+            topscore.displayTopScore();
         }
         
 }

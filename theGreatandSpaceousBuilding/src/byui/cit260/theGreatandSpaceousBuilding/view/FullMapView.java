@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package byui.cit260.theGreatandSpaceousBuilding.view;
-import byui.cit260.theGreatandSpaceousBuilding.model.Scenario;
-import byui.cit260.theGreatandSpaceousBuilding.model.Map;
+import byui.cit260.theGreatandSpaceousBuilding.model.Scene;
+;import byui.cit260.theGreatandSpaceousBuilding.model.Map;
 import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
