@@ -10,7 +10,7 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Game;
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import byui.cit260.theGreatandSpaceousBuilding.model.Location;
 import byui.cit260.theGreatandSpaceousBuilding.model.Map;
-import byui.cit260.theGreatandSpaceousBuilding.model.Scenario;
+import byui.cit260.theGreatandSpaceousBuilding.model.Scene;
 import byui.cit260.theGreatandSpaceousBuilding.view.StartProgramView;
 import byui.cit260.theGreatandSpaceousBuilding.model.Attributes;
 
