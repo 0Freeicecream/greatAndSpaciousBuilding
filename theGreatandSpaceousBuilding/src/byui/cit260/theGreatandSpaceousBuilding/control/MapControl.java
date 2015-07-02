@@ -5,6 +5,7 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.control;
 
+import byui.cit260.theGreatandSpaceousBuilding.exceptions.MapControlException;
 import byui.cit260.theGreatandSpaceousBuilding.model.Map;
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import byui.cit260.theGreatandSpaceousBuilding.model.Game;
@@ -24,20 +25,26 @@ public class MapControl {
        return coordinates;
    }
   
-   public static boolean movePlayer(char direction) {
+   public static void movePlayer(char direction) throws MapControlException {
+        
        Player player = theGreatandSpaceousBuilding.getPlayer();
        int x = player.getX();
        int y = player.getY();
-       boolean isValid = false;
+ 
        
        if ((direction == 'N' && y < 5) ||
             (direction == 'S' && y > 1) ||
             (direction == 'E' && x < 7) ||
             (direction == 'W' && x > 1)) {
-           isValid = true;
        }
+        else {
+            throw new MapControlException("Can not move actor to location "
+                                    + x + ", " + y 
+                                    + " because that location is outside"
+                                    + " the bounds of the map.");
+                }
        
-       if (isValid) {
+       
         if (direction == 'N'){
             player.setY(y+1);
         }
@@ -53,10 +60,7 @@ public class MapControl {
         
         // Add coordinates of where we just left to visited
         player.addVisited(x, y);
-       }
-       
-       return isValid;
-   };
+   }
 
     public static Map createMap() {
         //create .map
@@ -65,7 +69,7 @@ public class MapControl {
         //create a list of different scenes in the game
         Scene[] scenes = createScenes();
         
-        //assigne the different scenes to locatiosn in the map
+        //assigne the different scenes to locations in the map
         assignScenesToLocations(map, scenes);
         
         return map;

@@ -7,6 +7,7 @@ package byui.cit260.theGreatandSpaceousBuilding.view;
 
 import java.util.Scanner;
 import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
+import byui.cit260.theGreatandSpaceousBuilding.exceptions.MapControlException;
 import byui.cit260.theGreatandSpaceousBuilding.view.QuizView;
 /**
  *
@@ -28,10 +29,11 @@ public class MapView {
             selection = input.charAt(0); //Get first character of string
             
             this.pickDirection(selection); //do action based on selection
-            if (dir != 'X' && MapControl.movePlayer(dir)) {
+            try {
+                MapControl.movePlayer(dir);
                 break;
             }
-            else {
+            catch (MapControlException e) {
                 System.out.println("You can not travel that direction");
             }
             
