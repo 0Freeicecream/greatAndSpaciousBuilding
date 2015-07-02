@@ -36,6 +36,7 @@ public class MapView {
             catch (MapControlException e) {
                 System.out.println("You can not travel that direction");
             }
+
             
         } while (true); // selection is not correct
         
@@ -67,6 +68,30 @@ public class MapView {
         return selection; //Yell players selection into code
     }
     
+    public int getIntNumber() {
+        int number = -1;
+                
+        while (number == -1) {
+            String value = this.getInput();
+            value = value.trim().toUpperCase();
+            
+            if (value.equals("Q"))
+                break;
+            
+            try{
+            //parse and convert number from text to a double
+            number = Integer.parseInt(value);
+            } catch (NumberFormatException nf) {
+                System.out.println("HUMAN: YOU HAVE MADE A MISTAKE!"
+                        + "\nINPUT APPROPRIATE NUMBER OR USE Q TO QUIT!"
+                        + "\n-SINCERELY"
+                        + "\n YOUR COMPUTER");
+            }
+        }
+        
+        return number;
+    }
+    
     public void pickDirection(char direction) {
         boolean isValid = false;
         switch (direction) {
@@ -77,12 +102,12 @@ public class MapView {
                 dir = direction;
                 isValid = true;
                 break;
-            case '1':
+            case '6':
                 StatsView statsview = new StatsView();
                 statsview.displayStats();
                 break;
             
-            case '2':
+            case '7':
                 FullMapView fullMapView = new FullMapView();
                 fullMapView.displayFullMap();
                 break;
