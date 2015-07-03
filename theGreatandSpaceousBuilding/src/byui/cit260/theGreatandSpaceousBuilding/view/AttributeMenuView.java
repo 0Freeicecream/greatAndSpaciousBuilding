@@ -60,7 +60,7 @@ public class AttributeMenuView extends View {
                 this.displayObedience();
                 isValid = true;
                 break;
-            case "1":
+            case "6":
                 StatsView statsview = new StatsView();
                 statsview.displayStats();
                 break;

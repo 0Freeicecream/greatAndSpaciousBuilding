@@ -52,7 +52,7 @@ public class ChallengeSelectionView extends View {
                 this.randomChallenge();
                 isValid = true;
                 break;
-            case '1':
+            case '6':
                 StatsView statsview = new StatsView();
                 statsview.displayStats();
                 break;

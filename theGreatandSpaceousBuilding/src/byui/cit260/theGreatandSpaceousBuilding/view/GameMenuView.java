@@ -17,9 +17,9 @@ public class GameMenuView extends View {
     
     public GameMenuView() {
         super("\n-----------Game Menu-----------"
-            + "\n1 - View Attributes Stats"
+            + "\n6 - View Attributes Stats"
             + "\nM - Move on Map"
-            + "\n2 - View Full Map"
+            + "\n7 - View Full Map"
             + "\nQ - Answer Quiz"
             + "\nC - Tackle Challenge"
             + "\n"
@@ -36,20 +36,20 @@ public class GameMenuView extends View {
         //get first character entered
         char choice = value.charAt(0);
         switch (choice) {
-            case '1': // View Attribute Stats
-                this.displayStatsView();
-                break;
             case 'M': // Move on Map
                 this.displayMap();
-                break;
-            case '2': // View Full Map
-                this.displayFullMap();
                 break;
             case 'Q': // Answer Quiz
                 this.displayQuiz();
                 break;
             case 'C': // Challenge
                 this.displayChallengeSelection();
+                break;
+            case '6': // View Attribute Stats
+                this.displayStatsView();
+                break;
+            case '7': // View Full Map
+                this.displayFullMap();
                 break;
             case 'R': // Closes program so players can get to more important things
                 return true;

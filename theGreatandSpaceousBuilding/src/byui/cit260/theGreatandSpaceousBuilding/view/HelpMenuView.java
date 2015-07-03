@@ -85,7 +85,7 @@ public class HelpMenuView extends View {
     private void displayAttributes(){
         System.out.println("\n**********************************\n"
         + "\n During the game you can view your attributes stats"
-        + "\n at any time by typing \"1\"");
+        + "\n at any time by typing \"6\"");
     }
 
     private void displayChallengesQuiz() {

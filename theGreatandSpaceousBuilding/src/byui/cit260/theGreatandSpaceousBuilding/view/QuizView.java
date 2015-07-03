@@ -40,7 +40,7 @@ public class QuizView extends View {
             System.out.println("\n\nYou answered correctly, you gain x Attribute");
             isRight = true;          
         } 
-        else if (choice =='1'){
+        else if (choice =='6'){
                 StatsView statsview = new StatsView();
                 statsview.displayStats();
                 return false;
