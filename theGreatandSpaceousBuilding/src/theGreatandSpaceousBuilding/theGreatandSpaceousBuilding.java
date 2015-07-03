@@ -46,15 +46,17 @@ public class theGreatandSpaceousBuilding {
         
         //BruceBanner Test
         StartProgramView startProgramView = new StartProgramView();
-        try {
-        startProgramView.startProgram();
+        while(true) {
+            try {
+                startProgramView.startProgram();
+                break;
+            }
+            catch (Throwable te) {
+                System.out.println(te.getMessage());
+                //te.printStackTrace();
+            }
+            
         }
-        catch (Throwable te) {
-            System.out.println(te.getMessage());
-            te.printStackTrace();
-            startProgramView.startProgram();
-        }
-        
     }
 
     public static Attributes getAttributes() {

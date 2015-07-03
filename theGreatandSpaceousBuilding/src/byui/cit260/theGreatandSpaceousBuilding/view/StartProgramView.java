@@ -8,6 +8,7 @@ package byui.cit260.theGreatandSpaceousBuilding.view;
 import byui.cit260.theGreatandSpaceousBuilding.control.ProgramControl;
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import java.util.Scanner;
+import byui.cit260.theGreatandSpaceousBuilding.exceptions.ProgramControlException;
 
 /**
  *
@@ -15,7 +16,7 @@ import java.util.Scanner;
  */
 public class StartProgramView {
     
-    public void startProgram(){
+    public void startProgram() throws ProgramControlException{
             
      
         // DISPLAY the banner screen
@@ -24,12 +25,13 @@ public class StartProgramView {
         // Get the players name
         String playersName = this.getPlayerName();
         
-        // Create a new player
+        // Create a new player and throwing an exception
         Player player = ProgramControl.createPlayer(playersName);
+       
         
         // DISPLAY a customized welcome message
         this.displayWelcomeMessage(player);
-        
+              
         // DISPLAY the main menu
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
@@ -60,9 +62,10 @@ public class StartProgramView {
             playersName = playersName.trim();
             
             //If name is invalid (less than two character in length)
-            if (playersName.length() < 2) {
-                System.out.println("Invalid name - the name must not be blank");
-                continue; // repeats
+        try {
+                ProgramControl.createPlayer(playersName);
+            }
+            catch (ProgramControlException me) {
             }
             break; // out of the exit repitition
         }

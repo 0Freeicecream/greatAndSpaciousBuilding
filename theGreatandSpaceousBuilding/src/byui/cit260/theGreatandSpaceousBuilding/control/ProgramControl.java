@@ -10,6 +10,8 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Attributes;
 import java.util.HashSet;
 import java.util.Set;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+import byui.cit260.theGreatandSpaceousBuilding.exceptions.ProgramControlException;
+import byui.cit260.theGreatandSpaceousBuilding.view.StartProgramView;
 
 
 /**
@@ -17,11 +19,12 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
  * @author Ted
  */
 public class ProgramControl {
-
-    public static Player createPlayer(String playersName) {
+    
+    public static Player createPlayer(String playersName)throws ProgramControlException {
         
-        if (playersName == null) {
-            return null;
+        if (playersName.length() < 2) {
+            throw new ProgramControlException("Can not use that name"
+                                              +"\nPlease try again.");
         }
         
         Player player = new Player();
