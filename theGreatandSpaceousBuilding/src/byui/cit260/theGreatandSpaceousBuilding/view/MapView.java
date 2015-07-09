@@ -9,15 +9,26 @@ import java.util.Scanner;
 import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
 import byui.cit260.theGreatandSpaceousBuilding.exceptions.MapControlException;
 import byui.cit260.theGreatandSpaceousBuilding.view.QuizView;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+
 /**
  *
  * @author Néna
  */
-public class MapView {
+public class MapView extends View {
   
     public String movePrompt = "Please enter a direction (N, S, E, or W)";
     char dir = 'X';    
-           
+
+    public MapView(String promptMessage) {
+        super(promptMessage);
+    }
+    
+    public boolean doAction(Object o) {
+        return true;
+    }
     void displayPrompts() {
         char selection;
         do {
@@ -46,15 +57,16 @@ public class MapView {
         attributemenu.display();   //hand off to AttributeMenuView
     }
 
-    String getInput() {
-        boolean valid = false; // indicates if the selection has been retrieved
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in); // Use keyboard input
+public String getInput() {
+    boolean valid = false; // indicates if the selection has been retrieved
+    String selection = null;
+     // Use keyboard input
+    try {
         
         while(!valid) { //while a valid selection is not retrived
             
             // Demands data from keyboard and trims off the blanks
-            selection = keyboard.nextLine();
+            selection = this.keyboard.readLine();
             selection = selection.trim();
             
             //If selection is invalid ( not N, S, E or W
@@ -64,7 +76,10 @@ public class MapView {
             }
             break; // out of the exit repitition
         }
-        
+    }
+    catch (Exception e) {
+        System.out.println("Error reading input:" + e.getMessage());
+        } 
         return selection; //Yell players selection into code
     }
     

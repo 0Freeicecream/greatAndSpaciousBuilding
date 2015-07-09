@@ -9,12 +9,19 @@ import byui.cit260.theGreatandSpaceousBuilding.control.ProgramControl;
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import java.util.Scanner;
 import byui.cit260.theGreatandSpaceousBuilding.exceptions.ProgramControlException;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 
 /**
  *
  * @author Ted and Néna
  */
-public class StartProgramView {
+public class StartProgramView extends View{
+
+    public StartProgramView(String promptMessage) {
+        super(promptMessage);
+    }
     
     public void startProgram() throws ProgramControlException{
             
@@ -39,7 +46,11 @@ public class StartProgramView {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
 }
-
+    
+    public boolean doAction(Object o) {
+    return true;
+    }
+    
     private void displayBanner() {
         System.out.println("\n\n************************************************************");
                 
@@ -53,26 +64,30 @@ public class StartProgramView {
     String getPlayerName() {
         boolean valid = false; // indicates if the name has been retrieved
         String playersName = null;
-        Scanner keyboard = new Scanner(System.in); // Use keyboard input
-        
-        while(!valid) { //while a valid name is not retrived
-            
-            // prompt for player's name
-            System.out.println("Enter the player's name below:");
-            
-            // Demands data from keyboard and trims off the blanks
-            playersName = keyboard.nextLine();
-            playersName = playersName.trim();
-            
-            //If name is invalid (less than two character in length)
+         // Use keyboard input
         try {
-                ProgramControl.createPlayer(playersName);
+            
+            while(!valid) { //while a valid name is not retrived
+
+                // prompt for player's name
+                System.out.println("Enter the player's name below:");
+
+                // Demands data from keyboard and trims off the blanks
+                playersName = this.keyboard.readLine();
+                playersName = playersName.trim();
+
+                //If name is invalid (less than two character in length)
+            try {
+                    ProgramControl.createPlayer(playersName);
+                }
+                catch (ProgramControlException me) {
+                }
+                break; // out of the exit repitition
             }
-            catch (ProgramControlException me) {
-            }
-            break; // out of the exit repitition
         }
-        
+        catch (Exception e) {
+        System.out.println("Error reading input:" + e.getMessage());
+        } 
         return playersName; //Yell players name into code
     }
 

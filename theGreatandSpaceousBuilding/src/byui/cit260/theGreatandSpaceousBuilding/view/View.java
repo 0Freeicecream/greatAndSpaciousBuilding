@@ -6,6 +6,9 @@
 package byui.cit260.theGreatandSpaceousBuilding.view;
 
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 
 /**
  *
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     private String promptMessage;
+    
+    protected final BufferedReader keyboard = theGreatandSpaceousBuilding.getInFile();
+    protected final PrintWriter consol = theGreatandSpaceousBuilding.getOutFile();
     
     public View(String promptMessage) {
         this.promptMessage = promptMessage;
@@ -26,6 +32,8 @@ public abstract class View implements ViewInterface {
     public void setPromptMessage(String message) {
         this.promptMessage = message;
     }
+    
+
     
     @Override
     public void display() {
@@ -42,14 +50,14 @@ public abstract class View implements ViewInterface {
 
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in); // Use keyboard input
         boolean valid = false; // indicates if the name has been retrieved
         String value = null;
         
+    try {    
         while(!valid) { //while a valid name is not retrived
             
             // Demands data from keyboard and trims off the blanks
-            value = keyboard.nextLine();
+            value = keyboard.readLine();
             value = value.trim();
             
             //If name is invalid (less than two character in length)
@@ -59,7 +67,10 @@ public abstract class View implements ViewInterface {
             }
             break; // out of the exit repitition
         }
-        
+    }
+    catch (Exception e) {
+        System.out.println("Error reading input:" + e.getMessage());
+        } 
         return value; //Yell players value into code
     }
 }

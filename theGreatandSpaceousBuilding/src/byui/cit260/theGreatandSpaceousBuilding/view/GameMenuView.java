@@ -27,6 +27,7 @@ public class GameMenuView extends View {
             + "\n-------------------------------");
     }
     
+    
     @Override
     public boolean doAction(Object obj) {
         //Defines obj String for Superclass
@@ -73,7 +74,7 @@ public class GameMenuView extends View {
 
     private void displayMap() {
             //display the Map View
-            MapView mapView = new MapView();
+            MapView mapView = new MapView("");
             mapView.displayPrompts();
     }
 

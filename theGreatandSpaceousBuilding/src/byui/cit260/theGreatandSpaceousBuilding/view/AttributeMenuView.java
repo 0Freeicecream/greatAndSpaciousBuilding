@@ -114,7 +114,7 @@ public class AttributeMenuView extends View {
                     }
                 }
             }
-            MapView mapview = new MapView();
+            MapView mapview = new MapView("");
             mapview.displayPrompts(); // hands off to Map View  
         }
         
