@@ -24,7 +24,7 @@ import java.io.InputStreamReader;
  *
  * @author Ted 
 */
-public class theGreatandSpaceousBuilding {
+public class theGreatandSpaceousBuilding{
     
     private static Game currentGame = null;
     private static Player player = null;

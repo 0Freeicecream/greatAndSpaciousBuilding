@@ -6,6 +6,10 @@
 package byui.cit260.theGreatandSpaceousBuilding.view;
 
 import byui.cit260.theGreatandSpaceousBuilding.control.SaveGameControl;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+import byui.cit260.theGreatandSpaceousBuilding.view.ErrorView;
 
 /**
  *
@@ -23,11 +27,13 @@ public class SaveGameView extends View{
             slotNum = Integer.parseInt((String)saveSlot);
         } 
         catch (NumberFormatException e) {
-            System.out.println("You must enter a number");
+            ErrorView.display(this.getClass().getName(),
+                    "You must enter a number");
             return false;
         }
         if (slotNum < 1 || slotNum > 3) {
-            System.out.println("Slot number must be between 1 and 3");
+            ErrorView.display(this.getClass().getName(),
+                    "Slot number must be between 1 and 3");
             return false;
         }
         

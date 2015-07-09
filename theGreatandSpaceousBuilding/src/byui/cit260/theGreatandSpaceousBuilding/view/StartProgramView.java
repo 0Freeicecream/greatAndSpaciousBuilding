@@ -12,6 +12,7 @@ import byui.cit260.theGreatandSpaceousBuilding.exceptions.ProgramControlExceptio
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+import byui.cit260.theGreatandSpaceousBuilding.view.ErrorView;
 
 /**
  *
@@ -52,13 +53,13 @@ public class StartProgramView extends View{
     }
     
     private void displayBanner() {
-        System.out.println("\n\n************************************************************");
+        this.console.println("\n\n************************************************************");
                 
-        System.out.println(" Welcome to The Great and Spacious Building Game!"
+        this.console.println(" Welcome to The Great and Spacious Building Game!"
             + "\n  In this game, we will make our way to the tree of life"
             + "\n  while answering spritual questions and facing challenges"
             + "\n  of faith.");
-        System.out.println("************************************************************");
+        this.console.println("************************************************************");
     }
 
     String getPlayerName() {
@@ -70,7 +71,7 @@ public class StartProgramView extends View{
             while(!valid) { //while a valid name is not retrived
 
                 // prompt for player's name
-                System.out.println("Enter the player's name below:");
+                this.console.println("Enter the player's name below:");
 
                 // Demands data from keyboard and trims off the blanks
                 playersName = this.keyboard.readLine();
@@ -86,15 +87,16 @@ public class StartProgramView extends View{
             }
         }
         catch (Exception e) {
-        System.out.println("Error reading input:" + e.getMessage());
+        ErrorView.display(this.getClass().getName(),
+                "Error reading input:" + e.getMessage());
         } 
         return playersName; //Yell players name into code
     }
 
     private void displayWelcomeMessage(Player player) {
-        System.out.println("\n\nHey " + player.getName());
-        System.out.println("\nWelcome to the Great and Spaceous Building");
-        System.out.println("Enjoy your trip to the Tree of Life (if you make it\n)");
+       this.console.println("\n\nHey " + player.getName());
+        this.console.println("\nWelcome to the Great and Spaceous Building");
+        this.console.println("Enjoy your trip to the Tree of Life (if you make it\n)");
     }
 }
 

@@ -10,17 +10,20 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Map;
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import byui.cit260.theGreatandSpaceousBuilding.model.Scene;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import byui.cit260.theGreatandSpaceousBuilding.view.View;
 
 
 /**
  *
  * @author Néna
  */
-public class GameControl {
+public class GameControl extends View {
     
     public static void createNewGame(Player player) {
         // Create new game and save it in theGreatandSpaceousBuilding
-        Game game = new Game();
+        Game game = new Game("");
         theGreatandSpaceousBuilding.setCurrentGame(game);
         
         //Save player in THE GAME
@@ -31,8 +34,16 @@ public class GameControl {
         game.setMap(map);
     }
 
-    public static void assignScenesToLocations(Map map, Scene[] scenes) {
-        System.out.println("Your assignScenesToLocations is working perfectly");
+    public GameControl(String promptMessage) {
+        super(promptMessage);
+    }
+
+    public void assignScenesToLocations(Map map, Scene[] scenes) {
+        this.console.println("Your assignScenesToLocations is working perfectly");
     }
     
+    @Override    
+    public boolean doAction(Object o) {
+    return true;
+    }
 }

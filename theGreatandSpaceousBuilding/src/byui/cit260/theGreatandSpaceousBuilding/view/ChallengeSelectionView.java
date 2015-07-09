@@ -6,6 +6,10 @@
 package byui.cit260.theGreatandSpaceousBuilding.view;
 
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+
 
 /**
  *
@@ -53,11 +57,12 @@ public class ChallengeSelectionView extends View {
                 isValid = true;
                 break;
             case '6':
-                StatsView statsview = new StatsView();
+                StatsView statsview = new StatsView("");
                 statsview.displayStats();
                 break;
             default: // displays in any other instance
-                System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
+                ErrorView.display(this.getClass().getName(),
+                        "!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
 
         }
@@ -66,18 +71,18 @@ public class ChallengeSelectionView extends View {
     }
 
     private void fingerOfScorn() {
-        System.out.println("---fingerOfScorn() is active---");
+        this.console.println("---fingerOfScorn() is active---");
     }
 
     private void pride() {
-        System.out.println("---pride() is active---");
+        this.console.println("---pride() is active---");
     }
 
     private void mistsOfDarkness() {
-        System.out.println("---mistsOfDarkness() is active---");
+        this.console.println("---mistsOfDarkness() is active---");
     }
 
     private void randomChallenge() {
-        System.out.println("---randomChallenge() is active---");
+        this.console.println("---randomChallenge() is active---");
     }
 }

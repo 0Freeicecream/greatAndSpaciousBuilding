@@ -9,6 +9,11 @@ import byui.cit260.theGreatandSpaceousBuilding.control.GameControl;
 import java.util.Scanner;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+
+
+
 /**
  *
  * @author Ted and Nena
@@ -55,7 +60,8 @@ public class MainMenuView extends View {
             case 'Q': // Closes program so players can get to more important things
                 return true;
             default: // displays in any other instance
-                System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
+               ErrorView.display(this.getClass().getName(),
+                       "!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
             
         }
@@ -71,11 +77,11 @@ public class MainMenuView extends View {
         }
         
         private void saveGame() {
-            System.out.println("--Your saveGame function is working perfectly--");
+            this.console.println("--Your saveGame function is working perfectly--");
         }
         
         private void startExistingGame() {
-            System.out.println("--Your startExistingGame function is working perfectly--");
+            this.console.println("--Your startExistingGame function is working perfectly--");
         }
         
         private void displayHelpMenu() {            
@@ -85,7 +91,7 @@ public class MainMenuView extends View {
         }
         
         private void displayBestScores() {
-            TopScoreView topscore = new TopScoreView();
+            TopScoreView topscore = new TopScoreView("");
             topscore.displayTopScore();
         }
         

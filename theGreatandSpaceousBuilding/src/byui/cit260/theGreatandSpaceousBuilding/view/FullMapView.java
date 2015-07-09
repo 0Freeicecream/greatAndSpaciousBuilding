@@ -9,12 +9,25 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Scene;
 import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+
 
 /**
  *
  * @author Ted
  */
-public class FullMapView {
+public class FullMapView extends View {
+
+    public FullMapView(String promptMessage){
+        super(promptMessage);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public boolean doAction(Object o) {
+        return true;
+    }
+
     public void displayFullMap() {
         
         int rowCount = 5;
@@ -29,29 +42,29 @@ public class FullMapView {
         //this.mapGetLocation();
         
         //DISPLAY title
-        System.out.println("\n*********************THE MAP*********************");
+        this.console.println("\n*********************THE MAP*********************");
         
         //DISPLAY row of column numbers
-        System.out.println("  1 2 3 4 5 6 7");
+        this.console.println("  1 2 3 4 5 6 7");
         
         //FOR every row in map
         for (int i = 0; i < rowCount ; i++){
-            System.out.println(rowDivider);
-            System.out.print(i + 1);
+            this.console.println(rowDivider);
+            this.console.print(i + 1);
             for (int j = 0; j < columnCount; j++) {
-                System.out.print("|");
+                this.console.print("|");
                 if (player.hasVisited(j, i)) {
-                    System.out.print("~");
+                    this.console.print("~");
                 }
                 else {
-                    System.out.print("?");
+                    this.console.print("?");
                 }
             }
-            System.out.println("|");
+            this.console.println("|");
         }
-        System.out.println(rowDivider);
+        this.console.println(rowDivider);
         
-       System.out.println("\n*************************************************");
+       this.console.println("\n*************************************************");
     }
         
 }

@@ -5,8 +5,11 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 import java.util.Scanner;
-
+import byui.cit260.theGreatandSpaceousBuilding.view.ErrorView;
 /**
  *
  * @author Ted
@@ -47,7 +50,8 @@ public class HelpMenuView extends View {
             case 'B': // Closes program so players can get to more important things
                 return true;
             default: // displays in any other instance
-                System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
+                ErrorView.display(this.getClass().getName(),
+                        "!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
             
         }
@@ -55,7 +59,7 @@ public class HelpMenuView extends View {
     }    
 
     private void displayGoals() {
-        System.out.println("\n**********************************\n"
+        this.console.println("\n**********************************\n"
         + "The Great and Spacious Building is a text based role playing game\n"
         + "in which you will have to journey through life making personal choices\n"
         + "that will lead you across the dark and dreary wil-derness, until the\n"
@@ -74,7 +78,7 @@ public class HelpMenuView extends View {
     }
 
     private void displayMoving() {
-        System.out.println("\n**********************************\n"
+        this.console.println("\n**********************************\n"
         + "At the end of each turn, you have the option to move closer to\n"
         + "the tree of life, or you can move across the land north or south of the land.\n"
         + "\n"
@@ -83,13 +87,13 @@ public class HelpMenuView extends View {
     }
     
     private void displayAttributes(){
-        System.out.println("\n**********************************\n"
+        this.console.println("\n**********************************\n"
         + "\n During the game you can view your attributes stats"
         + "\n at any time by typing \"6\"");
     }
 
     private void displayChallengesQuiz() {
-        System.out.println("\n**********************************\n"
+       this.console.println("\n**********************************\n"
         + "On each space, you will be asked a multiple choice question based on\n"
         + "stories from the Book of Mormon.  Answer correctly, and you will be\n"
         + "rewarded with fruit and attributes, answer wrong and you will be \n"

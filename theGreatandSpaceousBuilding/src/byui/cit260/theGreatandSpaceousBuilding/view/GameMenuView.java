@@ -8,6 +8,8 @@ package byui.cit260.theGreatandSpaceousBuilding.view;
 import byui.cit260.theGreatandSpaceousBuilding.control.GameControl;
 import java.util.Scanner;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -55,7 +57,8 @@ public class GameMenuView extends View {
             case 'R': // Closes program so players can get to more important things
                 return true;
             default: // displays in any other instance
-                System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
+                ErrorView.display(this.getClass().getName(),
+                        "!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
             
         }
@@ -63,12 +66,12 @@ public class GameMenuView extends View {
     }
         
         private void saveGame() {
-            System.out.println("--Your saveGame function is working perfectly--");
+            this.console.println("--Your saveGame function is working perfectly--");
         }
 
     private void displayStatsView() {
             //display the Stats
-            StatsView statsView = new StatsView();
+            StatsView statsView = new StatsView("");
             statsView.displayStats();
     }
 
@@ -80,13 +83,13 @@ public class GameMenuView extends View {
 
     private void displayFullMap() {
             //display the Map View
-            FullMapView fullMapView = new FullMapView();
+            FullMapView fullMapView = new FullMapView("");
             fullMapView.displayFullMap();
     }
 
     private void displayQuiz() {
             //display the Quiz View
-        System.out.println("Answer the following question:\n");
+        this.console.println("Answer the following question:\n");
             QuizView quizView = new QuizView();
             quizView.display();
     }

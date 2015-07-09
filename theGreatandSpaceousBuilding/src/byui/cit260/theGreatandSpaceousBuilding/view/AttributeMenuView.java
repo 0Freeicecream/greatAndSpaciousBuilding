@@ -9,6 +9,10 @@ import byui.cit260.theGreatandSpaceousBuilding.control.AttributeControl;
 import byui.cit260.theGreatandSpaceousBuilding.model.Attributes;
 import java.util.Scanner;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+
+
 
 /**
  *
@@ -61,11 +65,12 @@ public class AttributeMenuView extends View {
                 isValid = true;
                 break;
             case "6":
-                StatsView statsview = new StatsView();
+                StatsView statsview = new StatsView("");
                 statsview.displayStats();
                 break;
             default: // displays in any other instance
-                System.out.println("!!--This is not a valid option, use the menu for a correct option--!!");
+                ErrorView.display(this.getClass().getName(),
+                        "!!--This is not a valid option, use the menu for a correct option--!!");
                 break;
         }
        
@@ -121,14 +126,14 @@ public class AttributeMenuView extends View {
         return isValid;
     }  
         private void displayFruit() {
-            System.out.println("--You've waged 1 point to Fruit--");
+            this.console.println("--You've waged 1 point to Fruit--");
         }
         
         private void displayTestimony() {
-            System.out.println("--You've waged 1 point to Testimony--");
+            this.console.println("--You've waged 1 point to Testimony--");
         }
     
         private void displayObedience() {
-            System.out.println("--You've waged 1 point to Obedience--");
+            this.console.println("--You've waged 1 point to Obedience--");
 }
 }

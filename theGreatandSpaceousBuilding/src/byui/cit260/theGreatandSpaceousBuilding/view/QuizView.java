@@ -5,6 +5,11 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+
+
 /**
  *
  * @author Ted Bell
@@ -37,17 +42,17 @@ public class QuizView extends View {
         //get first character entered
         char choice = value.charAt(0);
         if (choice == ANSWER) {
-            System.out.println("\n\nYou answered correctly, you gain x Attribute");
+            this.console.println("\n\nYou answered correctly, you gain x Attribute");
             isRight = true;          
         } 
         else if (choice =='6'){
-                StatsView statsview = new StatsView();
+                StatsView statsview = new StatsView("");
                 statsview.displayStats();
                 return false;
         }
         else {
             isRight = false;
-            System.out.println("\n\nYou chose poorly.");
+            this.console.println("\n\nYou chose poorly.");
             
             //ChallengeSelectionView challengeselectionview = new ChallengeSelectionView();
             //challengeselectionview.display(); // hands off to Challenge View

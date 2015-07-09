@@ -3,6 +3,10 @@ package byui.cit260.theGreatandSpaceousBuilding.model;
 import byui.cit260.theGreatandSpaceousBuilding.control.GameControl;
 import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
 import java.io.Serializable;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+import byui.cit260.theGreatandSpaceousBuilding.view.ErrorView;
 
 public class Map implements Serializable {
 
@@ -22,7 +26,8 @@ public class Map implements Serializable {
     public Map(int rowCount, int columnCount) {
         
         if (rowCount < 1 || columnCount < 1) {
-            System.out.println("The number of rows & columns must be above zero");
+            ErrorView.display(this.getClass().getName(),
+                    "The number of rows & columns must be above zero");
             return;
         }
         

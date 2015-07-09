@@ -10,12 +10,25 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Attributes;
 import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+
 /**
  *
  * @author Néna
  */
-public class StatsView {
+public class StatsView extends View {
+
+
+    public StatsView(String placeHolder){
+        super(placeHolder);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
+      public boolean doAction(Object o) {
+        return true;
+    }
+      
   public void displayStats(){
       
     Attributes attributes = theGreatandSpaceousBuilding.getAttributes();
@@ -23,14 +36,14 @@ public class StatsView {
     int testimony = attributes.getTestimony();
     int obedience = attributes.getObedience();
          
-    System.out.println("\n************************************************************");
+    this.console.println("\n************************************************************");
     
-    System.out.println("\n These are your current Attribute Stats"
+    this.console.println("\n These are your current Attribute Stats"
     +"\n Fruit = " + fruit
     +"\n Testimony = " + testimony 
     +"\n Obedience = " + obedience);
     
-    System.out.println("\n************************************************************");
+    this.console.println("\n************************************************************");
   }
   
 }

@@ -8,10 +8,10 @@ package byui.cit260.theGreatandSpaceousBuilding.view;
 import java.util.Scanner;
 import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
 import byui.cit260.theGreatandSpaceousBuilding.exceptions.MapControlException;
-import byui.cit260.theGreatandSpaceousBuilding.view.QuizView;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+
 
 /**
  *
@@ -32,8 +32,8 @@ public class MapView extends View {
     void displayPrompts() {
         char selection;
         do {
-            System.out.println("you are at: " + MapControl.getLocation() );
-            System.out.println(movePrompt); // displays the location of the user
+            this.console.println("you are at: " + MapControl.getLocation() );
+            this.console.println(movePrompt); // displays the location of the user
             
             String input = this.getInput(); //Gets user input
             input = input.toUpperCase();
@@ -45,7 +45,7 @@ public class MapView extends View {
                 break;
             }
             catch (MapControlException e) {
-                System.out.println("You can not travel that direction");
+                this.console.println("You can not travel that direction");
             }
 
             
@@ -71,14 +71,16 @@ public String getInput() {
             
             //If selection is invalid ( not N, S, E or W
             if (selection.length() < 1) {
-                System.out.println("Invalid command, must contain at least one character");
+               ErrorView.display(this.getClass().getName(),
+                       "Invalid command, must contain at least one character");
                 continue; // repeats
             }
             break; // out of the exit repitition
         }
     }
     catch (Exception e) {
-        System.out.println("Error reading input:" + e.getMessage());
+       ErrorView.display(this.getClass().getName(),
+               "Error reading input:" + e.getMessage());
         } 
         return selection; //Yell players selection into code
     }
@@ -97,7 +99,8 @@ public String getInput() {
             //parse and convert number from text to a double
             number = Integer.parseInt(value);
             } catch (NumberFormatException nf) {
-                System.out.println("HUMAN: YOU HAVE MADE A MISTAKE!"
+                ErrorView.display(this.getClass().getName(),
+                        "HUMAN: YOU HAVE MADE A MISTAKE!"
                         + "\nINPUT APPROPRIATE NUMBER OR USE Q TO QUIT!"
                         + "\n-SINCERELY"
                         + "\n YOUR COMPUTER");
@@ -118,18 +121,18 @@ public String getInput() {
                 isValid = true;
                 break;
             case '6':
-                StatsView statsview = new StatsView();
+                StatsView statsview = new StatsView("");
                 statsview.displayStats();
                 break;
             
             case '7':
-                FullMapView fullMapView = new FullMapView();
+                FullMapView fullMapView = new FullMapView("");
                 fullMapView.displayFullMap();
                 break;
                 
             default: // displays in any other instance
                 dir = 'X';
-                System.out.println("!!--Not a valid direction--!!");
+                this.console.println("!!--Not a valid direction--!!");
                 break;
         }
     }

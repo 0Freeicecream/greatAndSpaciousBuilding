@@ -1,8 +1,13 @@
 package byui.cit260.theGreatandSpaceousBuilding.model;
 
 import java.io.Serializable;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+import byui.cit260.theGreatandSpaceousBuilding.view.View;
 
-public class Game implements Serializable {
+
+public class Game extends View implements Serializable {
     
     /**
      * @author Ted
@@ -17,7 +22,11 @@ public class Game implements Serializable {
     private Player player;
     private Map map;
 
-    public Game() {
+    
+
+    public Game(String placeHolder) {
+        super(placeHolder);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public double getTotalTime() {
@@ -42,6 +51,11 @@ public class Game implements Serializable {
 
     public void setPlayerCoordinatesY(double playerCoordinatesY) {
         this.playerCoordinatesY = playerCoordinatesY;
+    }
+    
+    @Override    
+    public boolean doAction(Object o) {
+    return true;
     }
 
     @Override
@@ -80,11 +94,11 @@ public class Game implements Serializable {
     }
 
     public void setMap(Map map) {
-        System.out.println("Your setMap funciton is working sorta okay I guess");
+        this.console.println("Your setMap funciton is working properly");
     }
 
     public void setPlayer(Player player) {
-        System.out.println("Your setPlayer function is working properly");
+        this.console.println("Your setPlayer function is working properly");
     }
     
 }
