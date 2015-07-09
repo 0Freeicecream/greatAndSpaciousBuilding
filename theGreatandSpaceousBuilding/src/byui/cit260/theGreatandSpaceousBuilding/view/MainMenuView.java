@@ -77,11 +77,35 @@ public class MainMenuView extends View {
         }
         
         private void saveGame() {
-            this.console.println("--Your saveGame function is working perfectly--");
+            System.out.println("\n\nEnter the file path for where the game"
+                    + "is to be saved.");
+            String filePath = this.getInput();
+            
+            try {
+                // save the game to the specified
+                GameControl.saveGame(theGreatandSpaceousBuilding.getCurrentGame(), filePath);
+            } catch (Exception ex) {
+                ErrorView.display("MainMenuView", ex.getMessage());
+            }
         }
         
         private void startExistingGame() {
-            this.console.println("--Your startExistingGame function is working perfectly--");
+            //prompt for and get the name of the file to save the game in;
+            System.out.println("\n\nEnter the file path for where a "
+                    + "saved game is.");
+            
+            String filePath = this.getInput();
+            
+            try{
+                //start a saved game
+                GameControl.startExistingGame(filePath);
+            } catch (Exception ex) {
+                ErrorView.display("MainMenuView", ex.getMessage());
+            }
+            
+            //display the Game Menu
+            GameMenuView gameMenu = new GameMenuView();
+            gameMenu.display();
         }
         
         private void displayHelpMenu() {            
