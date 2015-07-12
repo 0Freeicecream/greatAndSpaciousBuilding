@@ -11,7 +11,9 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 import java.util.Scanner;
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 
 
@@ -37,7 +39,7 @@ public class StatsView extends View {
     int fruit = attributes.getFruit();
     int testimony = attributes.getTestimony();
     int obedience = attributes.getObedience();
-    this.console.println("Please enter a file name"); 
+    this.console.println("SAVE FILE: Please enter a file name"); 
   
     String fileName = getInput(); 
     
@@ -50,10 +52,10 @@ public class StatsView extends View {
     +"\n Obedience\t\t\t" + obedience
     
     + "\n************************************************************";
-    
+    this.console.println(fileContents);
     try {
-       FileWriter outputStream = new FileWriter(fileName);
-       outputStream.write(fileContents); 
+       OutputStream outputStream = new FileOutputStream(fileName);
+       outputStream.write(fileContents.getBytes()); 
        this.console.println("You have successfully saved your report");
        outputStream.close();
     }

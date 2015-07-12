@@ -48,7 +48,7 @@ public class GameMenuView extends View {
             case 'C': // Challenge
                 this.displayChallengeSelection();
                 break;
-            case '6': // View Attribute Stats
+            case '6': // save/view Attribute Stats
                 this.displayStatsView();
                 break;
             case '7': // View Full Map
