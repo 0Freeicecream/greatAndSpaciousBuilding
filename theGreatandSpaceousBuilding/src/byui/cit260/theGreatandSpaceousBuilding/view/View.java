@@ -54,26 +54,27 @@ public abstract class View implements ViewInterface {
         boolean valid = false; // indicates if the name has been retrieved
         String value = null;
         
-    try {    
-        while(!valid) { //while a valid name is not retrived
-            
-            // Demands data from keyboard and trims off the blanks
-            value = keyboard.readLine();
-            value = value.trim();
-            
-            //If name is invalid (less than two character in length)
-            if (value.length() < 1) {
-                ErrorView.display(this.getClass().getName(),
-                        "Invalid command, must contain at least one character");
-                continue; // repeats
+        try {    
+            while(!valid) { //while a valid name is not retrived
+
+                // Demands data from keyboard and trims off the blanks
+                value = keyboard.readLine();
+                value = value.trim();
+
+                //If name is invalid (less than two character in length)
+                if (value.length() < 1) {
+                    ErrorView.display(this.getClass().getName(),
+                            "Invalid command, must contain at least one character");
+                    continue; // repeats
+                }
+                break; // out of the exit repitition
             }
-            break; // out of the exit repitition
         }
-    }
-    catch (Exception e) {
-        ErrorView.display(this.getClass().getName(),
-                "Error reading input:" + e.getMessage());
-        } 
+        catch (Exception e) {
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input:" + e.getMessage());
+        }
+        
         return value; //Yell players value into code
     }
 }

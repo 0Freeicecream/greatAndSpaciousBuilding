@@ -26,7 +26,7 @@ public class Game extends View implements Serializable {
 
     public Game(String placeHolder) {
         super(placeHolder);
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public double getTotalTime() {

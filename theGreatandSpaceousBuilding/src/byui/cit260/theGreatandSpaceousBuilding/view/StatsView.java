@@ -11,7 +11,9 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 import java.util.Scanner;
 import java.io.BufferedReader;
+import java.io.FileWriter;
 import java.io.PrintWriter;
+
 
 /**
  *
@@ -22,7 +24,7 @@ public class StatsView extends View {
 
     public StatsView(String placeHolder){
         super(placeHolder);
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
       public boolean doAction(Object o) {
@@ -35,15 +37,29 @@ public class StatsView extends View {
     int fruit = attributes.getFruit();
     int testimony = attributes.getTestimony();
     int obedience = attributes.getObedience();
-         
-    this.console.println("\n************************************************************");
+    this.console.println("Please enter a file name"); 
+  
+    String fileName = getInput(); 
     
-    this.console.println("\n These are your current Attribute Stats"
-    +"\n Fruit = " + fruit
-    +"\n Testimony = " + testimony 
-    +"\n Obedience = " + obedience);
+    String fileContents = "\n************************************************************" +
     
-    this.console.println("\n************************************************************");
+    "\n List of Current Attribute Stats"
+    +"\n ATTRIBUTE\t\t\tSTATS"        
+    +"\n Fruit\t\t\t\t" + fruit
+    +"\n Testimony\t\t\t" + testimony 
+    +"\n Obedience\t\t\t" + obedience
+    
+    + "\n************************************************************";
+    
+    try {
+       FileWriter outputStream = new FileWriter(fileName);
+       outputStream.write(fileContents); 
+       this.console.println("You have successfully saved your report");
+       outputStream.close();
+    }
+    catch (Exception e)  {
+        ErrorView.display(this.getClass().getName(),"Sorry, you failed to write to a file");
+    }
   }
   
 }
