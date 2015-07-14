@@ -14,7 +14,6 @@ public class Scene {
     //class attributes
     private String story;
     private String question;
-    private String choices;
     private String answer;
     private double earnedFruits;
      
@@ -23,7 +22,7 @@ public class Scene {
     
     @Override
     public String toString() {
-        return "Scene{" + "story=" + story + ", question=" + question + ", choices=" + choices + ", answer=" + answer + ", earnedFruits=" + earnedFruits + '}';
+        return "Scene{" + "story=" + story + ", question=" + question +", answer=" + answer + ", earnedFruits=" + earnedFruits + '}';
     }
     
     @Override
@@ -31,7 +30,6 @@ public class Scene {
         int hash = 5;
         hash = 47 * hash + Objects.hashCode(this.story);
         hash = 47 * hash + Objects.hashCode(this.question);
-        hash = 47 * hash + Objects.hashCode(this.choices);
         hash = 47 * hash + Objects.hashCode(this.answer);
         hash = 47 * hash + Objects.hashCode(this.earnedFruits);        
         return hash;
@@ -52,9 +50,6 @@ public class Scene {
         if (!Objects.equals(this.question, other.question)) {
             return false;
         }
-        if (!Objects.equals(this.choices, other.choices)) {
-            return false;
-        }
         if (!Objects.equals(this.answer, other.answer)) {
             return false;
         }
@@ -72,10 +67,6 @@ public class Scene {
         return question;
     }
     
-    public String getChoices(){
-        return choices;
-    }
-    
     public String getAnswer(){
         return answer;
     }
@@ -86,10 +77,6 @@ public class Scene {
     
     public void setQuestion(String question){
         this.question = question;
-    }
-    
-    public void setChoices (String choices){
-        this.choices = choices;
     }
     
     public void setAnswer (String answer) {
@@ -109,5 +96,5 @@ public class Scene {
         quizShow,
         finish;
     }
-    
+       
 }
