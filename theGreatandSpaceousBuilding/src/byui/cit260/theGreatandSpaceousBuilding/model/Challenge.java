@@ -11,25 +11,21 @@ public class Challenge {
     
     //class attributes
     private String type;
-    private double obedienceMod;
-
-    
-    private double testimonyMod;
+    private double challengeRating;
     
     public Challenge(){
     }
-    
+
     @Override
     public String toString() {
-        return "Challenge{" + "type=" + type + ", obedienceMod=" + obedienceMod + ", testimonyMod=" + testimonyMod + '}';
+        return "Challenge{" + "type=" + type + ", challengeRating=" + challengeRating + '}';
     }
-    
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.type);
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.obedienceMod) ^ (Double.doubleToLongBits(this.obedienceMod) >>> 32));
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.testimonyMod) ^ (Double.doubleToLongBits(this.testimonyMod) >>> 32));
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.type);
+        hash = 59 * hash + (int) (Double.doubleToLongBits(this.challengeRating) ^ (Double.doubleToLongBits(this.challengeRating) >>> 32));
         return hash;
     }
 
@@ -45,7 +41,7 @@ public class Challenge {
         if (!Objects.equals(this.type, other.type)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.obedienceMod) != Double.doubleToLongBits(other.obedienceMod)) {
+        if (Double.doubleToLongBits(this.challengeRating) != Double.doubleToLongBits(other.challengeRating)) {
             return false;
         }
         return true;
@@ -55,24 +51,16 @@ public class Challenge {
         return type;
     }
     
-    public double getObedienceMod(){
-        return obedienceMod;
-    }
-    
-    public double getTestimonyMod(){
-        return testimonyMod;
-    }
-    
     public void setType(String type){
         this.type = type;
     }
     
-    public void setObedienceMod(double obedienceMod){
-        this.obedienceMod = obedienceMod;
+    public double getChallengeRating() {
+        return challengeRating;
     }
-    
-    public void setTestimonyMod(double testimonyMod){
-        this.testimonyMod = testimonyMod;
+
+    public void setChallengeRating(double challengeRating) {
+        this.challengeRating = challengeRating;
     }
     
 }
