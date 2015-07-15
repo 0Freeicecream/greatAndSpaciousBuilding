@@ -15,7 +15,9 @@ public class Scene {
     private String story;
     private String question;
     private String answer;
-    private double earnedFruits;
+    private int earnedFruits;
+    
+    private Challenge challenge;
      
     public Scene(){   
     }
@@ -53,7 +55,7 @@ public class Scene {
         if (!Objects.equals(this.answer, other.answer)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.earnedFruits) != Double.doubleToLongBits(other.earnedFruits)) {
+        if (this.earnedFruits != other.earnedFruits) {
             return false;
         }
         return true;
@@ -83,18 +85,59 @@ public class Scene {
         this.answer = answer;
     }
 
-    public double getEarnedFruits() {
+    public int getEarnedFruits() {
         return earnedFruits;
     }
 
-    public void setEarnedFruits(double earnedFruits) {
+    public void setEarnedFruits(int earnedFruits) {
         this.earnedFruits = earnedFruits;
     }
     
     public enum SceneType {
         start,
         quizShow,
+        quizOne,
+        quizTwo,
+        quizThree,
+        quizFour,
+        quizFive,
+        quizSix,
+        quizSeven,
+        quizEight,
+        quizNine,
+        quizTen,
+        quizEleven,
+        quizTwelve,
+        quizThirteen,
+        quizFourteen,
+        quizFifteen,
+        quizSixteen,
+        quizSeventeen,
+        quizEightteen,
+        quizNineteen,
+        quizTwenty,
+        quizTwentyone,
+        quizTwentytwo,
+        quizTwentythree,
+        quizTwentyfour,
+        quizTwentyfive,
+        quizTwentysix,
+        quizTwentyseven,
+        quizTwentyeight,
+        quizTwentynine,
+        quizThirty,
+        quizThirtyone,
+        quizThirtytwo,
+        quizThirtythree,
         finish;
+    }
+
+    public Challenge getChallenge() {
+        return challenge;
+    }
+
+    public void setChallenge(Challenge challenge) {
+        this.challenge = challenge;
     }
        
 }
