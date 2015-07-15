@@ -371,7 +371,7 @@ public class MapControl {
 
         Scene quizTwentysixScene = new Scene();
         quizTwentysixScene.setQuestion(
-            "What verses are sometimes referred to as the "promise" of the Book of Morman?"
+            "What verses are sometimes referred to as the 'promise' of the Book of Morman?"
             + "\nA. Moroni 10:3-5"
             + "\nB. Helaman 10:4"
             + "\nC. Mosiah 4:2"
