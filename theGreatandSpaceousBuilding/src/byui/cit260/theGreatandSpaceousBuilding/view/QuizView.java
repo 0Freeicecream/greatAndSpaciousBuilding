@@ -5,6 +5,7 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.view;
 
+import byui.cit260.theGreatandSpaceousBuilding.model.Location;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
@@ -16,22 +17,21 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
  */
 public class QuizView extends View {
     boolean isRight;
+    //Get informaiton from Location
+    Location location = theGreatandSpaceousBuilding.getLocation();
+    private final String quiz = this.location.getScene().getQuestion();
+    char answer = this.location.getScene().getAnswer();
+    
     public QuizView(){
-        super("\nThis is an example test, the correct answer is Candy"
-        + "\nA. Zubat"
-        + "\nB. Candy Crush Saga"
-        + "\nC. Candy"
-        + "\nD. I don't have a fourth option, I just thought I'd impress you"
-        + "\n");
+        super("/n/nAnswer the following question:/n");
     }
    
     public boolean quizOutcome() {
         this.display();
+        System.out.println(quiz);
         
         return isRight;
     }
-    
-    private final char ANSWER = 'C';
     
     @Override
     public boolean doAction(Object obj) {
@@ -41,26 +41,18 @@ public class QuizView extends View {
         value = value.toUpperCase();
         //get first character entered
         char choice = value.charAt(0);
-        if (choice == ANSWER) {
+        if (choice == answer) {
             this.console.println("\n\nYou answered correctly, you gain x Attribute");
             isRight = true;          
-        } 
-        else if (choice =='6'){
-                StatsView statsview = new StatsView("");
-                statsview.displayStats();
-                return false;
         }
         else {
             isRight = false;
             this.console.println("\n\nYou chose poorly.");
-            
-            //ChallengeSelectionView challengeselectionview = new ChallengeSelectionView();
-            //challengeselectionview.display(); // hands off to Challenge View
-          
+            // hands off to Challenge View
+            ChallengeSelectionView challengeSelectionView = new ChallengeSelectionView();
+            challengeSelectionView.display();
         }
-        return true;
+        return isRight;
         
     }
-        
-        
 }
