@@ -14,7 +14,7 @@ public class Scene {
     //class attributes
     private String story;
     private String question;
-    private String answer;
+    private char answer;
     private int earnedFruits;
     
     private Challenge challenge;
@@ -69,7 +69,7 @@ public class Scene {
         return question;
     }
     
-    public String getAnswer(){
+    public char getAnswer(){
         return answer;
     }
     
@@ -81,7 +81,7 @@ public class Scene {
         this.question = question;
     }
     
-    public void setAnswer (String answer) {
+    public void setAnswer (char answer) {
         this.answer = answer;
     }
 
