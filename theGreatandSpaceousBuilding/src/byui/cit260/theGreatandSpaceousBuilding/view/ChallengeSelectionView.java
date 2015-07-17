@@ -5,9 +5,8 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.view;
 
-import java.util.Scanner;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
+
+import byui.cit260.theGreatandSpaceousBuilding.model.Attributes;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 
 
@@ -21,9 +20,9 @@ public class ChallengeSelectionView extends View {
         super("\nBecause you've failed the quiz, you must face a challenge.\n"
             + "\nF - Finger of Scorn"
             + "\nP - Pride"
-            + "\nM - Mists of Darkness"
-            + "\nR - Random Challenge\n");
+            + "\nM - Mists of Darkness");
     }
+        Attributes attributes = theGreatandSpaceousBuilding.getAttributes();
     
     public boolean doChallenge() {
         this.display();
@@ -40,19 +39,19 @@ public class ChallengeSelectionView extends View {
         char choice = value.charAt(0);
         boolean isValid = false;
         switch (choice) {
-            case 'F': // Create and start new.game
+            case 'F': // Runs finger of scorn
                 this.fingerOfScorn();
                 isValid = true;
                 break;
-            case 'P': // Saves current game
+            case 'P': // runs pride
                 this.pride();
                 isValid = true;
                 break;
-            case 'M': // restores and runs existing game
+            case 'M': // runs mists of darkness
                 this.mistsOfDarkness();
                 isValid = true;
                 break;
-            case 'R': // Loads the help menu
+            case 'R': // chooses a challenge at random
                 this.randomChallenge();
                 isValid = true;
                 break;
@@ -69,9 +68,19 @@ public class ChallengeSelectionView extends View {
     
         return isValid;
     }
+    
+    private int roll() {
+
+        double randA = Math.random() * 9 + 1;
+        return (int) randA;
+    }
 
     private void fingerOfScorn() {
-        this.console.println("---fingerOfScorn() is active---");
+        int tes = attributes.getTestimony();
+        int obd = attributes.getObedience();
+        int rand = roll();
+        
+        byui.cit260.theGreatandSpaceousBuilding.control.SceneControl.fingerOfScorn(tes, obd, 5, rand);
     }
 
     private void pride() {
