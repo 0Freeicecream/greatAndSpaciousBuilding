@@ -63,6 +63,9 @@ public class MainMenuView extends View {
     
     private void startNewGame() {
             GameControl.createNewGame(theGreatandSpaceousBuilding.getPlayer());
+            // Sets player's coordinates to (0,2)
+            theGreatandSpaceousBuilding.player.setX(0);
+            theGreatandSpaceousBuilding.player.setY(2);
             
             //display the game menu
             GameMenuView gameMenu = new GameMenuView();
