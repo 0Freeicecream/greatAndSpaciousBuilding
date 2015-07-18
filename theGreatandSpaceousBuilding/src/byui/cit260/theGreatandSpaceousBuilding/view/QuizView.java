@@ -58,7 +58,7 @@ public class QuizView extends View {
             isRight = true;          
         }
         else {
-            isRight = false;
+            isRight = true;
             this.console.println("\n\nYou chose poorly.");
             // hands off to Challenge View
             ChallengeSelectionView challengeSelectionView = new ChallengeSelectionView();

@@ -59,10 +59,6 @@ public class ChallengeSelectionView extends View {
                 this.randomChallenge();
                 isValid = true;
                 break;
-            case '6':
-                StatsView statsview = new StatsView("");
-                statsview.displayStats();
-                break;
             default: // displays in any other instance
                 ErrorView.display(this.getClass().getName(),
                         "!!--This is not a valid option, use the menu for a correct option--!!");
@@ -78,7 +74,7 @@ public class ChallengeSelectionView extends View {
         if (sceneControl.challengeSelection(type)) {
             System.out.println("\nyou succeed!");
         } else {
-            System.out.println("\nYou fail, and loose 1 fruit.");
+            System.out.println("\nYou fail, and lose 1 fruit.");
             int num = attributes.getFruit();
             attributes.setFruit(num - 1);
         }
