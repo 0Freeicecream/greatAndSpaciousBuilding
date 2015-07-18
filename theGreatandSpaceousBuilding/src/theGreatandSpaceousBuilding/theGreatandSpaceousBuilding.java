@@ -27,8 +27,9 @@ import java.io.InputStreamReader;
 public class theGreatandSpaceousBuilding{
     
     private static Game currentGame = null;
-    private static Player player = null;
+    public static Player player = null;
     private static Attributes attributes = null;
+    private static Location location = null;
     
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
@@ -76,8 +77,22 @@ public class theGreatandSpaceousBuilding{
     public static void setPlayer(Player player) {
         theGreatandSpaceousBuilding.player = player;
     }
-    
 
+    public static Attributes getAttributes() {
+        return attributes; 
+    }
+     
+    public static void setAttributes(Attributes attributes){
+        theGreatandSpaceousBuilding.attributes = attributes;
+    }
+
+    public static Location getLocation() {
+        return location; 
+    }
+     
+    public static void setLocation(Location location){
+        theGreatandSpaceousBuilding.location = location;
+    }
         
     public static void main(String[] args) {
         
@@ -119,13 +134,5 @@ public class theGreatandSpaceousBuilding{
                 return;
             }
         }
-    }
-
-    public static Attributes getAttributes() {
-        return attributes; 
-    }
-     
-    public static void setAttributes(Attributes attributes){
-        theGreatandSpaceousBuilding.attributes = attributes;
     }
 }
