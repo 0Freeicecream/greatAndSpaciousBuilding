@@ -6,6 +6,7 @@
 package byui.cit260.theGreatandSpaceousBuilding.view;
 
 
+import byui.cit260.theGreatandSpaceousBuilding.control.SceneControl;
 import byui.cit260.theGreatandSpaceousBuilding.model.Attributes;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 
@@ -40,15 +41,15 @@ public class ChallengeSelectionView extends View {
         boolean isValid = false;
         switch (choice) {
             case 'F': // Runs finger of scorn
-                this.fingerOfScorn();
+                choice("fOS");
                 isValid = true;
                 break;
             case 'P': // runs pride
-                this.pride();
+                choice("Pride");
                 isValid = true;
                 break;
             case 'M': // runs mists of darkness
-                this.mistsOfDarkness();
+                choice("mOD");
                 isValid = true;
                 break;
             case 'R': // chooses a challenge at random
@@ -69,29 +70,33 @@ public class ChallengeSelectionView extends View {
         return isValid;
     }
     
-    private int roll() {
-
-        double randA = Math.random() * 9 + 1;
-        return (int) randA;
-    }
-
-    private void fingerOfScorn() {
-        int tes = attributes.getTestimony();
-        int obd = attributes.getObedience();
-        int rand = roll();
-        
-        byui.cit260.theGreatandSpaceousBuilding.control.SceneControl.fingerOfScorn(tes, obd, 5, rand);
-    }
-
-    private void pride() {
-        this.console.println("---pride() is active---");
-    }
-
-    private void mistsOfDarkness() {
-        this.console.println("---mistsOfDarkness() is active---");
+    private void choice(String type) {
+        if (SceneControl.challengeSelection(type)) {
+            System.out.println("\nyou succeed!");
+        } else {
+            System.out.println("\nYou fail, and loose 1 fruit.");
+            attributes.setFruit() -= 1;
+        }
     }
 
     private void randomChallenge() {
-        this.console.println("---randomChallenge() is active---");
+        // Rolls a random number between 0 and 2
+        double randA = Math.random() * 2;
+        int randB = (int) randA;
+        switch(randB) {
+            case 0:
+                choice("fOS");
+                break;
+            case 1:
+                choice("Pride");
+                break;
+            case 2:
+                choice("mOD");
+                break;
+             default: // displays in any other instance
+                ErrorView.display(this.getClass().getName(),
+                        "!!--The Random Challenge Function has encountered an issue--!!");
+                break;    
+        }
     }
 }
