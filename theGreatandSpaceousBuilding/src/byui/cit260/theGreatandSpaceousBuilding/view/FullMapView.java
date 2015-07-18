@@ -21,10 +21,13 @@ public class FullMapView extends View {
 
     public FullMapView(String promptMessage){
         super(promptMessage);
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public boolean doAction(Object o) {
+        if (super.doAction(o)) {
+            return false;
+        };
         return true;
     }
 

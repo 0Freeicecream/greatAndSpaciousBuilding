@@ -32,7 +32,7 @@ public class StartProgramViewTest {
      */
     @Test
     public void testStartProgram() {
-        System.out.println("getPlayersName");
+        this.console.println("getPlayersName");
         //input value for Test Case 1
         StartProgramView instance = new StartProgramView();
         String result = instance.getPlayerName();

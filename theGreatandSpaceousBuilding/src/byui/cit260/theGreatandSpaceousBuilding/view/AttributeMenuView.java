@@ -33,6 +33,9 @@ public class AttributeMenuView extends View {
     
     @Override
     public boolean doAction(Object obj) {
+        if (super.doAction(obj)) {
+            return false;
+        }
         //Defines obj String for Superclass
         String value = (String) obj;
         // convert to Uppercase
@@ -63,10 +66,6 @@ public class AttributeMenuView extends View {
                 //Call the challenge
                 this.displayObedience();
                 isValid = true;
-                break;
-            case "6":
-                StatsView statsview = new StatsView("");
-                statsview.displayStats();
                 break;
             default: // displays in any other instance
                 ErrorView.display(this.getClass().getName(),
@@ -120,7 +119,7 @@ public class AttributeMenuView extends View {
                 }
             }
             MapView mapview = new MapView("");
-            mapview.displayPrompts(); // hands off to Map View  
+            mapview.display(); // hands off to Map View  
         }
         
         return isValid;

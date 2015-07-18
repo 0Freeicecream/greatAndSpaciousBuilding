@@ -33,8 +33,7 @@ public class StartProgramView extends View{
         // Get the players name
         String playersName = this.getPlayerName();
         
-        SaveGameView saveGameView = new SaveGameView("Please select a save slot (1-3):");
-        saveGameView.display();
+        
         
         // Create a new player and throwing an exception
         Player player = ProgramControl.createPlayer(playersName);

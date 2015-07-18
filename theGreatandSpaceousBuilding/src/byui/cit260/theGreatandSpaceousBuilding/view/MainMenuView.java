@@ -45,9 +45,6 @@ public class MainMenuView extends View {
             case 'N': // Create and start new.game
                 this.startNewGame();
                 break;
-            case 'S': // Saves current game
-                this.saveGame();
-                break;
             case 'L': // restores and runs existing game
                 this.startExistingGame();
                 break;
@@ -74,19 +71,6 @@ public class MainMenuView extends View {
             //display the game menu
             GameMenuView gameMenu = new GameMenuView();
             gameMenu.display();
-        }
-        
-        private void saveGame() {
-            System.out.println("\n\nEnter the file path for where the game"
-                    + "is to be saved.");
-            String filePath = this.getInput();
-            
-            try {
-                // save the game to the specified
-                GameControl.saveGame(theGreatandSpaceousBuilding.getCurrentGame(), filePath);
-            } catch (Exception ex) {
-                ErrorView.display("MainMenuView", ex.getMessage());
-            }
         }
         
         private void startExistingGame() {

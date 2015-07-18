@@ -17,7 +17,9 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 public class QuizView extends View {
     boolean isRight;
     public QuizView(){
-        super("\nThis is an example test, the correct answer is Candy"
+        super("\n Please Answer the Following Question:"
+        +"\n"
+        + "This is an example test, the correct answer is Candy"
         + "\nA. Zubat"
         + "\nB. Candy Crush Saga"
         + "\nC. Candy"
@@ -35,6 +37,9 @@ public class QuizView extends View {
     
     @Override
     public boolean doAction(Object obj) {
+        if (super.doAction(obj)) {
+            return false;
+        };
         //Defines obj String for Superclass
         String value = (String) obj;
         // convert to Uppercase
@@ -45,11 +50,6 @@ public class QuizView extends View {
             this.console.println("\n\nYou answered correctly, you gain x Attribute");
             isRight = true;          
         } 
-        else if (choice =='6'){
-                StatsView statsview = new StatsView("");
-                statsview.displayStats();
-                return false;
-        }
         else {
             isRight = false;
             this.console.println("\n\nYou chose poorly.");

@@ -34,6 +34,20 @@ public abstract class View implements ViewInterface {
         this.promptMessage = message;
     }
     
+    public boolean doAction(Object o) {
+        String letter = (String) o;
+        boolean isValid = false;
+        
+         this.console.println("the Letter is " + letter);
+        if(letter.equals("G")){
+            this.console.println("WHAT ARE YOU DOING?");
+            GameMenuView gameMenu = new GameMenuView();
+            gameMenu.display();
+            isValid = true;
+        }
+        
+        return isValid;
+    }
 
     
     @Override
@@ -78,3 +92,5 @@ public abstract class View implements ViewInterface {
         return value; //Yell players value into code
     }
 }
+
+

@@ -13,19 +13,21 @@ import java.io.PrintWriter;
 
 /**
  *
- * @author Ted
+ * @author Ted  Edited: Néna
  */
 public class GameMenuView extends View {
     
     public GameMenuView() {
         super("\n-----------Game Menu-----------"
-            + "\n6 - View Attributes Stats"
-            + "\nM - Move on Map"
-            + "\n7 - View Full Map"
-            + "\nQ - Answer Quiz"
-            + "\nC - Tackle Challenge"
+            + "\nN - Start New Game"
+            + "\nM - Full Map View"
+            + "\nA - View Attribute Stats"
+            + "\nS - Save Game"
             + "\n"
-            + "\nR - Return to Main Menu"
+            + "\nR - Return to Current Game"
+            + "\nQ - Return to Main Menu"
+            + "\n**NOTE: typing G throughout your "
+            + "game will take to you back this menu**"
             + "\n-------------------------------");
     }
     
@@ -39,23 +41,24 @@ public class GameMenuView extends View {
         //get first character entered
         char choice = value.charAt(0);
         switch (choice) {
-            case 'M': // Move on Map
+            case 'N': // Start Game
                 this.displayMap();
-                break;
-            case 'Q': // Answer Quiz
-                this.displayQuiz();
-                break;
-            case 'C': // Challenge
-                this.displayChallengeSelection();
-                break;
-            case '6': // save/view Attribute Stats
+                break;           
+            case 'A': // save/view Attribute Stats
                 this.displayStatsView();
                 break;
-            case '7': // View Full Map
+            case 'M': // View Full Map
                 this.displayFullMap();
                 break;
-            case 'R': // Closes program so players can get to more important things
+            case 'S': // save game
+                this.saveGame();
+                break;
+            case 'Q': // View Return to Main Menu
+               this.displayMainMenu();
+               break;
+            case 'R': // Closes program
                 return true;
+   
             default: // displays in any other instance
                 ErrorView.display(this.getClass().getName(),
                         "!!--This is not a valid option, use the menu for a correct option--!!");
@@ -65,39 +68,41 @@ public class GameMenuView extends View {
         return false;
     }
         
-        private void saveGame() {
-            this.console.println("--Your saveGame function is working perfectly--");
-        }
-
     private void displayStatsView() {
             //display the Stats
-            StatsView statsView = new StatsView("");
+            StatsView statsView = new StatsView("A");
             statsView.displayStats();
     }
 
     private void displayMap() {
             //display the Map View
-            MapView mapView = new MapView("");
-            mapView.displayPrompts();
+            MapView mapView = new MapView("N");
+            this.console.println("Handin off to the map");
+            mapView.display();
     }
 
     private void displayFullMap() {
             //display the Map View
-            FullMapView fullMapView = new FullMapView("");
+            FullMapView fullMapView = new FullMapView("M");
             fullMapView.displayFullMap();
     }
+    
+    private void saveGame() {
+        System.out.println("\n\nEnter the file path for where the game"
+                + "is to be saved.");
+        String filePath = this.getInput();
 
-    private void displayQuiz() {
-            //display the Quiz View
-        this.console.println("Answer the following question:\n");
-            QuizView quizView = new QuizView();
-            quizView.display();
+        try {
+            // save the game to the specified
+            GameControl.saveGame(theGreatandSpaceousBuilding.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
-
-    private void displayChallengeSelection() {
-            //display the Map View
-            ChallengeSelectionView challengeSelectionView = new ChallengeSelectionView();
-            challengeSelectionView.display();
-    }
-     
+    
+    private void displayMainMenu() {
+         //return to Main Menu
+         MainMenuView mainMenu = new MainMenuView();
+         mainMenu.display();
+   }   
 }

@@ -32,6 +32,9 @@ public class ChallengeSelectionView extends View {
     
     @Override
     public boolean doAction(Object obj) {
+        if (super.doAction(obj)) {
+            return false;
+        }
         //Defines obj String for Superclass
         String value = (String) obj;
         // convert to Uppercase

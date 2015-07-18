@@ -1,0 +1,8 @@
+
+************************************************************
+ List of Current Attribute Stats
+ ATTRIBUTE			STATS
+ Fruit				5
+ Testimony			5
+ Obedience			5
+************************************************************

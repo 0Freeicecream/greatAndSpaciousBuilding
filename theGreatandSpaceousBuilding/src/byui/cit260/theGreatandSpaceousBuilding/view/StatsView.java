@@ -30,7 +30,12 @@ public class StatsView extends View {
     }
     
       public boolean doAction(Object o) {
+        if (super.doAction(o)) {
+            return false;
+        };
         return true;
+        
+        
     }
       
   public void displayStats(){
@@ -39,7 +44,7 @@ public class StatsView extends View {
     int fruit = attributes.getFruit();
     int testimony = attributes.getTestimony();
     int obedience = attributes.getObedience();
-    this.console.println("SAVE FILE: Please enter a file name"); 
+    this.console.println("SAVE FILE: Please enter a file name (example: file.txt)"); 
   
     String fileName = getInput(); 
     

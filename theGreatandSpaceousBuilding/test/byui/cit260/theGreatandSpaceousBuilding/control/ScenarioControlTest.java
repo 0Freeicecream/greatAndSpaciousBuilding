@@ -32,7 +32,7 @@ public class ScenarioControlTest {
      */
     @Test
     public void testFingerOfScorn() {
-        System.out.println("fingerOfScorn");
+        this.console.println("fingerOfScorn");
         
         /*
         * Test case #1
@@ -46,7 +46,7 @@ public class ScenarioControlTest {
         Integer expResult = 4; //expected output returned value
         
         //create instance of ScenarioControl class
-        ScenarioControl instance = new ScenarioControl();
+        SceneControl instance = new SceneControl();
         
         //Call function to run test
         Integer result = instance.fingerOfScorn(testimony, obedience, challengeRating, rand);
