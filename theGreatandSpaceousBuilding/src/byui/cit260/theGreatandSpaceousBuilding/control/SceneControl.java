@@ -5,20 +5,50 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.control;
 
+import byui.cit260.theGreatandSpaceousBuilding.model.Attributes;
+import byui.cit260.theGreatandSpaceousBuilding.model.Location;
+import byui.cit260.theGreatandSpaceousBuilding.model.Player;
+import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+
 /**
  *
  * @author Néna and Ted
  */
 public class SceneControl {
     
-        private int roll() {
-
-            double randA = Math.random() * 9 + 1;
-            return (int) randA;
+    // Get's type of challenge chosen and selects a function to run
+    public boolean challengeSelection(String type) {
+        // Get's Attributes from the player's attributes
+        Attributes attributes = theGreatandSpaceousBuilding.getAttributes();
+        int tes = attributes.getTestimony();
+        int obd = attributes.getObedience();
+        Player player = theGreatandSpaceousBuilding.getPlayer();
+        int x = player.getX();
+        int y = player.getY();
+        int rand = roll();
+        boolean result;
+        switch(type) {
+            case "fOS": //Finger of Scorn
+                result = fingerOfScorn(tes, obd, 5, rand) > 5;
+                break;
+            case "Pride":
+                result = pride(tes, obd, 5, rand, x) > 5;
+                break;
+            case "mOD":
+                result = mistsOfDarkness(tes, obd, 5, rand, y) > 5;
+                break;
+            default:
+                result = false;
         }
-    int rand = roll();
+        return result;
+    }
+    
+       private int roll() {
 
-   
+        double randA = Math.random() * 9 + 1; //rolls a random number and multiplies it by 10(+1)
+        return (int) randA;
+    }
+       
     public Integer fingerOfScorn(int testimony, int obedience, int challengeRating, int rand) {
         
         if (testimony > 99) {
@@ -46,8 +76,10 @@ public class SceneControl {
             //Error – obedience too low
             return -1;
         } else
-            
-            return (testimony + rand)  - (challengeRating - obedience);
+        System.out.println("\nYour BR = " + testimony + rand);
+        System.out.println("\nThe Challenge Rating is " + (challengeRating - obedience) + "(" + challengeRating + ")");
+        System.out.println("\nAgainst the challenge, you...");
+        return (testimony + rand)  - (challengeRating - obedience);
     }    
     
      public Integer pride(int testimony, int obedience, int challengeRating, int rand, int x) {
@@ -117,5 +149,5 @@ public class SceneControl {
 
 
        }
-    }
+}
 
