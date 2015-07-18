@@ -101,7 +101,7 @@ public class MapControl {
             + "\nB. Moslet Simerit"
             + "\nC. Henry B. Eyering"
             + "\nD. Joseph Smith");
-        quizOneScene.setAnswer("D");
+        quizOneScene.setAnswer('D');
         quizOneScene.getEarnedFruits();
         scenes[Scene.SceneType.quizOne.ordinal()] = quizOneScene;
 
@@ -112,7 +112,7 @@ public class MapControl {
             + "\nB. Build a ship"
             + "\nC. Partake of the Tree of Life"
             + "\nD. Joseph Smith");
-        quizTwoScene.setAnswer("A");
+        quizTwoScene.setAnswer('A');
         quizTwoScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTwo.ordinal()] = quizTwoScene;
 
@@ -123,7 +123,7 @@ public class MapControl {
             + "\nB. An angel"
             + "\nC. Samuel"
             + "\nD. Joseph Smith");
-        quizThreeScene.setAnswer("B");
+        quizThreeScene.setAnswer('B');
         quizThreeScene.getEarnedFruits();
         scenes[Scene.SceneType.quizThree.ordinal()] = quizThreeScene;
 
@@ -134,7 +134,7 @@ public class MapControl {
             + "\nB. This is not a Book of Mormon Question"
             + "\nC. Huey Lewis?"
             + "\nD. Joseph Smith");
-        quizFourScene.setAnswer("B");
+        quizFourScene.setAnswer('B');
         quizFourScene.getEarnedFruits();
         scenes[Scene.SceneType.quizFour.ordinal()] = quizFourScene;
 
@@ -145,7 +145,7 @@ public class MapControl {
             + "\nB. Mosiah"
             + "\nC. Benjamin"
             + "\nD. Joseph Smith");
-        quizFiveScene.setAnswer("A");
+        quizFiveScene.setAnswer('A');
         quizFiveScene.getEarnedFruits();
         scenes[Scene.SceneType.quizFive.ordinal()] = quizFiveScene;
 
@@ -156,7 +156,7 @@ public class MapControl {
             + "\nB. Malachi"
             + "\nC. Moroni"
             + "\nD. Joseph Smith");
-        quizSixScene.setAnswer("C");
+        quizSixScene.setAnswer('C');
         quizSixScene.getEarnedFruits();
         scenes[Scene.SceneType.quizSix.ordinal()] = quizSixScene;
 
@@ -167,7 +167,7 @@ public class MapControl {
             + "\nB. Noah"
             + "\nC. Jacob"
             + "\nD. Joseph Smith");
-        quizSevenScene.setAnswer("A");
+        quizSevenScene.setAnswer('A');
         quizSevenScene.getEarnedFruits();
         scenes[Scene.SceneType.quizSeven.ordinal()] = quizSevenScene;
 
@@ -178,7 +178,7 @@ public class MapControl {
             + "\nB. Ishmael"
             + "\nC. Mormon"
             + "\nD. Joseph Smith");
-        quizEightScene.setAnswer("C");
+        quizEightScene.setAnswer('C');
         quizEightScene.getEarnedFruits();
         scenes[Scene.SceneType.quizEight.ordinal()] = quizEightScene;
 
@@ -189,7 +189,7 @@ public class MapControl {
             + "\nB. Amalakia"
             + "\nC. Zedikiah"
             + "\nD. Joseph Smith");
-        quizNineScene.setAnswer("C");
+        quizNineScene.setAnswer('C');
         quizNineScene.getEarnedFruits();
         scenes[Scene.SceneType.quizNine.ordinal()] = quizNineScene;
 
@@ -200,7 +200,7 @@ public class MapControl {
             + "\nB. Helaman"
             + "\nC. Mormon"
             + "\nD. Joseph Smith");
-        quizTenScene.setAnswer("B");
+        quizTenScene.setAnswer('B');
         quizTenScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTen.ordinal()] = quizTenScene;
 
@@ -211,7 +211,7 @@ public class MapControl {
             + "\nB. Samuel"
             + "\nC. Joseph"
             + "\nD. Joseph Smith");
-        quizElevenScene.setAnswer("C");
+        quizElevenScene.setAnswer('C');
         quizElevenScene.getEarnedFruits();
         scenes[Scene.SceneType.quizEleven.ordinal()] = quizElevenScene;
 
@@ -222,7 +222,7 @@ public class MapControl {
             + "\nB. Antion"
             + "\nC. Senine"
             + "\nD. Joseph Smith");
-        quizTwelveScene.setAnswer("A");
+        quizTwelveScene.setAnswer('A');
         quizTwelveScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTwelve.ordinal()] = quizTwelveScene;
 
@@ -233,7 +233,7 @@ public class MapControl {
             + "\nB. Sariah"
             + "\nC. Jessica"
             + "\nD. Joseph Smith");
-        quizThirteenScene.setAnswer("B");
+        quizThirteenScene.setAnswer('B');
         quizThirteenScene.getEarnedFruits();
         scenes[Scene.SceneType.quizThirteen.ordinal()] = quizThirteenScene;
 
@@ -244,7 +244,7 @@ public class MapControl {
             + "\nB. Mosiah"
             + "\nC. Jeddikiah"
             + "\nD. Joseph Smith");
-        quizFourteenScene.setAnswer("B");
+        quizFourteenScene.setAnswer('B');
         quizFourteenScene.getEarnedFruits();
         scenes[Scene.SceneType.quizFourteen.ordinal()] = quizFourteenScene;
 
@@ -255,7 +255,7 @@ public class MapControl {
             + "\nB. 1"
             + "\nC. 2060"
             + "\nD. Joseph Smith");
-        quizFifteenScene.setAnswer("C");
+        quizFifteenScene.setAnswer('C');
         quizFifteenScene.getEarnedFruits();
         scenes[Scene.SceneType.quizFifteen.ordinal()] = quizFifteenScene;
 
@@ -266,7 +266,7 @@ public class MapControl {
             + "\nB. Cureloms"
             + "\nC. Quail"
             + "\nD. Joseph Smith");
-        quizSixteenScene.setAnswer("C");
+        quizSixteenScene.setAnswer('C');
         quizSixteenScene.getEarnedFruits();
         scenes[Scene.SceneType.quizSixteen.ordinal()] = quizSixteenScene;
 
@@ -277,7 +277,7 @@ public class MapControl {
             + "\nB. Wicked"
             + "\nC. Witcher"
             + "\nD. Joseph Smith");
-        quizSeventeenScene.setAnswer("B");
+        quizSeventeenScene.setAnswer('B');
         quizSeventeenScene.getEarnedFruits();
         scenes[Scene.SceneType.quizSeventeen.ordinal()] = quizSeventeenScene;
 
@@ -288,7 +288,7 @@ public class MapControl {
             + "\nB. Mormon"
             + "\nC. Helaman"
             + "\nD. Joseph Smith");
-        quizEightteenScene.setAnswer("D");
+        quizEightteenScene.setAnswer('D');
         quizEightteenScene.getEarnedFruits();
         scenes[Scene.SceneType.quizEightteen.ordinal()] = quizEightteenScene;
 
@@ -299,7 +299,7 @@ public class MapControl {
             + "\nB. Moroni"
             + "\nC. Abanidi"
             + "\nD. Joseph Smith");
-        quizNineteenScene.setAnswer("B");
+        quizNineteenScene.setAnswer('B');
         quizNineteenScene.getEarnedFruits();
         scenes[Scene.SceneType.quizNineteen.ordinal()] = quizNineteenScene;
 
@@ -310,7 +310,7 @@ public class MapControl {
             + "\nB. Perfect People"
             + "\nC. Prophets and Apostles"
             + "\nD. Joseph Smith");
-        quizTwentyScene.setAnswer("A");
+        quizTwentyScene.setAnswer('A');
         quizTwentyScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTwenty.ordinal()] = quizTwentyScene;
 
@@ -321,7 +321,7 @@ public class MapControl {
             + "\nB. When the first child of Laman was born"
             + "\nC. Once Zarahemla was established"
             + "\nD. Joseph Smith");
-        quizTwentyoneScene.setAnswer("B");
+        quizTwentyoneScene.setAnswer('B');
         quizTwentyoneScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTwentyone.ordinal()] = quizTwentyoneScene;
 
@@ -332,7 +332,7 @@ public class MapControl {
             + "\nB. Honey Bee"
             + "\nC. Dessert"
             + "\nD. Joseph Smith");
-        quizTwentytwoScene.setAnswer("B");
+        quizTwentytwoScene.setAnswer('B');
         quizTwentytwoScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTwentytwo.ordinal()] = quizTwentytwoScene;
 
@@ -343,7 +343,7 @@ public class MapControl {
             + "\nB. Satan"
             + "\nC. An Angel"
             + "\nD. Joseph Smith");
-        quizTwentythreeScene.setAnswer("C");
+        quizTwentythreeScene.setAnswer('C');
         quizTwentythreeScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTwentythree.ordinal()] = quizTwentythreeScene;
 
@@ -354,7 +354,7 @@ public class MapControl {
             + "\nB. Jared"
             + "\nC. Ether"
             + "\nD. Joseph Smith");
-        quizTwentyfourScene.setAnswer("C");
+        quizTwentyfourScene.setAnswer('C');
         quizTwentyfourScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTwentyfour.ordinal()] = quizTwentyfourScene;
 
@@ -365,7 +365,7 @@ public class MapControl {
             + "\nB. 4 hours"
             + "\nC. 4 days"
             + "\nD. 4 minutes");
-        quizTwentyfiveScene.setAnswer("C");
+        quizTwentyfiveScene.setAnswer('C');
         quizTwentyfiveScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTwentyfive.ordinal()] = quizTwentyfiveScene;
 
@@ -376,7 +376,7 @@ public class MapControl {
             + "\nB. Helaman 10:4"
             + "\nC. Mosiah 4:2"
             + "\nD. Joseph Smith History 1:2");
-        quizTwentysixScene.setAnswer("A");
+        quizTwentysixScene.setAnswer('A');
         quizTwentysixScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTwentysix.ordinal()] = quizTwentysixScene;
 
@@ -387,7 +387,7 @@ public class MapControl {
             + "\nB. Sidon"
             + "\nC. Jerusalem"
             + "\nD. Joseph Smith");
-        quizTwentysevenScene.setAnswer("B");
+        quizTwentysevenScene.setAnswer('B');
         quizTwentysevenScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTwentyseven.ordinal()] = quizTwentysevenScene;
 
@@ -398,7 +398,7 @@ public class MapControl {
             + "\nB. His eldest son"
             + "\nC. The Lord"
             + "\nD. Joseph Smith");
-        quizTwentyeightScene.setAnswer("A");
+        quizTwentyeightScene.setAnswer('A');
         quizTwentyeightScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTwentyeight.ordinal()] = quizTwentyeightScene;
 
@@ -409,7 +409,7 @@ public class MapControl {
             + "\nB. The Lamanites"
             + "\nC. The Zoramites"
             + "\nD. The Nephites");
-        quizTwentynineScene.setAnswer("C");
+        quizTwentynineScene.setAnswer('C');
         quizTwentynineScene.getEarnedFruits();
         scenes[Scene.SceneType.quizTwentynine.ordinal()] = quizTwentynineScene;
 
@@ -420,7 +420,7 @@ public class MapControl {
             + "\nB. Take My Life"
             + "\nC. I Know That My Savior Loves Me"
             + "\nD. Something To Be");
-        quizThirtyScene.setAnswer("C");
+        quizThirtyScene.setAnswer('C');
         quizThirtyScene.getEarnedFruits();
         scenes[Scene.SceneType.quizThirty.ordinal()] = quizThirtyScene;
 
@@ -431,7 +431,7 @@ public class MapControl {
             + "\nB. Samuel the Lamanite"
             + "\nC. Mormon"
             + "\nD. Joseph Smith");
-        quizThirtyoneScene.setAnswer("C");
+        quizThirtyoneScene.setAnswer('C');
         quizThirtyoneScene.getEarnedFruits();
         scenes[Scene.SceneType.quizThirtyone.ordinal()] = quizThirtyoneScene;
 
@@ -442,7 +442,7 @@ public class MapControl {
             + "\nB. The New Testamant"
             + "\nC. The Doctrine and Covenants"
             + "\nD. Doesn't the question that asks who made the book technically mean that it's not one book?");
-        quizThirtytwoScene.setAnswer("A");
+        quizThirtytwoScene.setAnswer('A');
         quizThirtytwoScene.getEarnedFruits();
         scenes[Scene.SceneType.quizThirtytwo.ordinal()] = quizThirtytwoScene;
 
@@ -453,7 +453,7 @@ public class MapControl {
             + "\nB. Less Traveled"
             + "\nC. The Path Choice Above All Others"
             + "\nD. Light and Easy");
-        quizThirtythreeScene.setAnswer("B");
+        quizThirtythreeScene.setAnswer('B');
         quizThirtythreeScene.getEarnedFruits();
         scenes[Scene.SceneType.quizThirtythree.ordinal()] = quizThirtythreeScene;
         
@@ -506,5 +506,10 @@ public class MapControl {
         
         locations[6][3].setScene(scenes[SceneType.quizThirtytwo.ordinal()]);
         locations[6][4].setScene(scenes[SceneType.quizThirtythree.ordinal()]);
+    }
+    
+    public void getScene() {
+        String point = getLocation();
+        
     }
 }

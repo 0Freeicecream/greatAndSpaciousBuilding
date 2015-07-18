@@ -5,9 +5,9 @@
  */
 package byui.cit260.theGreatandSpaceousBuilding.view;
 
-import java.util.Scanner;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
+
+import byui.cit260.theGreatandSpaceousBuilding.control.SceneControl;
+import byui.cit260.theGreatandSpaceousBuilding.model.Attributes;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 
 
@@ -21,9 +21,9 @@ public class ChallengeSelectionView extends View {
         super("\nBecause you've failed the quiz, you must face a challenge.\n"
             + "\nF - Finger of Scorn"
             + "\nP - Pride"
-            + "\nM - Mists of Darkness"
-            + "\nR - Random Challenge\n");
+            + "\nM - Mists of Darkness");
     }
+        Attributes attributes = theGreatandSpaceousBuilding.getAttributes();
     
     public boolean doChallenge() {
         this.display();
@@ -43,19 +43,19 @@ public class ChallengeSelectionView extends View {
         char choice = value.charAt(0);
         boolean isValid = false;
         switch (choice) {
-            case 'F': // Create and start new.game
-                this.fingerOfScorn();
+            case 'F': // Runs finger of scorn
+                choice("fOS");
                 isValid = true;
                 break;
-            case 'P': // Saves current game
-                this.pride();
+            case 'P': // runs pride
+                choice("Pride");
                 isValid = true;
                 break;
-            case 'M': // restores and runs existing game
-                this.mistsOfDarkness();
+            case 'M': // runs mists of darkness
+                choice("mOD");
                 isValid = true;
                 break;
-            case 'R': // Loads the help menu
+            case 'R': // chooses a challenge at random
                 this.randomChallenge();
                 isValid = true;
                 break;
@@ -72,20 +72,35 @@ public class ChallengeSelectionView extends View {
     
         return isValid;
     }
-
-    private void fingerOfScorn() {
-        this.console.println("---fingerOfScorn() is active---");
-    }
-
-    private void pride() {
-        this.console.println("---pride() is active---");
-    }
-
-    private void mistsOfDarkness() {
-        this.console.println("---mistsOfDarkness() is active---");
+    
+    private void choice(String type) {
+        if (SceneControl.challengeSelection(type)) {
+            System.out.println("\nyou succeed!");
+        } else {
+            System.out.println("\nYou fail, and loose 1 fruit.");
+            int num = attributes.getFruit();
+            attributes.setFruit(num - 1);
+        }
     }
 
     private void randomChallenge() {
-        this.console.println("---randomChallenge() is active---");
+        // Rolls a random number between 0 and 2
+        double randA = Math.random() * 2;
+        int randB = (int) randA;
+        switch(randB) {
+            case 0:
+                choice("fOS");
+                break;
+            case 1:
+                choice("Pride");
+                break;
+            case 2:
+                choice("mOD");
+                break;
+             default: // displays in any other instance
+                ErrorView.display(this.getClass().getName(),
+                        "!!--The Random Challenge Function has encountered an issue--!!");
+                break;    
+        }
     }
 }
