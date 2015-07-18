@@ -75,7 +75,8 @@ public class ChallengeSelectionView extends View {
             System.out.println("\nyou succeed!");
         } else {
             System.out.println("\nYou fail, and loose 1 fruit.");
-            attributes.setFruit() -= 1;
+            int num = attributes.getFruit();
+            attributes.setFruit(num - 1);
         }
     }
 
