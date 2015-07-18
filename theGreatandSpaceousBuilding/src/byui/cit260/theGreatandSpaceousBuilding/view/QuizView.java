@@ -9,6 +9,8 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Location;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
+import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
+
 
 
 /**
@@ -18,9 +20,15 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 public class QuizView extends View {
     boolean isRight;
     //Get informaiton from Location
-    Location location = theGreatandSpaceousBuilding.getLocation();
-    private final String quiz = this.location.getScene().getQuestion();
-    char answer = this.location.getScene().getAnswer();
+    MapControl mapControl = new MapControl();
+    
+    // Nenas temporary standins
+    private final String quiz = "quiz";
+    char answer = 'A';
+    
+    //Location location = mapControl.getLocation();
+    //private final String quiz = this.location.getScene().getQuestion();
+    //char answer = this.location.getScene().getAnswer();
     
     public QuizView(){
         super("/n/nAnswer the following question:/n");
@@ -33,6 +41,7 @@ public class QuizView extends View {
         return isRight;
     }
     
+   
     @Override
     public boolean doAction(Object obj) {
         if (super.doAction(obj)) {

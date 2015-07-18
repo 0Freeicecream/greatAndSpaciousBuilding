@@ -74,7 +74,8 @@ public class ChallengeSelectionView extends View {
     }
     
     private void choice(String type) {
-        if (SceneControl.challengeSelection(type)) {
+        SceneControl sceneControl = new SceneControl();
+        if (sceneControl.challengeSelection(type)) {
             System.out.println("\nyou succeed!");
         } else {
             System.out.println("\nYou fail, and loose 1 fruit.");
