@@ -15,11 +15,11 @@ import java.io.PrintWriter;
  *
  * @author Néna
  */
-public class TopScoreView extends View {
+public class FinalScoreView extends View {
 
-    public TopScoreView(String placeHolder) {
+    public FinalScoreView(String placeHolder) {
         super(placeHolder);
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
         public boolean doAction(Object o) {
@@ -34,8 +34,10 @@ public class TopScoreView extends View {
         int obedience = attributes.getObedience();
         
         TopScoreControl topscore = new TopScoreControl();
-        this.console.println("\n*****TOP SCORE******");
+        this.console.println("\n*****FINAL SCORE******");
         this.console.println("\n Your Score is:" + topscore.getScore(fruit, testimony, obedience));
+        this.console.println("SAVE SCORE: Please enter a file name (example: file.txt)"); 
+        String fileName = getInput(); 
  
     }
 }

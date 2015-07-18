@@ -27,7 +27,6 @@ public class MainMenuView extends View {
                 + "\nS - Save Game"
                 + "\nL - Load Saved Game"
                 + "\nH - Help Documents"
-                + "\nT - Top Scores"
                 + "\nQ - Quit Game"
                 + "\n-------------------------------");
         }
@@ -50,9 +49,6 @@ public class MainMenuView extends View {
                 break;
             case 'H': // Loads the help menu
                 this.displayHelpMenu();
-                break;
-            case 'T': // Show off other people's best runs and fill the player with shame/glory
-                this.displayBestScores();
                 break;
             case 'Q': // Closes program so players can get to more important things
                 return true;
@@ -99,7 +95,7 @@ public class MainMenuView extends View {
         }
         
         private void displayBestScores() {
-            TopScoreView topscore = new TopScoreView("");
+            FinalScoreView topscore = new FinalScoreView("");
             topscore.displayTopScore();
         }
         
