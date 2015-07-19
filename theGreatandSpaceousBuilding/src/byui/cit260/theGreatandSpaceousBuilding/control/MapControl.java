@@ -11,6 +11,7 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import byui.cit260.theGreatandSpaceousBuilding.model.Game;
 import byui.cit260.theGreatandSpaceousBuilding.model.Location;
 import byui.cit260.theGreatandSpaceousBuilding.model.Scene;
+import byui.cit260.theGreatandSpaceousBuilding.view.FinalScoreView;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 /**
  *
@@ -47,23 +48,33 @@ public class MapControl {
        
         if (direction == 'N'){
             player.setY(y+1);
+            y += 1;
             game.setPlayerCoordinatesY(y+1);
         }
         else if (direction == 'S'){
             player.setY(y-1);
+            y -= 1;
             game.setPlayerCoordinatesY(y-1);
         }
         else if (direction == 'E'){
             player.setX(x+1);
+            x += 1;
             game.setPlayerCoordinatesX(x+1);
         }
         else if (direction == 'W'){
             player.setX(x-1);
+            x -= 1;
             game.setPlayerCoordinatesX(x-1);
         }
         
         // Add coordinates of where we just left to visited
         player.addVisited(x, y);
+        if (x == 6 && y == 2) {
+            System.out.println("\nYou made it to the Tree of Life!");
+            FinalScoreView finalScoreView = new FinalScoreView("");
+            finalScoreView.displayFinalScore();
+            System.exit(y);
+        }
    }
 
     public static Map createMap() {

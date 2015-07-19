@@ -12,7 +12,7 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
  *
  * @author Néna
  */
-public class TopScoreControl {
+public class FinalScoreControl {
 
     
    public int getScore(int fruit, int testimony, int obedience){

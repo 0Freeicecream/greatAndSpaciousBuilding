@@ -36,6 +36,7 @@ public class QuizView extends View {
 //    Location location = mapControl.getLocations();
     Location location = locs[x.intValue()][y.intValue()];
     private final String quiz = this.location.getScene().getQuestion();
+    private final String story = this.location.getScene().getStory();
     char answer = this.location.getScene().getAnswer();
     
     public QuizView(){
@@ -43,8 +44,10 @@ public class QuizView extends View {
     }
    
     public boolean quizOutcome() {
-        this.display();
+        System.out.println(story);
         System.out.println(quiz);
+        this.display();
+
         
         return isRight;
     }

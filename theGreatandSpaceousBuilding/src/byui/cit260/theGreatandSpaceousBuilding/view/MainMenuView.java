@@ -98,8 +98,8 @@ public class MainMenuView extends View {
         }
         
         private void displayBestScores() {
-            FinalScoreView topscore = new FinalScoreView("");
-            topscore.displayTopScore();
+            FinalScoreView finalscore = new FinalScoreView("");
+            finalscore.displayFinalScore();
         }
         
 }

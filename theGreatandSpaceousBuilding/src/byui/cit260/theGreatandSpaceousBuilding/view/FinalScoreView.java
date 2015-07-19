@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.theGreatandSpaceousBuilding.view;
-import byui.cit260.theGreatandSpaceousBuilding.control.TopScoreControl;
+import byui.cit260.theGreatandSpaceousBuilding.control.FinalScoreControl;
 import byui.cit260.theGreatandSpaceousBuilding.model.Attributes;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 import java.io.BufferedReader;
@@ -26,18 +26,19 @@ public class FinalScoreView extends View {
         return true;
     }
  
-    public void displayTopScore(){
+    public void displayFinalScore(){
             Attributes attributes = theGreatandSpaceousBuilding.getAttributes();
         
         int fruit = attributes.getFruit();
         int testimony = attributes.getTestimony();
         int obedience = attributes.getObedience();
         
-        TopScoreControl topscore = new TopScoreControl();
+        FinalScoreControl finalscore = new FinalScoreControl();
         this.console.println("\n*****FINAL SCORE******");
-        this.console.println("\n Your Score is:" + topscore.getScore(fruit, testimony, obedience));
+        this.console.println("\n Your Score is:" + finalscore.getScore(fruit, testimony, obedience));
         this.console.println("SAVE SCORE: Please enter a file name (example: file.txt)"); 
         String fileName = getInput(); 
- 
+        
+        
     }
 }
