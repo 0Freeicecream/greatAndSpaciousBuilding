@@ -11,7 +11,6 @@ import byui.cit260.theGreatandSpaceousBuilding.model.Player;
 import byui.cit260.theGreatandSpaceousBuilding.model.Game;
 import byui.cit260.theGreatandSpaceousBuilding.model.Location;
 import byui.cit260.theGreatandSpaceousBuilding.model.Scene;
-import byui.cit260.theGreatandSpaceousBuilding.model.Scene.SceneType;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 /**
  *
@@ -19,7 +18,7 @@ import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
  */
 public class MapControl {
     
-   public static String getLocation() {
+   public static String getCoordinates() {
        String coordinates = theGreatandSpaceousBuilding.getPlayer().getPosition();
        
        return coordinates;
@@ -79,20 +78,20 @@ public class MapControl {
         
         Game game = theGreatandSpaceousBuilding.getCurrentGame();
         
-        Scene[] scenes = new Scene[Scene.SceneType.values().length];
+        Scene[] scenes = new Scene[SceneType.values().length];
         
         Scene startingScene = new Scene();
         startingScene.setStory(
             "\nYou find yourself in a valley filled with mists of darkness, after being led"
             + "by a man in white flowing robes to a rod of iron, you are instructed to find your"
             + "way to the Tree of Life");
-        scenes[Scene.SceneType.start.ordinal()] = startingScene;
+        scenes[SceneType.start.ordinal()] = startingScene;
         
         Scene finishScene = new Scene();
         finishScene.setStory(
                 "\nYou have made it to the Tree of Life!"
                 + "         you get respect");
-        scenes[Scene.SceneType.finish.ordinal()] = finishScene;
+        scenes[SceneType.finish.ordinal()] = finishScene;
         
                 Scene quizOneScene = new Scene();
         quizOneScene.setQuestion(
@@ -103,7 +102,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizOneScene.setAnswer('D');
         quizOneScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizOne.ordinal()] = quizOneScene;
+        scenes[SceneType.quizOne.ordinal()] = quizOneScene;
 
         Scene quizTwoScene = new Scene();
         quizTwoScene.setQuestion(
@@ -114,7 +113,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizTwoScene.setAnswer('A');
         quizTwoScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTwo.ordinal()] = quizTwoScene;
+        scenes[SceneType.quizTwo.ordinal()] = quizTwoScene;
 
                 Scene quizThreeScene = new Scene();
         quizThreeScene.setQuestion(
@@ -125,7 +124,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizThreeScene.setAnswer('B');
         quizThreeScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizThree.ordinal()] = quizThreeScene;
+        scenes[SceneType.quizThree.ordinal()] = quizThreeScene;
 
         Scene quizFourScene = new Scene();
         quizFourScene.setQuestion(
@@ -136,7 +135,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizFourScene.setAnswer('B');
         quizFourScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizFour.ordinal()] = quizFourScene;
+        scenes[SceneType.quizFour.ordinal()] = quizFourScene;
 
         Scene quizFiveScene = new Scene();
         quizFiveScene.setQuestion(
@@ -147,7 +146,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizFiveScene.setAnswer('A');
         quizFiveScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizFive.ordinal()] = quizFiveScene;
+        scenes[SceneType.quizFive.ordinal()] = quizFiveScene;
 
         Scene quizSixScene = new Scene();
         quizSixScene.setQuestion(
@@ -158,7 +157,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizSixScene.setAnswer('C');
         quizSixScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizSix.ordinal()] = quizSixScene;
+        scenes[SceneType.quizSix.ordinal()] = quizSixScene;
 
         Scene quizSevenScene = new Scene();
         quizSevenScene.setQuestion(
@@ -169,7 +168,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizSevenScene.setAnswer('A');
         quizSevenScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizSeven.ordinal()] = quizSevenScene;
+        scenes[SceneType.quizSeven.ordinal()] = quizSevenScene;
 
         Scene quizEightScene = new Scene();
         quizEightScene.setQuestion(
@@ -180,7 +179,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizEightScene.setAnswer('C');
         quizEightScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizEight.ordinal()] = quizEightScene;
+        scenes[SceneType.quizEight.ordinal()] = quizEightScene;
 
         Scene quizNineScene = new Scene();
         quizNineScene.setQuestion(
@@ -191,7 +190,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizNineScene.setAnswer('C');
         quizNineScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizNine.ordinal()] = quizNineScene;
+        scenes[SceneType.quizNine.ordinal()] = quizNineScene;
 
         Scene quizTenScene = new Scene();
         quizTenScene.setQuestion(
@@ -202,7 +201,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizTenScene.setAnswer('B');
         quizTenScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTen.ordinal()] = quizTenScene;
+        scenes[SceneType.quizTen.ordinal()] = quizTenScene;
 
         Scene quizElevenScene = new Scene();
         quizElevenScene.setQuestion(
@@ -213,7 +212,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizElevenScene.setAnswer('C');
         quizElevenScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizEleven.ordinal()] = quizElevenScene;
+        scenes[SceneType.quizEleven.ordinal()] = quizElevenScene;
 
         Scene quizTwelveScene = new Scene();
         quizTwelveScene.setQuestion(
@@ -224,7 +223,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizTwelveScene.setAnswer('A');
         quizTwelveScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTwelve.ordinal()] = quizTwelveScene;
+        scenes[SceneType.quizTwelve.ordinal()] = quizTwelveScene;
 
         Scene quizThirteenScene = new Scene();
         quizThirteenScene.setQuestion(
@@ -235,7 +234,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizThirteenScene.setAnswer('B');
         quizThirteenScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizThirteen.ordinal()] = quizThirteenScene;
+        scenes[SceneType.quizThirteen.ordinal()] = quizThirteenScene;
 
         Scene quizFourteenScene = new Scene();
         quizFourteenScene.setQuestion(
@@ -246,7 +245,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizFourteenScene.setAnswer('B');
         quizFourteenScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizFourteen.ordinal()] = quizFourteenScene;
+        scenes[SceneType.quizFourteen.ordinal()] = quizFourteenScene;
 
         Scene quizFifteenScene = new Scene();
         quizFifteenScene.setQuestion(
@@ -257,7 +256,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizFifteenScene.setAnswer('C');
         quizFifteenScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizFifteen.ordinal()] = quizFifteenScene;
+        scenes[SceneType.quizFifteen.ordinal()] = quizFifteenScene;
 
         Scene quizSixteenScene = new Scene();
         quizSixteenScene.setQuestion(
@@ -268,7 +267,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizSixteenScene.setAnswer('C');
         quizSixteenScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizSixteen.ordinal()] = quizSixteenScene;
+        scenes[SceneType.quizSixteen.ordinal()] = quizSixteenScene;
 
         Scene quizSeventeenScene = new Scene();
         quizSeventeenScene.setQuestion(
@@ -279,7 +278,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizSeventeenScene.setAnswer('B');
         quizSeventeenScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizSeventeen.ordinal()] = quizSeventeenScene;
+        scenes[SceneType.quizSeventeen.ordinal()] = quizSeventeenScene;
 
         Scene quizEightteenScene = new Scene();
         quizEightteenScene.setQuestion(
@@ -290,7 +289,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizEightteenScene.setAnswer('D');
         quizEightteenScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizEightteen.ordinal()] = quizEightteenScene;
+        scenes[SceneType.quizEightteen.ordinal()] = quizEightteenScene;
 
         Scene quizNineteenScene = new Scene();
         quizNineteenScene.setQuestion(
@@ -301,7 +300,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizNineteenScene.setAnswer('B');
         quizNineteenScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizNineteen.ordinal()] = quizNineteenScene;
+        scenes[SceneType.quizNineteen.ordinal()] = quizNineteenScene;
 
         Scene quizTwentyScene = new Scene();
         quizTwentyScene.setQuestion(
@@ -312,7 +311,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizTwentyScene.setAnswer('A');
         quizTwentyScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTwenty.ordinal()] = quizTwentyScene;
+        scenes[SceneType.quizTwenty.ordinal()] = quizTwentyScene;
 
         Scene quizTwentyoneScene = new Scene();
         quizTwentyoneScene.setQuestion(
@@ -323,7 +322,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizTwentyoneScene.setAnswer('B');
         quizTwentyoneScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTwentyone.ordinal()] = quizTwentyoneScene;
+        scenes[SceneType.quizTwentyone.ordinal()] = quizTwentyoneScene;
 
         Scene quizTwentytwoScene = new Scene();
         quizTwentytwoScene.setQuestion(
@@ -334,7 +333,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizTwentytwoScene.setAnswer('B');
         quizTwentytwoScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTwentytwo.ordinal()] = quizTwentytwoScene;
+        scenes[SceneType.quizTwentytwo.ordinal()] = quizTwentytwoScene;
 
         Scene quizTwentythreeScene = new Scene();
         quizTwentythreeScene.setQuestion(
@@ -345,7 +344,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizTwentythreeScene.setAnswer('C');
         quizTwentythreeScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTwentythree.ordinal()] = quizTwentythreeScene;
+        scenes[SceneType.quizTwentythree.ordinal()] = quizTwentythreeScene;
 
         Scene quizTwentyfourScene = new Scene();
         quizTwentyfourScene.setQuestion(
@@ -356,7 +355,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizTwentyfourScene.setAnswer('C');
         quizTwentyfourScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTwentyfour.ordinal()] = quizTwentyfourScene;
+        scenes[SceneType.quizTwentyfour.ordinal()] = quizTwentyfourScene;
 
         Scene quizTwentyfiveScene = new Scene();
         quizTwentyfiveScene.setQuestion(
@@ -367,7 +366,7 @@ public class MapControl {
             + "\nD. 4 minutes");
         quizTwentyfiveScene.setAnswer('C');
         quizTwentyfiveScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTwentyfive.ordinal()] = quizTwentyfiveScene;
+        scenes[SceneType.quizTwentyfive.ordinal()] = quizTwentyfiveScene;
 
         Scene quizTwentysixScene = new Scene();
         quizTwentysixScene.setQuestion(
@@ -378,7 +377,7 @@ public class MapControl {
             + "\nD. Joseph Smith History 1:2");
         quizTwentysixScene.setAnswer('A');
         quizTwentysixScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTwentysix.ordinal()] = quizTwentysixScene;
+        scenes[SceneType.quizTwentysix.ordinal()] = quizTwentysixScene;
 
         Scene quizTwentysevenScene = new Scene();
         quizTwentysevenScene.setQuestion(
@@ -389,7 +388,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizTwentysevenScene.setAnswer('B');
         quizTwentysevenScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTwentyseven.ordinal()] = quizTwentysevenScene;
+        scenes[SceneType.quizTwentyseven.ordinal()] = quizTwentysevenScene;
 
         Scene quizTwentyeightScene = new Scene();
         quizTwentyeightScene.setQuestion(
@@ -400,7 +399,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizTwentyeightScene.setAnswer('A');
         quizTwentyeightScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTwentyeight.ordinal()] = quizTwentyeightScene;
+        scenes[SceneType.quizTwentyeight.ordinal()] = quizTwentyeightScene;
 
         Scene quizTwentynineScene = new Scene();
         quizTwentynineScene.setQuestion(
@@ -411,7 +410,7 @@ public class MapControl {
             + "\nD. The Nephites");
         quizTwentynineScene.setAnswer('C');
         quizTwentynineScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizTwentynine.ordinal()] = quizTwentynineScene;
+        scenes[SceneType.quizTwentynine.ordinal()] = quizTwentynineScene;
 
         Scene quizThirtyScene = new Scene();
         quizThirtyScene.setQuestion(
@@ -422,7 +421,7 @@ public class MapControl {
             + "\nD. Something To Be");
         quizThirtyScene.setAnswer('C');
         quizThirtyScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizThirty.ordinal()] = quizThirtyScene;
+        scenes[SceneType.quizThirty.ordinal()] = quizThirtyScene;
 
         Scene quizThirtyoneScene = new Scene();
         quizThirtyoneScene.setQuestion(
@@ -433,7 +432,7 @@ public class MapControl {
             + "\nD. Joseph Smith");
         quizThirtyoneScene.setAnswer('C');
         quizThirtyoneScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizThirtyone.ordinal()] = quizThirtyoneScene;
+        scenes[SceneType.quizThirtyone.ordinal()] = quizThirtyoneScene;
 
         Scene quizThirtytwoScene = new Scene();
         quizThirtytwoScene.setQuestion(
@@ -444,7 +443,7 @@ public class MapControl {
             + "\nD. Doesn't the question that asks who made the book technically mean that it's not one book?");
         quizThirtytwoScene.setAnswer('A');
         quizThirtytwoScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizThirtytwo.ordinal()] = quizThirtytwoScene;
+        scenes[SceneType.quizThirtytwo.ordinal()] = quizThirtytwoScene;
 
         Scene quizThirtythreeScene = new Scene();
         quizThirtythreeScene.setQuestion(
@@ -455,11 +454,49 @@ public class MapControl {
             + "\nD. Light and Easy");
         quizThirtythreeScene.setAnswer('B');
         quizThirtythreeScene.getEarnedFruits();
-        scenes[Scene.SceneType.quizThirtythree.ordinal()] = quizThirtythreeScene;
+        scenes[SceneType.quizThirtythree.ordinal()] = quizThirtythreeScene;
         
         return scenes;
         
         
+    }    
+    public enum SceneType {
+        start,
+        quizShow,
+        quizOne,
+        quizTwo,
+        quizThree,
+        quizFour,
+        quizFive,
+        quizSix,
+        quizSeven,
+        quizEight,
+        quizNine,
+        quizTen,
+        quizEleven,
+        quizTwelve,
+        quizThirteen,
+        quizFourteen,
+        quizFifteen,
+        quizSixteen,
+        quizSeventeen,
+        quizEightteen,
+        quizNineteen,
+        quizTwenty,
+        quizTwentyone,
+        quizTwentytwo,
+        quizTwentythree,
+        quizTwentyfour,
+        quizTwentyfive,
+        quizTwentysix,
+        quizTwentyseven,
+        quizTwentyeight,
+        quizTwentynine,
+        quizThirty,
+        quizThirtyone,
+        quizThirtytwo,
+        quizThirtythree,
+        finish;
     }
     
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
@@ -467,7 +504,7 @@ public class MapControl {
         
         locations[0][0].setScene(scenes[SceneType.quizOne.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.quizTwo.ordinal()]);
-
+        
         // Start Point
         locations[0][2].setScene(scenes[SceneType.start.ordinal()]);
         
@@ -509,7 +546,7 @@ public class MapControl {
     }
     
     public void getScene() {
-        String point = getLocation();
+        String point = getCoordinates();
         
     }
 }
