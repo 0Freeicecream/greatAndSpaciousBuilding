@@ -10,6 +10,10 @@ import java.io.BufferedReader;
 import java.io.PrintWriter;
 import theGreatandSpaceousBuilding.theGreatandSpaceousBuilding;
 import byui.cit260.theGreatandSpaceousBuilding.control.MapControl;
+import byui.cit260.theGreatandSpaceousBuilding.model.Game;
+import byui.cit260.theGreatandSpaceousBuilding.model.Map;
+import static java.lang.System.console;
+
 
 
 
@@ -22,13 +26,17 @@ public class QuizView extends View {
     //Get informaiton from Location
     MapControl mapControl = new MapControl();
     
-    // Nenas temporary standins
-    private final String quiz = "quiz";
-    char answer = 'A';
+    Game game = theGreatandSpaceousBuilding.getCurrentGame();
+    Map map = game.getMap();
     
-    //Location location = mapControl.getLocation();
-    //private final String quiz = this.location.getScene().getQuestion();
-    //char answer = this.location.getScene().getAnswer();
+    //this.console.println();
+    Location[][] locs = map.getLocations();
+    Double x = new Double(game.getPlayerCoordinatesX());
+    Double y = new Double(game.getPlayerCoordinatesY());
+//    Location location = mapControl.getLocations();
+    Location location = locs[x.intValue()][y.intValue()];
+    private final String quiz = this.location.getScene().getQuestion();
+    char answer = this.location.getScene().getAnswer();
     
     public QuizView(){
         super("/n/nAnswer the following question:/n");

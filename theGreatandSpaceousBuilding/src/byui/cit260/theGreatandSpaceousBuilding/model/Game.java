@@ -94,7 +94,11 @@ public class Game extends View implements Serializable {
     }
 
     public void setMap(Map map) {
-        this.console.println("Your setMap funciton is working properly");
+        this.map = map;
+    }
+    
+    public Map getMap() {
+        return this.map;
     }
 
     public void setPlayer(Player player) {

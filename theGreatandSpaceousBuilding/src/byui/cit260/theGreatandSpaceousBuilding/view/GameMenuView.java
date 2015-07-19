@@ -77,7 +77,6 @@ public class GameMenuView extends View {
     private void displayMap() {
             //display the Map View
             MapView mapView = new MapView("N");
-            this.console.println("Handin off to the map");
             mapView.display();
     }
 

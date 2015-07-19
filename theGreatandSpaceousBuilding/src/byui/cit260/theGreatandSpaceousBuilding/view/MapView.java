@@ -24,7 +24,7 @@ public class MapView extends View {
 
     public MapView(String promptMessage) {
         super(promptMessage);
-        this.setPromptMessage("you are at: " + MapControl.getLocation() + "\n" + movePrompt);
+        this.setPromptMessage("you are at: " + MapControl.getCoordinates() + "\n" + movePrompt);
     }
     
     public boolean doAction(Object o) {
