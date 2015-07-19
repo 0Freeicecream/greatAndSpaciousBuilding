@@ -27,6 +27,7 @@ public class MapControl {
    public static void movePlayer(char direction) throws MapControlException {
         
        Player player = theGreatandSpaceousBuilding.getPlayer();
+       Game game = theGreatandSpaceousBuilding.getCurrentGame();
        int x = player.getX();
        int y = player.getY();
  
@@ -46,15 +47,19 @@ public class MapControl {
        
         if (direction == 'N'){
             player.setY(y+1);
+            game.setPlayerCoordinatesY(y+1);
         }
         else if (direction == 'S'){
             player.setY(y-1);
+            game.setPlayerCoordinatesY(y-1);
         }
         else if (direction == 'E'){
             player.setX(x+1);
+            game.setPlayerCoordinatesX(x+1);
         }
         else if (direction == 'W'){
             player.setX(x-1);
+            game.setPlayerCoordinatesX(x-1);
         }
         
         // Add coordinates of where we just left to visited
