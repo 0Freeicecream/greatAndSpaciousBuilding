@@ -62,7 +62,7 @@ public class QuizView extends View {
         //get first character entered
         char choice = value.charAt(0);
         if (choice == answer) {
-            this.console.println("\n\nYou answered correctly, you gain x Attribute");
+            this.console.println("\n\nYou answered correctly");
             isRight = true;          
         }
         else {
